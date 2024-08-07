@@ -1,0 +1,19 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2024-08-06 18:01:51.162814+00:00
+  name: daily_reports
+  pipeline_uuid: performance_reports
+  schedule_interval: '@daily'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-08-07 01:00:00+00:00
+  status: active
+  token: 782578af34b54b40a31fc46349f80dc1
+  variables:
+    cols_ref_to_drop: '[''pred_date'']'
+    current_folder: monitoring/current
+    prediction_col: prediction
+    reference_folder: monitoring/reference
+    reports_folder_s3: monitoring/reports

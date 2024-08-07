@@ -1,0 +1,20 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2024-08-06 15:38:19.069379+00:00
+  name: daily_batch_inference
+  pipeline_uuid: batch_inference
+  schedule_interval: '@daily'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-08-06 23:00:00+00:00
+  status: active
+  token: db77465e15de4b27980cefadaefbe34c
+  variables:
+    batch_file: online_gaming_behavior_dataset.csv
+    batch_folder: batch
+    model_alias: production
+    model_name: online_gaming
+    monitoring_folder: monitoring/current
+    output_prefix: output

@@ -1,0 +1,137 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - prepare_batch_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_batch_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_batch_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - batch_inference
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: prepare_batch_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_batch_data
+  uuid: prepare_batch_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - export_batch_predictions
+  - export_monitoring_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: batch_inference
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - prepare_batch_data
+  - production_model
+  uuid: batch_inference
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_batch_predictions
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - batch_inference
+  uuid: export_batch_predictions
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_monitoring_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - batch_inference
+  uuid: export_monitoring_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: global_data_products/production_model.py
+    file_source:
+      path: null
+    global_data_product:
+      uuid: best_registered_model
+  downstream_blocks:
+  - batch_inference
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: production_model
+  retry_config: null
+  status: executed
+  timeout: null
+  type: global_data_product
+  upstream_blocks: []
+  uuid: production_model
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-07-15 15:18:56.037454+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: batch_inference
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: batch_inference
+variables:
+  batch_file: online_gaming_batch_dataset.csv
+  batch_folder: batch
+  model_alias: production
+  model_name: online_gaming
+  monitoring_folder: monitoring/current
+  output_prefix: output
+variables_dir: /home/src/mage_data/machine_learning
+widgets: []

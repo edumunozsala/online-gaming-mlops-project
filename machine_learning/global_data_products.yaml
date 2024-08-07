@@ -1,0 +1,54 @@
+best_registered_model:
+  object_type: pipeline
+  object_uuid: select_best_model
+  repo_path: /home/src/machine_learning
+  settings:
+    set_best_model: {}
+core_data_users_v0:
+  object_type: pipeline
+  object_uuid: core_data_users_v0
+  outdated_after:
+    seconds: 3600
+  settings:
+    prepare_data/feature_engineering/add_and_combine_features:
+      partitions: 1
+ml_model_training:
+  object_type: pipeline
+  object_uuid: ml_training
+  outdated_after:
+    seconds: 3600
+  settings:
+    ml/training/explain:
+      partitions: 1
+ml_offline_predictions:
+  object_type: pipeline
+  object_uuid: ml_inference_offline
+  outdated_after:
+    seconds: 86400
+  settings:
+    ml/inference/offline/predictions:
+      partitions: 1
+player_features:
+  object_type: pipeline
+  object_uuid: prepare_data
+  outdated_after:
+    seconds: 3600
+  repo_path: /home/src/machine_learning
+  settings:
+    extract_player_features: {}
+training_set_v0:
+  object_type: pipeline
+  object_uuid: prepare_data
+  outdated_after:
+    seconds: 3600
+  settings:
+    prepare_data/feature_engineering/select_features: {}
+user_feature_store:
+  object_type: pipeline
+  object_uuid: ml_feature_fetching
+  outdated_after:
+    seconds: 86400
+    weeks: null
+  settings:
+    ml/feature_fetching/user_features:
+      partitions: 1

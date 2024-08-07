@@ -1,0 +1,121 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_loaders/load_reference_data.py
+  downstream_blocks:
+  - run_tests
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_reference_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_reference_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_loaders/load_current_data.py
+  downstream_blocks:
+  - run_tests
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_current_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_current_data
+- all_upstream_blocks_executed: false
+  color: teal
+  configuration:
+    file_source:
+      path: custom/run_tests.py
+  downstream_blocks:
+  - run_retraining
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: run_tests
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - load_reference_data
+  - load_current_data
+  uuid: run_tests
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: data_exporters/run_retraining.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: run_retraining
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - run_tests
+  uuid: run_retraining
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals:
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: conditionals/check_test_failure.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: check_test_failure
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: conditional
+  upstream_blocks:
+  - run_retraining
+  uuid: check_test_failure
+created_at: '2024-07-25 08:04:15.209203+00:00'
+data_integration: null
+description: Data drift and Prediction drift monitor
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: performance_monitor
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: performance_monitor
+variables:
+  current_folder: monitoring/current
+  prediction_col: prediction
+  reference_folder: monitoring/reference
+variables_dir: /home/src/mage_data/machine_learning
+widgets: []

@@ -1,0 +1,17 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2024-08-07 15:32:45.695196+00:00
+  name: performace_tests
+  pipeline_uuid: performance_monitor
+  schedule_interval: '@daily'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-08-08 03:00:00+00:00
+  status: active
+  token: 5fd7774c193e4e198ac71b993b392624
+  variables:
+    current_folder: monitoring/current
+    prediction_col: prediction
+    reference_folder: monitoring/reference

@@ -1,0 +1,19 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2024-08-06 17:15:53.216516+00:00
+  name: weekly_training
+  pipeline_uuid: training_workflow
+  schedule_interval: '@weekly'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-08-09 21:00:00+00:00
+  status: active
+  token: 75aff85411e745f9bcdec8f6e675acca
+  variables:
+    model_name: online_gaming
+    monitoring_folder: monitoring
+    processed_file: processed_online_gaming.csv
+    processed_folder: processed
+    reference_folder: reference

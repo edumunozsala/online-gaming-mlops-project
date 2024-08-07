@@ -1,0 +1,61 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: online_prediction
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - gdp_best_model
+  uuid: online_prediction
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    global_data_product:
+      uuid: best_registered_model
+  downstream_blocks:
+  - online_prediction
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: gdp_best_model
+  retry_config: null
+  status: executed
+  timeout: null
+  type: global_data_product
+  upstream_blocks: []
+  uuid: gdp_best_model
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-07-16 15:15:26.896413+00:00'
+data_integration: null
+description: Pipeline to make online predictions via API trigger
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: online_inference
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: online_inference
+variables:
+  GDP_best_model: best_registered_model
+variables_dir: /home/src/mage_data/machine_learning
+widgets: []

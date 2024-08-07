@@ -1,0 +1,49 @@
+inputs:
+  boolean:
+    options: []
+    style: null
+    type: switch
+  numbers:
+    options:
+    - label: User ID 1
+      value: '1'
+    - label: User ID 5
+      value: '5'
+    - label: User ID 20
+      value: '20'
+    - label: User ID 100
+      value: '100'
+    - label: User ID 500
+      value: '500'
+    - label: User ID 1000
+      value: '1000'
+    style: null
+    type: checkbox
+  text input:
+    options: []
+    style: null
+    type: text_field
+layout:
+- - variable: user_ids
+    width: 1
+- - variable: probability
+    width: 1
+variables:
+  probability:
+    description: Instead of getting predictions of the outcome, get the probability
+      of each possible outcome for every user ID.
+    input: boolean
+    name: Probability
+    required: null
+    types:
+    - boolean
+    uuid: null
+  user_ids:
+    description: A list of user IDs (1 - 1800) to get predictions for.
+    input: numbers
+    name: User IDs
+    required: null
+    types:
+    - list
+    - integer
+    uuid: null

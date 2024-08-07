@@ -1,0 +1,15 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2024-07-25 09:02:08.476047+00:00
+  name: online-prediction
+  pipeline_uuid: online_inference
+  schedule_interval: null
+  schedule_type: api
+  settings: null
+  sla: null
+  start_time: 2024-07-16 16:30:00+00:00
+  status: active
+  token: 2a48283d377a4f1ca9297d19cf4cd40f
+  variables:
+    GDP_best_model: best_registered_model
