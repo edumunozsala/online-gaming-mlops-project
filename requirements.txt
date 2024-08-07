@@ -1,0 +1,6 @@
+pandas==2.1.0
+scikit-learn
+boto3
+s3fs
+mlflow==2.14.0
+evidently==0.4.4

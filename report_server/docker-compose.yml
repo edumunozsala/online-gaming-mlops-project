@@ -1,0 +1,15 @@
+services:
+  
+  evidently-ui:
+    environment:
+      - .dev.env
+    build:
+      context: .
+    image: evidently-monitoring-ui
+    container_name: evidently-ui
+    #command: "./start.sh"
+    restart: always
+    #volumes:
+    #  - ./:/home/evidently-monitoring-ui
+    ports:
+      - 8001:8001

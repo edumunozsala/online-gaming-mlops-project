@@ -1,0 +1,74 @@
+[
+  {
+    "name": "ENV",
+    "value": "production"
+  },
+  {
+    "name": "PROJECT_NAME",
+    "value": "machine_learning"
+  },
+  {
+    "name": "MAGE_CODE_PATH",
+    "value": "/home/mage_code"
+  },
+  {
+    "name": "PYTHONPATH",
+    "value": "/home/mage_code:/home/mage_code/machine_learning:/home/evidently-monitoring-ui"
+  },
+  {
+    "name": "AWS_ACCESS_KEY_ID",
+    "value": "${aws_access_key_id}"
+  },
+  {
+    "name": "AWS_SECRET_ACCESS_KEY",
+    "value": "${aws_secret_access_key}"
+  },
+  {
+    "name": "AWS_REGION_NAME",
+    "value": "${aws_region_name}"
+  },
+  {
+    "name": "AWS_BUCKET_NAME",
+    "value": "mlops-online"
+  },
+  {
+    "name": "MLFLOW_PORT",
+    "value": "5000"
+  },  
+  {
+    "name": "MLFLOW_ENDPOINT_URL",
+    "value": "http://127.0.0.1:5000"
+  },
+  {
+    "name": "BACKEND_STORE_URI",
+    "value": "sqlite:////mlflow/mlflow.db"
+  },
+  {
+    "name": "MLFLOW_EXPERIMENT_NAME",
+    "value": "online_gaming_1"
+  },
+  {
+    "name": "DEFAULT_ARTIFACT_ROOT",
+    "value": "s3://${aws_bucket_name}/mlflow"
+  },
+  {
+    "name": "DEFAULT_ARTIFACTS_DESTINATION",
+    "value": "s3://${aws_bucket_name}/mlflow"
+  },
+  {
+    "name": "MAGE_DATABASE_CONNECTION_URL",
+    "value": "${database_connection_url}"
+  },
+  {
+    "name": "MAGE_EC2_SUBNET_ID",
+    "value": "${ec2_subnet_id}"
+  },
+  {
+    "name": "WORKSPACE",
+    "value": "myworkspace"
+  },
+  {
+    "name": "PROJECT",
+    "value": "online_gaming"
+  }    
+]

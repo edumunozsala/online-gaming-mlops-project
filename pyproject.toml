@@ -1,0 +1,12 @@
+[tool.pylint.'MESSAGES_CONTROL']
+
+disable=["trailing-whitespace", 
+        "missing-final-newline",
+        "possibly-used-before-assignment",
+        "import-error",
+        "invalid-name"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py311"]
+skip-string-normalization = true

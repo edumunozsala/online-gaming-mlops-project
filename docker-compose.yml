@@ -1,0 +1,74 @@
+services:
+  magic-platform:
+    env_file:
+      - .dev.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - PROJECT_NAME=$PROJECT_NAME
+      - MAGE_CODE_PATH=$MAGE_CODE_PATH
+      - MLFLOW_PORT=$MLFLOW_PORT
+    command: /app/run_app.sh mage start $PROJECT_NAME
+    ports:
+      - 6789:6789
+    volumes:
+      # Mount your local codebase to the container.docker image
+      - .:/$MAGE_CODE_PATH
+      # Store the data output on local machine to easily debug (optional).
+      #- ~/.mage_data:/$MAGE_CODE_PATH/mage_data
+      # Initial credentials to create an IAM user with limited permissions for deployment.
+      #- ~/.aws:/root/.aws
+      # Local machine’s SSH keys to pull and push to your GitHub repository.
+      # - ~/.ssh:/root/.ssh:ro
+      # Local machine’s GitHub configs
+      #- ~/.gitconfig:/root/.gitconfig:ro
+    restart: on-failure:5
+    networks:
+      - app-network
+    depends_on:
+      - magic-database
+    stdin_open: true # used for interactive debugging
+    tty: true # used for interactive debugging
+    
+  magic-database:
+    image: pgvector/pgvector:0.6.0-pg16
+    env_file:
+      - .dev.env
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/.postgres/data:/var/lib/postgresql/data
+      # Custom database initialization scripts (optional).
+      - ./scripts/database:/docker-entrypoint-initdb.d
+    restart: always
+    networks:
+      - app-network
+
+  mlflow:
+    env_file:                                # Swarm will load (in the container) both 'env_file' files in the list, not only '.env' by default !!
+          - .dev.env                               # Default '--env-file' option: $ docker-compose up -d
+        #    - .secrets/env-secrets               # Requires '--env-file' option: $ docker-compose --env-file .env-secrets up -d
+    build:
+        context: ./mlflow
+        dockerfile: Dockerfile                 # to build a root image with a system pip install of mlflow
+    image: mlflow_tracker_slim
+    container_name: mlflow_tracker_${MLFLOW_PORT}
+    hostname: mlflow_phpmyadmin_${MLFLOW_PORT}
+        #restart: unless-stopped
+        #depends_on:
+        #    - mysql
+    ports:
+          - ${MLFLOW_PORT}:5000
+    volumes:
+            # Artifact store locally available through folder mapping:
+            - ./mlflow:/mlflow
+        #command: ./entrypoint.sh                # replaces the CMD line in Dockerfile
+        #command: ./entrypoint-pip-dev.sh         # only for the image built with Dockerfile
+        #command: ./entrypoint-conda-dev.sh      # only for the image built with Dockerfile-conda
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
