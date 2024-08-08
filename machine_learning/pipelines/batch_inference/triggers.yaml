@@ -12,7 +12,7 @@ triggers:
   status: active
   token: db77465e15de4b27980cefadaefbe34c
   variables:
-    batch_file: online_gaming_behavior_dataset.csv
+    batch_file: online_gaming_batch_dataset.csv
     batch_folder: batch
     model_alias: production
     model_name: online_gaming

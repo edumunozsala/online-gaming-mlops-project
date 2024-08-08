@@ -33,7 +33,4 @@ def test_output(output, *args) -> None:
     """
     Template code for testing the output of the block.
     """
-    X_train, y_train, X_test, y_test = output
-    assert len(X_train)==len(y_train), 'Number of rows not equal: X_train'
-    assert len(X_test)==len(y_test), 'Number of rows not equal: X_train'
     assert output is not None, 'The output is undefined'

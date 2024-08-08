@@ -1,3 +1,6 @@
+"""
+Helper functions to train our ML model
+"""
 import pandas as pd
 import numpy as np
 
@@ -11,11 +14,11 @@ from sklearn.metrics import accuracy_score, precision_score,recall_score, f1_sco
 
 
 def build_model_pipeline(X: pd.DataFrame, params: dict):
-    
+    """
+    Define the model pipeline and return it
+    """
     # Define the types of columns
     numeric_col = X.select_dtypes(exclude=['category','object']).columns.tolist()
-    #categorical_col= ['Age', 'Gender', 'Location', 'GameGenre', 'InGamePurchases', 'GameDifficulty']
-    #categorical_col= ['Gender', 'Location', 'GameGenre', 'InGamePurchases', 'GameDifficulty']
     categorical_col= X.select_dtypes(include=['category','object']).columns.tolist()
     
     # Make Pipeline
@@ -29,12 +32,12 @@ def build_model_pipeline(X: pd.DataFrame, params: dict):
         ('imp',SimpleImputer(strategy='most_frequent')),
         ('enc',OneHotEncoder())
     ])
-    # DEfine the transformer
+    # Define the transformer
     preprocessor = ColumnTransformer([
         ('num',num,numeric_col),
         ('cat',cat,categorical_col)
     ])    
-    
+    #Check the params to use
     if "learning_rate" in params:
         lr= params['learning_rate']
     else:
@@ -48,9 +51,9 @@ def build_model_pipeline(X: pd.DataFrame, params: dict):
         max_depth= params['max_depth']
     else:
         max_depth= 3
-        
+    # Create the model    
     model= GradientBoostingClassifier(learning_rate=lr, n_estimators=n_estimators, max_depth=max_depth)
-    
+    # Create the pipeline
     pipeline = Pipeline([
         ('prep',preprocessor),
         ('model',model)
@@ -63,28 +66,18 @@ def build_model_pipeline(X: pd.DataFrame, params: dict):
 def train_evaluate_model(pipeline: Pipeline, X_train: pd.DataFrame, y_train: np.ndarray,
                          X_test: pd.DataFrame, y_test: np.ndarray,
                          ):
-    
-    #mlflow.set_tracking_uri("http://localhost:5005")
-    #mlflow.set_experiment("online_gaming_1")
-    
-    #mlflow.autolog()
-    
-    #with mlflow.start_run():
-        pipeline.fit(X_train, y_train)
+    """
+    Train the model/pipeline and evaluate it. Return the metrics on the test dataset
+    """
+    pipeline.fit(X_train, y_train)
 
-        y_pred = pipeline.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
-        precision = precision_score(y_test, y_pred,average='macro')
-        recall = recall_score(y_test, y_pred, average='macro')
-        f1 = f1_score(y_test, y_pred, average='macro')
-        #mlflow.log_metric("accuracy", accuracy)
-        #mlflow.log_metric("precision", precision)
-        #mlflow.log_metric("recall", recall)
-        #mlflow.log_metric("f1_score", f1)
+    y_pred = pipeline.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred,average='macro')
+    recall = recall_score(y_test, y_pred, average='macro')
+    f1 = f1_score(y_test, y_pred, average='macro')
         
-        print("Results: ", [accuracy, precision, recall, f1])
+    print("Results: ", [accuracy, precision, recall, f1])
     
-        #mlflow.sklearn.log_model(pipeline, artifact_path="models")
-    
-        return pipeline, [accuracy, precision, recall, f1]
+    return pipeline, [accuracy, precision, recall, f1]
 

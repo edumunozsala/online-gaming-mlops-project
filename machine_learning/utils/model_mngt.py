@@ -1,3 +1,6 @@
+"""
+Helper functions to mantain the registered models
+"""
 import mlflow
 from mlflow import MlflowClient
 import mlflow.sklearn
@@ -37,6 +40,9 @@ def get_metric_value(history):
     return value
 
 def print_metric_info(history):
+    """
+    Print the metric info
+    """
     for m in history:
         print(f"name: {m.key}")
         print(f"value: {m.value}")
@@ -60,16 +66,8 @@ def search_best_model_version(client: mlflow.tracking.MlflowClient, model_name: 
     best_metric_value=-1
     best_version=-1
     for version in registered_model_versions:
-        #pprint(version)
-        
         print(f"Model Name: {version.name}")
         print(f"Version: {version.version}")
-        #print(f"Run ID: {version.run_id}")
-        #print(f"Aliases: {version.aliases}")
-        #print(f"Status: {version.status}")
-        #print(f"Metric {'precision'}")
-        #print_metric_info(client.get_metric_history(version.run_id, "precision"))
-        #print(client.get_metric_history(version.run_id, "precision"))
         
         metric_value=get_metric_value(client.get_metric_history(version.run_id, metric))
 
@@ -88,6 +86,7 @@ def search_best_model_version(client: mlflow.tracking.MlflowClient, model_name: 
 def set_best_model_version(client: mlflow.tracking.MlflowClient, model_name: str, 
                             version: str):
     """
+    Set aliases for production to the model and version 
     Returns:
         Set the model name and version as the best model using the proper alias
     """

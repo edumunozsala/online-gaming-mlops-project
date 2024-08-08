@@ -18,7 +18,7 @@ def transform_custom(*args, **kwargs):
     # Specify your custom logic here
     #summary_report, data_drift_report, pred_drift_report = tuple(args)
     file_names=args[0]
-    #f= file_names[0].split('/')[-1]
+    
     for file_name in file_names:
         preprocessing.save_json_to_s3(file_name, os.getenv('AWS_BUCKET_NAME'), kwargs['reports_folder_s3'], 
                     file_name.split('/')[-1])

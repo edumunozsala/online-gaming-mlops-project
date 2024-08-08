@@ -1,6 +1,10 @@
+"""
+Helper function to execute the performance reports and Test Suites, using Evidently AI library
+"""
+import os
+from typing import List
 from datetime import datetime
 import pandas as pd
-import os
 
 from evidently import ColumnMapping
 from evidently.report import Report
@@ -9,9 +13,22 @@ from evidently.metric_preset import DataDriftPreset, DataQualityPreset, TargetDr
 from evidently.test_suite import TestSuite
 from evidently.test_preset import DataDriftTestPreset, NoTargetPerformanceTestPreset
 
+def prepare_current_data(df: pd.DataFrame, cols_to_drop: List):
+    """
+    Prepare and remove columns from the dataset to be used for reporting
+    """
+    # Check the columns to included in the df
+    actual_cols_to_drop= [col for col in cols_to_drop if col in df.columns]
+    # Drop the columns
+    df= df.drop(columns=cols_to_drop)
+    
+    return df
+
 def create_summary_report(report_date: datetime, reference: pd.DataFrame, data_sample: pd.DataFrame, 
                   col_mapping: ColumnMapping, tmp_folder: str = '/tmp/reports'):
-    
+    """
+    Create a Data Quality report and save it to disk
+    """
     summary_report = Report(
         metrics=[
                 DataQualityPreset()        
@@ -28,6 +45,9 @@ def create_summary_report(report_date: datetime, reference: pd.DataFrame, data_s
 
 def create_data_drift_report(report_date: datetime, reference: pd.DataFrame, data_sample: pd.DataFrame, 
                   col_mapping: ColumnMapping, tmp_folder: str = '/tmp/reports'):
+    """
+    Create a Data Drift report and save it to disk
+    """
     
     data_drift_report = Report(
         metrics=[
@@ -44,7 +64,10 @@ def create_data_drift_report(report_date: datetime, reference: pd.DataFrame, dat
 
 def create_prediction_drift_report(report_date: datetime, reference: pd.DataFrame, data_sample: pd.DataFrame, 
                   col_mapping: ColumnMapping, tmp_folder: str = '/tmp/reports'):
-    
+    """
+    Create a Prediction Drift report and save it to disk
+    """
+
     pred_drift_report = Report(
         metrics=[
                 TargetDriftPreset()
@@ -60,6 +83,9 @@ def create_prediction_drift_report(report_date: datetime, reference: pd.DataFram
 
 def create_test_suite(report_date: datetime, reference: pd.DataFrame, data_sample: pd.DataFrame, 
                   col_mapping: ColumnMapping):
+    """
+    Create and run the Test Suite and return it
+    """
     
     test_suite = TestSuite(
         tests=[DataDriftTestPreset(),
@@ -73,6 +99,9 @@ def create_test_suite(report_date: datetime, reference: pd.DataFrame, data_sampl
     return test_suite
 
 def check_test_failures(test_json: dict):
+    """
+    Check which tests have failed and return true if any of the most impactful are included
+    """
     failure= False
     for test in test_json['tests']:
         if test['status']!= 'SUCCESS':
@@ -93,16 +122,25 @@ def check_test_failures(test_json: dict):
     return failure
 
 def get_num_features(df: pd.DataFrame):
+    """
+    Return the list of numerical columns
+    """
     num_features = df.select_dtypes(exclude=['category','object']).columns.tolist()
     
     return num_features
 
 def get_cat_features(df: pd.DataFrame):
+    """
+    Return the list of categorical columns
+    """
     cat_features = df.select_dtypes(include=['category','object']).columns.tolist()
     
     return cat_features
 
 def get_column_mapping(data: pd.DataFrame, prediction_col: str, label_col: str = None):
+    """
+    Create and return the Column Mapping object for the reports and tests
+    """
     # Define Column Mapping
     num_features = get_num_features(data)
     cat_features = get_cat_features(data)
@@ -117,7 +155,9 @@ def get_column_mapping(data: pd.DataFrame, prediction_col: str, label_col: str =
     return column_mapping
 
 def create_reports(report_date, ref_data, curr_data, prediction_col, label_col= None):
-    
+    """
+    Run all the reports and save them to temporary disk
+    """
     # Create the directory
     temp_folder='/tmp/reports'
     os.makedirs(temp_folder, exist_ok=True)

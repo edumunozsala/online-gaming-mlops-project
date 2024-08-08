@@ -30,7 +30,7 @@ blocks:
   language: python
   name: split_data
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: custom
   upstream_blocks:
