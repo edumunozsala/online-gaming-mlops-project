@@ -10,6 +10,8 @@ isort = "*"
 [dev-packages]
 pylint = "*"
 mlflow = "==2.14.0"
+evidently = "==0.4.4"
+boto3 = "*"
 
 [requires]
 python_version = "3.10"

@@ -1,6 +1,6 @@
 pandas==2.1.0
 scikit-learn
-boto3
+boto3== 1.34.156
 s3fs
 mlflow==2.14.0
 evidently==0.4.4

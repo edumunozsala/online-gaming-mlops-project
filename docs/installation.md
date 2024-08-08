@@ -10,6 +10,7 @@ pipenv install --dev isort
 ```
 
 pipenv install --dev mlflow==2.14.0
+pipenv install --dev boto3== 1.34.156
 
 
 

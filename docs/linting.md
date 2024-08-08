@@ -14,6 +14,45 @@ pipenv install --dev isort
 
 isort --diff
 
+Check the changes, everything looks fine so we apply it:
+```
+isort machine_learning/utils
+```
+## Formatting the code
+
+We have apply `black` tool to check and format our code. We have configured the `pyproject.toml` file to set the python versin and to skip the string normalization.
+```
+[tool.black]
+line-length = 100
+target-version = ["py39", "py311"]
+skip-string-normalization = true
+
+```
+
+Firsdt, let's check the differences
+```bash
+black --diff machine_learning/utils
+```
+
+We review the changes, they are right and we can not detect any issues, so we can apply them:
+
+```bash
+black machine_learning/utils
+```
+
+Output:
+```text
+ black machine_learning/utils/
+reformatted /workspaces/online-gaming-mlops-project/machine_learning/utils/columns.py
+reformatted /workspaces/online-gaming-mlops-project/machine_learning/utils/model_mngt.py
+reformatted /workspaces/online-gaming-mlops-project/machine_learning/utils/monitoring.py
+reformatted /workspaces/online-gaming-mlops-project/machine_learning/utils/preprocessing.py
+reformatted /workspaces/online-gaming-mlops-project/machine_learning/utils/training.py
+
+All done! ✨ 🍰 ✨
+5 files reformatted, 1 file left unchanged.
+```
+
 ## Linting
 First, we look for errors only:
 
@@ -116,7 +155,7 @@ For a future use in a CD/CI pipeline, we will also remove the invalid-name error
 Your code has been rated at 10.00/10 (previous run: 9.48/10, +0.52)
 ```
 
-##Formatting the code
+## Formatting the code
 
 We have apply `black` tool to check and format our code. We have configured the `pyproject.toml` file to set the python versin and to skip the string normalization.
 ```

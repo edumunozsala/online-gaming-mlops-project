@@ -3,7 +3,7 @@
 disable=["trailing-whitespace", 
         "missing-final-newline",
         "possibly-used-before-assignment",
-        "import-error",
+        #"import-error",
         "invalid-name",
         "simplifiable-if-expression"]
 
