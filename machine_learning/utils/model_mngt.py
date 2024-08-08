@@ -11,8 +11,6 @@ def get_model_by_alias(client: MlflowClient, model_name: str, model_version_alia
     """
     # Get informawtion about the model
     model_info = client.get_model_version_by_alias(model_name, model_version_alias)
-    model_tags = model_info.tags
-    #print(model_tags)
 
     # Get the model version using a model URI
     model_uri = f"models:/{model_name}@{model_version_alias}"

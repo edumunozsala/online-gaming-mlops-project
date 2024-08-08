@@ -10,6 +10,11 @@ pipenv install --dev black
 pipenv install --dev isort
 ```
 
+## Sort omports
+
+isort --diff
+
+## Linting
 First, we look for errors only:
 
 pylint --errors_only machine_learning/utils

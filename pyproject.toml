@@ -4,9 +4,14 @@ disable=["trailing-whitespace",
         "missing-final-newline",
         "possibly-used-before-assignment",
         "import-error",
-        "invalid-name"]
+        "invalid-name",
+        "simplifiable-if-expression"]
 
 [tool.black]
 line-length = 100
-target-version = ["py39", "py311"]
+target-version = ["py39", "py310"]
 skip-string-normalization = true
+
+[tool.isort]
+multi_line_output = 3
+length_sort = true

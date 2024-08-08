@@ -20,7 +20,7 @@ def prepare_current_data(df: pd.DataFrame, cols_to_drop: List):
     # Check the columns to included in the df
     actual_cols_to_drop= [col for col in cols_to_drop if col in df.columns]
     # Drop the columns
-    df= df.drop(columns=cols_to_drop)
+    df= df.drop(columns=actual_cols_to_drop)
     
     return df
 
@@ -162,7 +162,7 @@ def create_reports(report_date, ref_data, curr_data, prediction_col, label_col= 
     temp_folder='/tmp/reports'
     os.makedirs(temp_folder, exist_ok=True)
     
-    column_mapping= get_column_mapping(curr_data, prediction_col)
+    column_mapping= get_column_mapping(curr_data, prediction_col, label_col)
     # Create the Summary or Data Quality report
     print("Creating Summary report")
     summary_report= create_summary_report(report_date, ref_data, curr_data, 

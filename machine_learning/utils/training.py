@@ -25,17 +25,17 @@ def build_model_pipeline(X: pd.DataFrame, params: dict):
     # Define pipeline for numeric columns
     num = Pipeline([
         ('imp',SimpleImputer(strategy='mean')),
-        ('scl',StandardScaler())
+        ('scl',StandardScaler()),
     ])
     #  Define pipeline for categorical columns
     cat = Pipeline([
         ('imp',SimpleImputer(strategy='most_frequent')),
-        ('enc',OneHotEncoder())
+        ('enc',OneHotEncoder()),
     ])
     # Define the transformer
     preprocessor = ColumnTransformer([
         ('num',num,numeric_col),
-        ('cat',cat,categorical_col)
+        ('cat',cat,categorical_col),
     ])    
     #Check the params to use
     if "learning_rate" in params:
@@ -56,7 +56,7 @@ def build_model_pipeline(X: pd.DataFrame, params: dict):
     # Create the pipeline
     pipeline = Pipeline([
         ('prep',preprocessor),
-        ('model',model)
+        ('model',model),
     ])
     
     print("Pipeline created")
@@ -64,8 +64,7 @@ def build_model_pipeline(X: pd.DataFrame, params: dict):
     return pipeline
 
 def train_evaluate_model(pipeline: Pipeline, X_train: pd.DataFrame, y_train: np.ndarray,
-                         X_test: pd.DataFrame, y_test: np.ndarray,
-                         ):
+                         X_test: pd.DataFrame, y_test: np.ndarray):
     """
     Train the model/pipeline and evaluate it. Return the metrics on the test dataset
     """
