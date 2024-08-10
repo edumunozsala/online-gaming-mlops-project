@@ -272,9 +272,170 @@ tests/unit_tests.py ...                                                         
 ========================================================================================== 3 passed in 7.19s ==========================================================================================
 ```
 
-
-
 ### Integration test
+
+We are going to test our mlflow container as a sample on how to apply integration tests. 
+
+* Set the environment variables
+```bash
+set -a
+source ./.dev.env
+set +a
+```
+
+if you do not want to build or rebuild the container image set the env variable to `LOCAL_IMAGE_NAME`.
+
+And now we can run the test using the `make` command and the task defined in the `Makefile`:
+```bash
+make scripts/integration-tests
+```
+
+The content of this section of the `Makefile` is:
+```make
+integration-tests:
+			LOCAL_IMAGE_NAME=${LOCAL_IMAGE_NAME} bash ./scripts/integration-test.sh
+
+```
+Output:
+```text
+LOCAL_IMAGE_NAME=mlflow_tracker_5000 bash ./scripts/integration-test.sh
+No need to build image. Runing container
+[+] Running 2/2
+ ✔ Network online-gaming-mlops-project_app-network  Created                                                                                                                                                                                  0.1s 
+ ✔ Container mlflow_tracker_5000                    Started                                                                                                                                                                                  0.5s 
+pwd
+Loading .env environment variables...
+============================================================================================================== test session starts ===============================================================================================================
+platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
+rootdir: /workspaces/online-gaming-mlops-project
+configfile: pyproject.toml
+plugins: anyio-4.4.0
+collected 0 items                                                                                                                                                                                                                                
+
+============================================================================================================= no tests ran in 0.00s ==============================================================================================================
+ERROR: file or directory not found: ./tests/integration_tests.py
+
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [11] [INFO] Starting gunicorn 22.0.0
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [11] [INFO] Listening at: http://0.0.0.0:5000 (11)
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [11] [INFO] Using worker: sync
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [12] [INFO] Booting worker with pid: 12
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [13] [INFO] Booting worker with pid: 13
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [14] [INFO] Booting worker with pid: 14
+mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [15] [INFO] Booting worker with pid: 15
+[+] Running 2/2
+ ✔ Container mlflow_tracker_5000                    Removed                                                                                                                                                                                 10.5s 
+ ✔ Network online-gaming-mlops-project_app-network  Removed                                                                                                                                                                                  0.1s 
+make: *** [Makefile:8: integration-tests] Error 4
+@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ 
+
+@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ 
+@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ make integration-tests
+LOCAL_IMAGE_NAME=mlflow_tracker_5000 bash ./scripts/integration-test.sh
++ [[ -z '' ]]
+++ dirname ./scripts/integration-test.sh
++ cd ./scripts
++ export MLFLOW_PORT=5000
++ MLFLOW_PORT=5000
++ export MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
++ MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
++ export BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
++ BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
++ export MLFLOW_EXPERIMENT_NAME=online_gaming_1
++ MLFLOW_EXPERIMENT_NAME=online_gaming_1
++ export DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
++ DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
++ export DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
++ DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
++ '[' mlflow_tracker_5000 == '' ']'
++ echo 'No need to build image. Runing container'
+No need to build image. Runing container
++ docker compose up -d mlflow
+[+] Running 2/2
+ ✔ Network online-gaming-mlops-project_app-network  Created                                                                                                                                                                                  0.1s 
+ ✔ Container mlflow_tracker_5000                    Started                                                                                                                                                                                  0.6s 
++ sleep 15
++ echo /workspaces/online-gaming-mlops-project/scripts
+/workspaces/online-gaming-mlops-project/scripts
++ pipenv run pytest ./tests/integration_tests.py
+Loading .env environment variables...
+============================================================================================================== test session starts ===============================================================================================================
+platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
+rootdir: /workspaces/online-gaming-mlops-project
+configfile: pyproject.toml
+plugins: anyio-4.4.0
+collected 0 items                                                                                                                                                                                                                                
+
+============================================================================================================= no tests ran in 0.00s ==============================================================================================================
+ERROR: file or directory not found: ./tests/integration_tests.py
+
++ ERROR_CODE=4
++ '[' 4 '!=' 0 ']'
++ docker compose logs
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [11] [INFO] Starting gunicorn 22.0.0
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [11] [INFO] Listening at: http://0.0.0.0:5000 (11)
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [11] [INFO] Using worker: sync
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [12] [INFO] Booting worker with pid: 12
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [13] [INFO] Booting worker with pid: 13
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [14] [INFO] Booting worker with pid: 14
+mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [15] [INFO] Booting worker with pid: 15
++ docker compose down
+[+] Running 2/2
+ ✔ Container mlflow_tracker_5000                    Removed                                                                                                                                                                                 10.4s 
+ ✔ Network online-gaming-mlops-project_app-network  Removed                                                                                                                                                                                  0.1s 
++ exit 4
+make: *** [Makefile:8: integration-tests] Error 4
+@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ make integration-tests
+LOCAL_IMAGE_NAME=mlflow_tracker_5000 bash ./scripts/integration-test.sh
++ [[ -z '' ]]
+++ dirname ./scripts/integration-test.sh
++ cd ./scripts
++ export MLFLOW_PORT=5000
++ MLFLOW_PORT=5000
++ export MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
++ MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
++ export BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
++ BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
++ export MLFLOW_EXPERIMENT_NAME=online_gaming_1
++ MLFLOW_EXPERIMENT_NAME=online_gaming_1
++ export DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
++ DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
++ export DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
++ DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
++ '[' mlflow_tracker_5000 == '' ']'
++ echo 'No need to build image. Runing container'
+No need to build image. Runing container
++ docker compose up -d mlflow
+[+] Running 2/2
+ ✔ Network online-gaming-mlops-project_app-network  Created                                                                                                                                                                                  0.1s 
+ ✔ Container mlflow_tracker_5000                    Started                                                                                                                                                                                  0.6s 
++ sleep 15
++ echo /workspaces/online-gaming-mlops-project/scripts
+/workspaces/online-gaming-mlops-project/scripts
++ pipenv run pytest ../tests/integration_tests.py
+Loading .env environment variables...
+============================================================================================================== test session starts ===============================================================================================================
+platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
+rootdir: /workspaces/online-gaming-mlops-project
+configfile: pyproject.toml
+plugins: anyio-4.4.0
+collected 3 items                                                                                                                                                                                                                                
+
+../tests/integration_tests.py ...                                                                                                                                                                                                          [100%]
+
+================================================================================================================ warnings summary ================================================================================================================
+../../../home/codespace/.local/share/virtualenvs/online-gaming-mlops-project-uvzvqTV3/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:20
+  /home/codespace/.local/share/virtualenvs/online-gaming-mlops-project-uvzvqTV3/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:20: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources  # noqa: TID251
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================================================================================================== 3 passed, 1 warning in 7.90s ==========================================================================================================
++ ERROR_CODE=0
++ '[' 0 '!=' 0 ']'
++ docker-compose down
+[+] Running 2/2
+ ✔ Container mlflow_tracker_5000                    Removed                                                                                                                                                                                 10.4s 
+ ✔ Network online-gaming-mlops-project_app-network  Removed 
+```
 
 ## Prerequisites to run the project demo
 1. Docker:

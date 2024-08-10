@@ -1,8 +1,8 @@
 services:
   
   evidently-ui:
-    environment:
-      - .dev.env
+    env_file:
+      - ../.dev.env
     build:
       context: .
     image: evidently-monitoring-ui
