@@ -221,10 +221,60 @@ For this project we use Evidently AI and have considered two actions in the surv
 
 And **you can navigate to our Evidently UI** (This URL depends on how the solutions is deployed, you can read it later in the Instalation guide) and visualize a main **Dashboard** where you can easily evaluate the data quality and performance. You can also navigate to individual **reports** to go deeper into detailed information like columns drifted, correlations, etc.
 
+## Cloud
+
+![I-a-C Tool Terraform](images/terraform.225x256.png) 						![Amazon Web Services](images/aws-logo.png)
+
+This MLOps Workflows and solution can be deployed to Amazon Web Services using Terraform. Terraform is an Infraestructure-as-Code tool, used primarily by DevOps teams to automate various infrastructure tasks. The provisioning of cloud resources is one of the main use cases of Terraform. It’s a cloud-agnostic, open-source provisioning tool written in the Go language and created by HashiCorp.
+
+The production solution includes the following architecture:
+
+
+![Production Architecture](images/diagram-flows.drawio.png)
+
+
+* Amazon ECS: Fargate containers distribuited in 2 Services:
+
+- Mage, the Workflow Orchestrator: runing in a 4096 CPU and 8192 GB container and connected to a Amazon RDS PostGres database. And accesing to several S3 folder containing the CSV dataset and the transformed version depending on the stage.
+
+- Mlflow, the experiment tracker and model registry: A Fargate service runing a Mlflow container, small size 1024 CPU and 2048 GB. The info is stored in a local SQLite to reduce cost and complexity. The artifacts are stored in a folder in an S3 bucket.
+
+- Evidently UI: A new task and Fargate service, runing in 1024 CPU and 2048 GB Mem. It collects reports from an S3 folder and generate the reports and dashboard when it starts up. 
+
+* Amazon Load Balancer: An application balancer to route the traffic to one of the three containers.
+
+* Amazon VPC: All components are protected inside a VPC to control access and networking.
+	-	Several subnets and security groups to keep the solution secure.
+* 
+
 ## Best practices
 
 ### Unit testing
 
+We have include some unit test to show how to fit them into this kind of project. Once we have created a DEV enviroment, you can install pytest (instruction are included in the following section) and run the test to check if things are working fine:
+
+```bash
+pytest tests/unit_tests.py
+
+```
+
+All relevant code and the functions we use in the Mage pipelines have been included in the package utils, that's why we only check that folder. And the results of the pytest execution is:
+```
+========================================================================================= test session starts =========================================================================================
+platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
+rootdir: /workspaces/online-gaming-mlops-project
+configfile: pyproject.toml
+plugins: anyio-4.4.0
+collected 3 items                                                                                                                                                                                     
+
+tests/unit_tests.py ...                                                                                                                                                                         [100%]
+
+========================================================================================== 3 passed in 7.19s ==========================================================================================
+```
+
+
+
+### Integration test
 
 ## Prerequisites to run the project demo
 1. Docker:
