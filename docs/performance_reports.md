@@ -1,7 +1,6 @@
 # MLOps Zoomcamp Cohort 2024
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Workflow Orchestrator
 
 ### Performance Reports stage
@@ -11,11 +10,11 @@ We complete the monitoring strategy, generating performance reports using Eviden
     - Data Drift Report
     - Prediction Drift Report
 
-We save this reports to an S3 folder to share them with the Evidently UI service.
+Every night, this reports are saved to an S3 folder to share them with the Evidently UI service. Then, analysts and ML engineers can visualized them to check for any issues.
 
 Flow diagram:
 
-![Pipeline Performance Reports](images/pipeline_performance_reports.png)
+![Pipeline Performance Reports](../images/pipeline_performance_reports.png)
 
 	- Load the reference and current data from an S3 folder
 	- Prepare reference data for monitoring, removing the target column that is not present in the current data

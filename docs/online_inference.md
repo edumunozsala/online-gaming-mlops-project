@@ -1,7 +1,6 @@
 # MLOps Zoomcamp Cohort 2024
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Workflow Orchestrator
 
 ### Online Inference stage
@@ -39,7 +38,7 @@ curl --location 'http://localhost:6789/api/runs' \
 
 Flow diagram:
 
-![Pipeline Online Inference](images/pipeline_online_inference.png)
+![Pipeline Online Inference](../images/pipeline_online_inference.png)
 
 	- Load the model from the Global Data Product
 	- Make a prediction for a list of inputs via Trigger API.

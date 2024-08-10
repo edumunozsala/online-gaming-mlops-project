@@ -1,7 +1,6 @@
 # MLOps Zoomcamp Cohort 2024
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Workflow Orchestrator
 
 ### Data preparation stage
@@ -12,7 +11,7 @@ We only need to run this pipeline on demand, when new data with all features, in
 
 Flow diagram:
 
-![Pipeline Prepare Data](images/pipeline_prepare_data.png)
+![Pipeline Prepare Data](../images/pipeline_prepare_data.png)
 
 	- Download and read the available training CSV data file from a AWS S3 folder
 	- Clean and transform the data

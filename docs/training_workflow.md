@@ -1,7 +1,6 @@
 # MLOps Zoomcamp Cohort 2024
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Workflow Orchestrator
 
 ### Training stage
@@ -14,7 +13,8 @@ We only run this pipeline on the training stage and when the monitoring job dete
 
 Flow diagram:
 
-![Pipeline Training](images/pipeline_training_workflow.png)
+![Pipeline Training](../images/pipeline_training_workflow.png)
+
 
 	- Download and read the processed CSV dataset from a AWS S3 folder
 	- Split the dataset into a train and test set

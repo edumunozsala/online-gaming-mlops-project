@@ -1,7 +1,6 @@
 # MLOps Zoomcamp Cohort 2024
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Workflow Orchestrator
 
 ### Model Selection stage
@@ -12,7 +11,7 @@ The following inferences will use the new production model.
 
 Flow diagram:
 
-![Pipeline Best Model Selection](images/pipeline_select_best_model.png)
+![Pipeline Best Model Selection](../images/pipeline_select_best_model.png)
 
 	- Search for the model, the one with the highest value of our selected metric
 	- Promote the best model as the production model, setting the alias. This one will be loaded for inference.

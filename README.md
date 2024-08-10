@@ -1,23 +1,35 @@
 # MLOps Zoomcamp Cohort 2024
+
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Problem Description
 ### Business Context
 The online gaming industry thrives on high player engagement, which directly correlates with increased revenue through in-game purchases, subscription fees, and sustained player base growth. Player engagement is a critical metric that impacts user retention, word-of-mouth promotion, and overall game popularity. Analyzing and predicting player engagement can help gaming companies develop strategies to enhance player experience, retain more players, and optimize revenue streams.
 
 ### Problem Statement
-The objective is to analyze the provided player data to predict the engagement level of the players  ('High', 'Medium', 'Low'). Given features about the player and his gaming sessions' statistics, we'll try to forecast the engagement level of that player, the likelihood of continuing playing or leaving the platform. Using these predictions, the goal is to identify actionable insights and strategies to improve player engagement, thereby enhancing player retention and increasing revenue from in-game purchases and other monetization strategies.
+The **objective is to analyze the provided player data to predict the engagement level of the players**  ('High', 'Medium', 'Low'). Given features about the player and his gaming sessions' statistics, we'll try to forecast the engagement level of that player, the likelihood of continuing playing or leaving the platform. Using these predictions, the goal is to identify actionable insights and strategies to improve player engagement, thereby enhancing player retention and increasing revenue from in-game purchases and other monetization strategies.
 
-- In our scenario, data about about the players and their gaming behavior is collected every day. 
-- Then, dayly at night, we run a batch inference process to get a predicted Engagement Level for every player and this data is stored in a shared and presistent storage on the cloud. 
-- At the end of the week, we can collect the ground truth or actual target value, based on the engagement level the player has shown during the week. This means we may have new training data.
-- Every weekend, we can retrain our model and register a new version, a candidate model.
-- Every monday, we select the best model, comparing candidate/s model vs production model and we set the new best model and promote it to production.
-- We run performace tests every night to check issues about data or model drift. If any of the relevent tests fails then we can force a retraining stage.
-- Some performance monitoring reports are also executed every day. They are saved, and the ML team will access to a dashboard and the reports to keep up to date of the model performance.
+**Return on Investment (ROI) and Benefits of higher Engagement**
+* Increased Revenue: By enhancing player engagement, the company can boost in-game purchases and subscription renewals.
+* Reduced Churn Rate: Improved engagement leads to higher retention, reducing the cost associated with acquiring new players.
+* Customer Lifetime Value (CLV): Higher engagement generally increases the lifetime value of players, leading to long-term profitability.
 
 ### Approach Using Machine Learning
+
+The next picture ilustrate the workflows or pipelines we have built using Mage AI to execute the relevant steps in a MLOps workflow to solve our problem:
+
+![MLOps Workflow and Pipelines](images/flows.drawio.png)
+
+- In our scenario, data about players and their playing behavior are collected every day.
+- From the collected data, we can prepare and train an ML model to predict a player's engagement level.  
+- Then, each day in the evening, we run a batch inference process to obtain a prediction of each player's engagement level and this data is stored in a shared, presistent cloud storage. 
+- At the end of the week, we can compile the actual truth or target value based on the level of engagement the player has shown during the week. This means that we can have new training data.
+- Every weekend, we can retrain our model and record a new version, a candidate model.
+- Every Monday, we select the best model, compare the candidate model with the production model, establish the new best model and move it to production.
+- Every night we run performance tests to check for problems related to data or model drift. If any of the relevant tests fail, we can force a retraining step.
+- Some performance monitoring reports are also run every day. These are saved, and the ML team will have access to a dashboard and reports to keep up to date on model performance.
+
+
 #### Data Understanding and Preprocessing
 * Data Collection: Gather the dataset with fields about the gamers and their gaming behavior on the platform.
 * Data Cleaning: Handle missing values, remove duplicates, and correct any inconsistencies in the data.
@@ -55,11 +67,6 @@ Strategies to Improve Player Engagement
 * Retention Programs: Design loyalty programs for 'High' engagement players to maintain their interest and reward their loyalty.
 * In-Game Events and Achievements: Organize special in-game events and introduce new achievements to keep the game fresh and engaging.
 
-### Return on Investment (ROI)
-* Increased Revenue: By enhancing player engagement, the company can boost in-game purchases and subscription renewals.
-* Reduced Churn Rate: Improved engagement leads to higher retention, reducing the cost associated with acquiring new players.
-* Customer Lifetime Value (CLV): Higher engagement generally increases the lifetime value of players, leading to long-term profitability.
-
 ## Dataset: Predict Online Gaming Behavior Dataset
 
 This dataset is available on Kaggle website: https://www.kaggle.com/datasets/rabieelkharoua/predict-online-gaming-behavior-dataset/data.
@@ -82,7 +89,7 @@ This dataset captures comprehensive metrics and demographics related to player b
 - PlayerLevel: Current level of the player in the game.
 - AchievementsUnlocked: Number of achievements unlocked by the player.
 
-Target Variable:
+**Target Variable:**
 - EngagementLevel: Indicates the level of player engagement categorized as 'High', 'Medium', or 'Low'.
 
 **Potential Applications**:
@@ -95,36 +102,63 @@ This dataset is suitable for exploring patterns in online gaming behavior, devel
 
 ## Experiment tracking and Model Registry
 
-Mlflow is the chossen platform to keep track of our training and evaluation stages. We will train a well-known scikit learn model and we'll use the Autolog feature in Mlflow to collect all the relevent metrics during training. But we'll also register the metrics from the test dataset evaluation.
+![Experiment Tracking and Model Management with MLFlow ](images/MLflow-Logo.svg)
 
-Once our model is trained, we will register the model (Automatic registering is activated) and it will be tagged as a candidate model. We also have built a pipeline to search for the best model and if the new model performs better that the actual model, it will become the new production model and will be loaded for future predictions.
+Mlflow is the platform of choice to track our training and evaluation stages. We will train a well-known scikit learn model and use Mlflow's Autolog feature to collect all relevant metrics during training. But we will also record evaluation metrics from the test data set.
 
-An mlflow server is deployed to track experiments and models, using S3 as the remote storage location. It is a very convenient way to share the model and artifacts with future model deployment instances.
+Once our model is trained, we will log it (automatic logging is enabled) and it will be labeled as a candidate model. We have also built a pipeline to search for the best model and if the new model performs better than the current model, it will become the new production model and will be loaded for future predictions.
 
-You can read more detaiuls and check the pipeline in this [link]
+An mlflow server is deployed to track experiments and models, using S3 as a remote storage location. This is a very convenient way to share the model and artifacts with future instances of model deployment
+
+You can read more detaiuls and see the pipeline in this [link]
 
 ## Workflow and process description
 
-![Architecture](images/architecture.png)
-
 ### Workflow Orchestrator
+![Mage AI Workflow Orchestrator](images/mage-ai-icon.png)
 
-We rely on Mage AI as our pipeline orchestrator, building a pipeline for each flow and a trigger to run the pipeline when it is required.
+We rely on Mage AI as our pipeline orchestrator, building a pipeline for each flow and a trigger to run the pipeline when it is required. Mage.ai, an open-source data engineering tool, combines the features of a Python library with workflow automation capabilities. It enables data professionals to utilize Python for a wide range of tasks, streamlining processes from data preparation to analysis and deployment.
 
 #### IMAGE PIPELINES
 
 ### Data preparation stage:  
 
-Deteiled information [HERE](./data_preparation.md)
+	- Download and read the available training CSV data file from a AWS S3 folder
+	- Clean and transform the data
+	- Upload and save the processed dataset into an AWS S3 folder
+    - Upload and save the players features into an AWS S3 folder
+
+
+Detailed information and pipeline diagram [HERE](docs/data_preparation.md)
 
 ### Training stage:
-Detailed information [HERE](./training_workflow.md)
+
+
+
+	- Download and read the processed CSV dataset from a AWS S3 folder
+	- Split the dataset into a train and test set
+	- Set the model parameters in a configuration dict
+	- Build a Scikit learn pipeline containing:
+		- Transformer to scale the numerical features
+		- Transformer to encode the categorical features
+		- Create a Gradient Boosting Classifier with a predefined set of hyperparameters
+	- Train or fit the pipeline and model to learn the parameters:
+		- Keep track of the experiment, loging the metrics for training and testing using Mlflow
+		- Register the model as a candidate model in the Mlflow server
+	- Upload and save the train and test set as our reference dataset for performance monitoring
+
+
+Detailed information and pipeline diagram  [HERE](docs/training_workflow.md)
 
 ### Best model selection stage:
-Detailed information [HERE](./model_selection.md)
+
+	- Search for the model, the one with the highest value of our selected metric
+	- Promote the best model as the production model, setting the alias. This one will be loaded for inference.
+	- Load the best model an save it in a Global Data Product component in Mage
+
+Detailed information and pipeline diagram [HERE](docs/model_selection.md)
 
 ### Batch inference:
-![Pipeline Batch Inference](images/pipeline_batch_inference.png)
 
 	- Download and read the processed CSV dataset from a AWS S3 folder
 	- Prepare the dataset, apply the same transformation that we execute in the training stage.
@@ -133,44 +167,59 @@ Detailed information [HERE](./model_selection.md)
 	- Upload and save predictions to the destination folder in S3
 	- Upload and save the input data to the monitoring folder in S3. It will become the current data for performance monitoring. 
 
+Detailed information and pipeline diagram [HERE](docs/batch_inference.md)
+
 ### Online inference:
-![Pipeline Online Inference](images/pipeline_online_inference.png)
 
 	- Load the model from the Global Data Product
 	- Make a prediction for a list of inputs via Trigger API.
 
+Detailed information and pipeline diagram [HERE](docs/online_inference.md)
+
 ### ML Retraining:
-	This pipeline is triggered by code from the performance monitoring pipeline to retraining the model.
+	This pipeline is triggered by code from the performance monitoring pipeline to retraining the model. IT simply triggers the Training pipeline.
 
 	- Just one block to trigger the Training pipeline
 
 ### Performance Monitoring:
-![Pipeline Performance Monitoring](images/pipeline_performance_monitor.png)
 
 	- Load the reference and current data from an S3 folder
 	- Run a Data Drift Test suite to check if any relevant column  has drifted.
 	- Run a Prediction Drift Test suite to check if the prediction column  has drifted.
 	- If the share of drifted columns is higher than 0.3 or prediction is drifted or AvgSessionDurationMinutes is drifted or SessionsPerWeek is drifted, then a retraining activated
 
+Detailed information and pipeline diagram [HERE](docs/performance_monitoring.md)
+
 ### Performance Reports:
-![Pipeline Performance Reports](images/pipeline_performance_reports.png)
 
 	- Load the reference and current data from an S3 folder
 	- Prepare reference data for monitoring, removing the target column that is not present in the current data
 	- Run a Summary Data Quality report, a Data Drift report and a Prediction Drift report
 	- Upload and save the reports to an S3 folder. The Evidently UI will read and visualize them.
 
+Detailed information and pipeline diagram [HERE](docs/performance_reports.md)
+
 ## Model Deployment
 
 As we've mentioned in a previous section, we deploy our model on the Mage platform for both scenarios:
-	- Batch Inference: the preferred method. More [info](#batch-inference)
-	- Online Inference: a pipeline triggered via API. More [info](#online-inference)
+
+* Batch Inference: the preferred method. We want to predict the player's engagement level every day, then, business analyst will take actions based on this predicted behavior. More [info](docs/batch_inference.md) about this pipeline or process.
+
+* Online Inference: A pipeline triggered via API. We also provide a POST API request. More [info](docs/online_inference.md) about this pipeline.
+
 
 ## Model Monitoring
+![Performance Monitoring framework Evidently AI](images/evidentlyai-logo.png)
 
-For this project, we have considered two actions in the surveillance strategy:
-	- Performance Monitoring: run some test on the current data (vs reference data) and retrain a model if any of the defined conditions fails. More [info](#performance-monitoring)
-	- Performance Reports: collect data and run some reports on performance to visualize the evolution of some relevant metrics. More [info](#performance-reports)
+Evidently AI helps run ML in production reliably. Evidently gives visibility into how ML models behave in the wild and helps detect and debug issues, from data drift to segments of low performance. All with an open-source approach: extensible, open, and built together with the community. 
+
+For this project we use Evidently AI and have considered two actions in the surveillance strategy:
+
+* **Performance Monitoring**: We run some tests on the current data (vs reference data), check the failure tests and retrain a model if any of the predefined conditions fails. You can read about these conditions and review the pipeline [here](docs/performance_monitoring.md)
+
+* **Performance Reports**: Every day data is collected and then we run some reports on performance to visualize the evolution of some relevant metrics. The reports to execute: Data Quality, Data Drift and Prediction Drift. More information and the pipeline [here](docs/performance_reports.md)
+
+And **you can navigate to our Evidently UI** (This URL depends on how the solutions is deployed, you can read it later in the Instalation guide) and visualize a main **Dashboard** where you can easily evaluate the data quality and performance. You can also navigate to individual **reports** to go deeper into detailed information like columns drifted, correlations, etc.
 
 ## Best practices
 

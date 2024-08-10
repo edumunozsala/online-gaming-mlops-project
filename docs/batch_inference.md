@@ -1,7 +1,6 @@
 # MLOps Zoomcamp Cohort 2024
 # Project: Predict Online Gaming Behavior
 
-## Predict Online Gaming Behavior
 ## Workflow Orchestrator
 
 ### Batch Inference stage
@@ -10,7 +9,7 @@ The platform collects the data about players and gaming behaviour every day and 
 
 Flow diagram:
 
-![Pipeline Batch Inference](images/pipeline_batch_inference.png)
+![Pipeline Batch Inference](../images/pipeline_batch_inference.png)
 
 	- Download and read the processed CSV dataset from a AWS S3 folder
 	- Prepare the dataset, apply the same transformation that we execute in the training stage.
