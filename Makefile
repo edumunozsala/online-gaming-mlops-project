@@ -24,6 +24,9 @@ quality-checks:
 			pipenv run isort machine_learning/utils
 			pipenv run black machine_learning/utils
 			pipenv run pylint machine_learning/utils
+plan-deploy-dev:
+			echo "Terraform plan for DEV environment"
+			bash ./scripts/deploy-dev-aws.sh
 run-dev-env:
 			echo "Building and running docker containers in DEV"
 			REBUILD=${REBUILD} bash ./scripts/run-dev.sh
