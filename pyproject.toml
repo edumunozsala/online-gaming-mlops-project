@@ -16,5 +16,6 @@ target-version = ["py39", "py310"]
 skip-string-normalization = true
 
 [tool.isort]
+line_length = 100
 multi_line_output = 3
 length_sort = true

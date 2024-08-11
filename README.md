@@ -312,6 +312,16 @@ make quality-checks
 ```
 As a result, our code pass all quality tests.
 
+### Makefile
+
+A `Makefile` has been defined to make easy to run some scripts like:
+- quality-checks: To run `isort`, `black` and `pylint`
+- unit-tests: To run the unit tests
+- run-dev-env: To launch the containers in development mode.
+- run-report-server: To run the evidently report server.
+
+And some others, this way simplifies hot to work with this project.
+
 ## Prerequisites to run the project demo
 1. Docker:
 	You need to install docker for your OS. [Link to installation](https://docs.docker.com/engine/install/) 
@@ -322,20 +332,6 @@ As a result, our code pass all quality tests.
 
 **Note:** You can use a GitHub Codespace to run this demo, it's installed both Docker and Git. You can watch [this video](https://youtu.be/XOSUt8Ih3zA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=15) for instructions on how to prepare a Codespace.
 
-## Instruction to prepare your GCP for this demo
-1. Create a GCP Project 
-	Our example Project_id = 'gdelt-project-data'
-2. Create a service account in the project, grant it the permissions:
-	- Storage Admin
-	- Bigquery Admin
-	- Service Usage Admin
-	- Service Management Administrator
-    You can include more permissions if you want to expand this project for a future use.
-3. Create an access key JSON file, you need to download its private key file. 
-	- This key file will be used to authenticate requests to GCP services.
-	- Select the service account you just created to view its details, Click on the "Keys" tab and then click the "Add Key" button.
-	- Select the "JSON" key type and click "Create" to download the private key file. 
-	  **Rename your json file to `gdelt-project-credentials.json` and copy it to the mage directory `mage-gdelt` and the terraform folder `terraform`**
 
 ## To run the demo project
 1. Clone the repo to your local folder or to a VM or Github Codespace
@@ -391,14 +387,6 @@ Go to logs to watch how the process advance, when a pipeline finish the next one
 **It takes about 15 minutes to download and move to Cloud Storage all the csv files, 4,700, and about 10 minutos to process them and create the dataframes and tables.**
 
 14. Once the workflow has finished you can go to the dashboard on [Looker Studio](https://lookerstudio.google.com/reporting/f1018a56-01ea-422b-8c40-ea9b1a87ee01)
-
-Some Visualizations:
-
-**TOTAL EVENTS**
-![Total amount of events, articles and mentions](images/total_events.png)
-
-![Events by Country](images/events_by_country.png)
-
 
 **IMPORTANT**: When you are done you can destroy the GCP bjects :
 
