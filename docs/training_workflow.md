@@ -28,3 +28,7 @@ Flow diagram:
 		- Register the model as a candidate model in the Mlflow server
 	- Upload and save the train and test set as our reference dataset for performance monitoring
 
+A screenshot of the Mlflow UI:
+
+![Mlflow Main Page](../images/mlflow-main.png)
+

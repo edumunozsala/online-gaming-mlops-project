@@ -109,19 +109,22 @@ Mlflow is the platform of choice to track our training and evaluation stages. We
 Once our model is trained, we will log it (automatic logging is enabled) and it will be labeled as a candidate model. We have also built a pipeline to search for the best model and if the new model performs better than the current model, it will become the new production model and will be loaded for future predictions.
 
 An mlflow server is deployed to track experiments and models, using S3 as a remote storage location. This is a very convenient way to share the model and artifacts with future instances of model deployment
+![Mlflow Screenshot](images/mlflow-main.png)
 
-You can read more detaiuls and see the pipeline in this [link]
+You can read a full description and see the pipeline [HERE](docs/training_workflow.md)
 
-## Workflow and process description
+## Workflow and Pipeline descriptions
 
 ### Workflow Orchestrator
 ![Mage AI Workflow Orchestrator](images/mage-ai-icon.png)
 
 We rely on Mage AI as our pipeline orchestrator, building a pipeline for each flow and a trigger to run the pipeline when it is required. Mage.ai, an open-source data engineering tool, combines the features of a Python library with workflow automation capabilities. It enables data professionals to utilize Python for a wide range of tasks, streamlining processes from data preparation to analysis and deployment.
 
-#### IMAGE PIPELINES
+![Mage Pipeline List](images/list-pipelines.png)
 
 ### Data preparation stage:  
+---
+
 
 	- Download and read the available training CSV data file from a AWS S3 folder
 	- Clean and transform the data
@@ -132,6 +135,8 @@ We rely on Mage AI as our pipeline orchestrator, building a pipeline for each fl
 Detailed information and pipeline diagram [HERE](docs/data_preparation.md)
 
 ### Training stage:
+---
+
 
 
 
@@ -151,6 +156,8 @@ Detailed information and pipeline diagram [HERE](docs/data_preparation.md)
 Detailed information and pipeline diagram  [HERE](docs/training_workflow.md)
 
 ### Best model selection stage:
+---
+
 
 	- Search for the model, the one with the highest value of our selected metric
 	- Promote the best model as the production model, setting the alias. This one will be loaded for inference.
@@ -159,6 +166,7 @@ Detailed information and pipeline diagram  [HERE](docs/training_workflow.md)
 Detailed information and pipeline diagram [HERE](docs/model_selection.md)
 
 ### Batch inference:
+---
 
 	- Download and read the processed CSV dataset from a AWS S3 folder
 	- Prepare the dataset, apply the same transformation that we execute in the training stage.
@@ -170,6 +178,7 @@ Detailed information and pipeline diagram [HERE](docs/model_selection.md)
 Detailed information and pipeline diagram [HERE](docs/batch_inference.md)
 
 ### Online inference:
+---
 
 	- Load the model from the Global Data Product
 	- Make a prediction for a list of inputs via Trigger API.
@@ -177,11 +186,13 @@ Detailed information and pipeline diagram [HERE](docs/batch_inference.md)
 Detailed information and pipeline diagram [HERE](docs/online_inference.md)
 
 ### ML Retraining:
+---
 	This pipeline is triggered by code from the performance monitoring pipeline to retraining the model. IT simply triggers the Training pipeline.
 
 	- Just one block to trigger the Training pipeline
 
 ### Performance Monitoring:
+---
 
 	- Load the reference and current data from an S3 folder
 	- Run a Data Drift Test suite to check if any relevant column  has drifted.
@@ -191,6 +202,7 @@ Detailed information and pipeline diagram [HERE](docs/online_inference.md)
 Detailed information and pipeline diagram [HERE](docs/performance_monitoring.md)
 
 ### Performance Reports:
+---
 
 	- Load the reference and current data from an S3 folder
 	- Prepare reference data for monitoring, removing the target column that is not present in the current data
@@ -205,7 +217,7 @@ As we've mentioned in a previous section, we deploy our model on the Mage platfo
 
 * Batch Inference: the preferred method. We want to predict the player's engagement level every day, then, business analyst will take actions based on this predicted behavior. More [info](docs/batch_inference.md) about this pipeline or process.
 
-* Online Inference: A pipeline triggered via API. We also provide a POST API request. More [info](docs/online_inference.md) about this pipeline.
+* Online Inference: A pipeline triggered via API. We also provide a POST API method to invoke the predictions for a list of inputs. More [info](docs/online_inference.md) about this pipeline.
 
 
 ## Model Monitoring
@@ -215,11 +227,11 @@ Evidently AI helps run ML in production reliably. Evidently gives visibility int
 
 For this project we use Evidently AI and have considered two actions in the surveillance strategy:
 
-* **Performance Monitoring**: We run some tests on the current data (vs reference data), check the failure tests and retrain a model if any of the predefined conditions fails. You can read about these conditions and review the pipeline [here](docs/performance_monitoring.md)
+* **Performance Monitoring**: We run some tests on the current data (against benchmark or reference data), check the failure tests and retrain the model if any of the predefined conditions fail. You can read about these conditions and review the pipeline [here](docs/performance_monitoring.md)
 
-* **Performance Reports**: Every day data is collected and then we run some reports on performance to visualize the evolution of some relevant metrics. The reports to execute: Data Quality, Data Drift and Prediction Drift. More information and the pipeline [here](docs/performance_reports.md)
+* **Performance Reports**: Every day we collect data and then run some performance reports to visualize the evolution of some relevant metrics. The reports to run: Data Quality, Data Drift and Prediction Drift. More information and the pipeline [here](docs/performance_reports.md)
 
-And **you can navigate to our Evidently UI** (This URL depends on how the solutions is deployed, you can read it later in the Instalation guide) and visualize a main **Dashboard** where you can easily evaluate the data quality and performance. You can also navigate to individual **reports** to go deeper into detailed information like columns drifted, correlations, etc.
+And **you can navigate to our Evidently UI** (This URL depends on how the solutions is deployed, you can read it later in the Instalation guide) and visualize a main **Dashboard** where you can easily assess data quality and performance. You can also navigate to individual **reports** to drill down to detailed information such as columns drifted, correlations, etc.
 
 ## Cloud
 
@@ -233,15 +245,15 @@ The production solution includes the following architecture:
 ![Production Architecture](images/diagram-flows.drawio.png)
 
 
-* Amazon ECS: Fargate containers distribuited in 2 Services:
+* Amazon ECS: Fargate containers distributed across 2 services:
 
-- Mage, the Workflow Orchestrator: runing in a 4096 CPU and 8192 GB container and connected to a Amazon RDS PostGres database. And accesing to several S3 folder containing the CSV dataset and the transformed version depending on the stage.
+- Mage, the Workflow Orchestrator: runing in a 4096 CPU and 8192 GB container and connected to an Amazon RDS Postgres database. And accesing to several S3 folder containing the CSV dataset and the transformed version depending on the stage.
 
-- Mlflow, the experiment tracker and model registry: A Fargate service runing a Mlflow container, small size 1024 CPU and 2048 GB. The info is stored in a local SQLite to reduce cost and complexity. The artifacts are stored in a folder in an S3 bucket.
+- Mlflow, the experiment tracker and model registry tool: A Fargate service runing a Mlflow container, small size 1024 CPU and 2048 GB. Data is stored in a local SQLite to reduce cost and complexity and the artifacts are stored in a folder in an S3 bucket.
 
-- Evidently UI: A new task and Fargate service, runing in 1024 CPU and 2048 GB Mem. It collects reports from an S3 folder and generate the reports and dashboard when it starts up. 
+- Evidently UI: A new task and Fargate service, runing in 1024 CPU and 2048 GB Mem. It collects reports from an S3 folder and generate the reports and dashboard when started. 
 
-* Amazon Load Balancer: An application balancer to route the traffic to one of the three containers.
+* Amazon Load Balancer: An application balancer to direct traffic to one of three containers.
 
 * Amazon VPC: All components are protected inside a VPC to control access and networking.
 	-	Several subnets and security groups to keep the solution secure.
@@ -251,191 +263,54 @@ The production solution includes the following architecture:
 
 ### Unit testing
 
-We have include some unit test to show how to fit them into this kind of project. Once we have created a DEV enviroment, you can install pytest (instruction are included in the following section) and run the test to check if things are working fine:
+**Important**: Follow the instructions in the Installation and How-to guides before runing this setion.
+
+We have include some unit test to show how to fit them into this kind of project. These unit tests check functions that are invoked from the Magew blocks to transform and prepare Pandas dataframe. Once we have created a DEV enviroment, you can install pytest (instruction are included in the following section) and run the test to check if things are working fine:
 
 ```bash
 pytest tests/unit_tests.py
-
 ```
 
-All relevant code and the functions we use in the Mage pipelines have been included in the package utils, that's why we only check that folder. And the results of the pytest execution is:
-```
-========================================================================================= test session starts =========================================================================================
-platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
-rootdir: /workspaces/online-gaming-mlops-project
-configfile: pyproject.toml
-plugins: anyio-4.4.0
-collected 3 items                                                                                                                                                                                     
+To make things easier, you can also run the command `make unit-tests` to run the unit tests.
 
-tests/unit_tests.py ...                                                                                                                                                                         [100%]
-
-========================================================================================== 3 passed in 7.19s ==========================================================================================
+```bash
+make unit-tests
 ```
+
+[Link](docs/testing.md) to the description and steps to run unit tests.
 
 ### Integration test
 
-We are going to test our mlflow container as a sample on how to apply integration tests. 
+**Important**: Follow the instructions in the Installation and How-to guides before runing this setion.
 
-* Set the environment variables
-```bash
-set -a
-source ./.dev.env
-set +a
-```
+**Integration testing** is a type of software testing where components of the software are gradually integrated and then tested as a whole. Usually, these components are already working well individually. However, they may break when integrated with other components.
 
-if you do not want to build or rebuild the container image set the env variable to `LOCAL_IMAGE_NAME`.
+For this project, we have prepared a test scenario where we run the mlflow server container and test the code in `machine_learning/utils' that creates a mlclient and connects to the container. 
 
-And now we can run the test using the `make` command and the task defined in the `Makefile`:
+* Set some evironment variables
+* Start the mlflow Docker container
+* Run the integration tests
+* Show the error output and logs.
+
+Now, run the `make` command (set up env variables before):
 ```bash
 make scripts/integration-tests
 ```
+### Linting and Code Formatting
+You can read a complete description of this step in the next [doc](docs/linting.md).
 
-The content of this section of the `Makefile` is:
-```make
-integration-tests:
-			LOCAL_IMAGE_NAME=${LOCAL_IMAGE_NAME} bash ./scripts/integration-test.sh
+We apply some tools to check for quality code, standard formatting and programming best practices.
+* isort
+* black
+* pylint
 
+And create a `pyproject.toml` file to set up how to apply every tool. 
+
+We have added a Makefiel entry to run the quality checks and show possible errors:
+```bash
+make quality-checks
 ```
-Output:
-```text
-LOCAL_IMAGE_NAME=mlflow_tracker_5000 bash ./scripts/integration-test.sh
-No need to build image. Runing container
-[+] Running 2/2
- ✔ Network online-gaming-mlops-project_app-network  Created                                                                                                                                                                                  0.1s 
- ✔ Container mlflow_tracker_5000                    Started                                                                                                                                                                                  0.5s 
-pwd
-Loading .env environment variables...
-============================================================================================================== test session starts ===============================================================================================================
-platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
-rootdir: /workspaces/online-gaming-mlops-project
-configfile: pyproject.toml
-plugins: anyio-4.4.0
-collected 0 items                                                                                                                                                                                                                                
-
-============================================================================================================= no tests ran in 0.00s ==============================================================================================================
-ERROR: file or directory not found: ./tests/integration_tests.py
-
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [11] [INFO] Starting gunicorn 22.0.0
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [11] [INFO] Listening at: http://0.0.0.0:5000 (11)
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [11] [INFO] Using worker: sync
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [12] [INFO] Booting worker with pid: 12
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [13] [INFO] Booting worker with pid: 13
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [14] [INFO] Booting worker with pid: 14
-mlflow_tracker_5000  | [2024-08-10 16:38:57 +0000] [15] [INFO] Booting worker with pid: 15
-[+] Running 2/2
- ✔ Container mlflow_tracker_5000                    Removed                                                                                                                                                                                 10.5s 
- ✔ Network online-gaming-mlops-project_app-network  Removed                                                                                                                                                                                  0.1s 
-make: *** [Makefile:8: integration-tests] Error 4
-@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ 
-
-@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ 
-@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ make integration-tests
-LOCAL_IMAGE_NAME=mlflow_tracker_5000 bash ./scripts/integration-test.sh
-+ [[ -z '' ]]
-++ dirname ./scripts/integration-test.sh
-+ cd ./scripts
-+ export MLFLOW_PORT=5000
-+ MLFLOW_PORT=5000
-+ export MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
-+ MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
-+ export BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
-+ BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
-+ export MLFLOW_EXPERIMENT_NAME=online_gaming_1
-+ MLFLOW_EXPERIMENT_NAME=online_gaming_1
-+ export DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
-+ DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
-+ export DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
-+ DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
-+ '[' mlflow_tracker_5000 == '' ']'
-+ echo 'No need to build image. Runing container'
-No need to build image. Runing container
-+ docker compose up -d mlflow
-[+] Running 2/2
- ✔ Network online-gaming-mlops-project_app-network  Created                                                                                                                                                                                  0.1s 
- ✔ Container mlflow_tracker_5000                    Started                                                                                                                                                                                  0.6s 
-+ sleep 15
-+ echo /workspaces/online-gaming-mlops-project/scripts
-/workspaces/online-gaming-mlops-project/scripts
-+ pipenv run pytest ./tests/integration_tests.py
-Loading .env environment variables...
-============================================================================================================== test session starts ===============================================================================================================
-platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
-rootdir: /workspaces/online-gaming-mlops-project
-configfile: pyproject.toml
-plugins: anyio-4.4.0
-collected 0 items                                                                                                                                                                                                                                
-
-============================================================================================================= no tests ran in 0.00s ==============================================================================================================
-ERROR: file or directory not found: ./tests/integration_tests.py
-
-+ ERROR_CODE=4
-+ '[' 4 '!=' 0 ']'
-+ docker compose logs
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [11] [INFO] Starting gunicorn 22.0.0
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [11] [INFO] Listening at: http://0.0.0.0:5000 (11)
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [11] [INFO] Using worker: sync
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [12] [INFO] Booting worker with pid: 12
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [13] [INFO] Booting worker with pid: 13
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [14] [INFO] Booting worker with pid: 14
-mlflow_tracker_5000  | [2024-08-10 16:42:19 +0000] [15] [INFO] Booting worker with pid: 15
-+ docker compose down
-[+] Running 2/2
- ✔ Container mlflow_tracker_5000                    Removed                                                                                                                                                                                 10.4s 
- ✔ Network online-gaming-mlops-project_app-network  Removed                                                                                                                                                                                  0.1s 
-+ exit 4
-make: *** [Makefile:8: integration-tests] Error 4
-@edumunozsala ➜ /workspaces/online-gaming-mlops-project (main) $ make integration-tests
-LOCAL_IMAGE_NAME=mlflow_tracker_5000 bash ./scripts/integration-test.sh
-+ [[ -z '' ]]
-++ dirname ./scripts/integration-test.sh
-+ cd ./scripts
-+ export MLFLOW_PORT=5000
-+ MLFLOW_PORT=5000
-+ export MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
-+ MLFLOW_ENDPOINT_URL=http://127.0.0.1:5000
-+ export BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
-+ BACKEND_STORE_URI=sqlite:////mlflow/mlflow.db
-+ export MLFLOW_EXPERIMENT_NAME=online_gaming_1
-+ MLFLOW_EXPERIMENT_NAME=online_gaming_1
-+ export DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
-+ DEFAULT_ARTIFACT_ROOT=s3://mlops-zoomcamp-gaming
-+ export DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
-+ DEFAULT_ARTIFACTS_DESTINATION=s3://mlops-zoomcamp-gaming
-+ '[' mlflow_tracker_5000 == '' ']'
-+ echo 'No need to build image. Runing container'
-No need to build image. Runing container
-+ docker compose up -d mlflow
-[+] Running 2/2
- ✔ Network online-gaming-mlops-project_app-network  Created                                                                                                                                                                                  0.1s 
- ✔ Container mlflow_tracker_5000                    Started                                                                                                                                                                                  0.6s 
-+ sleep 15
-+ echo /workspaces/online-gaming-mlops-project/scripts
-/workspaces/online-gaming-mlops-project/scripts
-+ pipenv run pytest ../tests/integration_tests.py
-Loading .env environment variables...
-============================================================================================================== test session starts ===============================================================================================================
-platform linux -- Python 3.10.13, pytest-8.3.2, pluggy-1.5.0
-rootdir: /workspaces/online-gaming-mlops-project
-configfile: pyproject.toml
-plugins: anyio-4.4.0
-collected 3 items                                                                                                                                                                                                                                
-
-../tests/integration_tests.py ...                                                                                                                                                                                                          [100%]
-
-================================================================================================================ warnings summary ================================================================================================================
-../../../home/codespace/.local/share/virtualenvs/online-gaming-mlops-project-uvzvqTV3/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:20
-  /home/codespace/.local/share/virtualenvs/online-gaming-mlops-project-uvzvqTV3/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:20: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
-    import pkg_resources  # noqa: TID251
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-========================================================================================================== 3 passed, 1 warning in 7.90s ==========================================================================================================
-+ ERROR_CODE=0
-+ '[' 0 '!=' 0 ']'
-+ docker-compose down
-[+] Running 2/2
- ✔ Container mlflow_tracker_5000                    Removed                                                                                                                                                                                 10.4s 
- ✔ Network online-gaming-mlops-project_app-network  Removed 
-```
+As a result, our code pass all quality tests.
 
 ## Prerequisites to run the project demo
 1. Docker:
