@@ -68,3 +68,11 @@ resource "aws_ecr_repository" "reporter_repository" {
     prevent_destroy = true
   }
 }
+
+output "container_repository_url" {
+  value = "http://${aws_ecr_repository.container_repository.repository_url}"
+}
+
+output "container_registry_id" {
+  value = "http://${aws_ecr_repository.container_repository.registry_id}"
+}

@@ -9,7 +9,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-## Prepare DEV enviroment
+## Prepare Python environment for DEV 
 
 Install pipenv
 
@@ -43,20 +43,54 @@ Go to AWS Console, to IAM section and Policies.
 - Once, the group is created and attached to the user, Next.
 - Finally, review and create the user.
 
+## Run the DEV solution
 
+Modify the .env y .dev.env files with the AWS credentials. You do not need to set the others parameters.
 
+You need to load the environment variables with the AWS credentials and other parameters.
 
-
-## Run the DEV soluction
-
+You can run:
 ```bash
 set -a
-source ./.dev.env
+source ./.env
+set +a
+```
+Run the command to create the AWS bucket and folders and to run the main containers (Mage, Mlflow and Postgres database):
+```bash
+make run-dev-env
+```
+Now, you can copy the files in the folder `data` to the folders created in S3, by default the bucket_name is `mlops-zoomcamp-gaming`. 
+
+## Run the DEV solution
+
+Modify the .env y .dev.env files with the AWS credentials. You do not need to set the others parameters.
+
+You need to load the environment variables with the AWS credentials and other parameters.
+
+You can run:
+```bash
+set -a
+source ./.env
 set +a
 ```
 
-then:
-
+First, we need to create the AWS ECR repositories for our container ipmages:
 ```bash
-docker compose up --build
+make deploy-ecr-prod
 ```
+
+The output will show you the registry url that we need to log in to push the images. 
+container_repository_url = "http://**223817798831.dkr.ecr.us-west-2.amazonaws.com**/online-gaming-production-repository"
+
+Set the env variable:
+```bash
+export AWS_ECR_ACCOUNT="223817798831.dkr.ecr.us-west-2.amazonaws.com"
+```
+
+Once, we have set the env variable `AWS_ECR_ACCOUNT`, we can create and push the container images to ECR:
+```bash
+make images-ecr-prod
+```
+
+And our last step is to deploy all the components:
+

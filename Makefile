@@ -27,10 +27,22 @@ quality-checks:
 plan-deploy-dev:
 			echo "Terraform plan for DEV environment"
 			bash ./scripts/deploy-dev-aws.sh
-run-dev-env:
+run-dev-env: plan-deploy-dev
 			echo "Building and running docker containers in DEV"
 			REBUILD=${REBUILD} bash ./scripts/run-dev.sh
 
 run-report-server:
 			echo "Building and running the docker container Report Server"
 			REBUILD=${REBUILD} bash ./scripts/run-report-server.sh
+
+deploy-ecr-prod:
+			echo "Creating the AWS ECR repositories"
+			bash ./scripts/deploy-prod-ecr.sh
+
+images-ecr-prod: 
+			echo "Pushing images to AWS ECR"
+			REBUILD=${REBUILD} bash ./scripts/push-images.sh
+
+deploy-aws-prod:
+			echo "Deploy the project to AWS"
+			bash ./scripts/deploy-prod-aws.sh

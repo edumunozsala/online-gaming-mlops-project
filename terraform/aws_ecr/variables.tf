@@ -1,17 +1,14 @@
 variable "AWS_ACCESS_KEY_ID" {
   type    = string
-  default = "AKIATIHEUSSXQKSHYSUM"
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
   type    = string
-  default = "+fZbI6bWa0Q50fARU8qAGK5FvZVQBMMr60ezH+04"
 }
 
 variable "AWS_REGION" {
   type        = string
   description = "AWS Region"
-  default     = "us-west-2"
 }
 
 variable "app_name" {
