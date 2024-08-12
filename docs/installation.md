@@ -24,21 +24,6 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 ```
-
-## Prepare Python environment for DEV 
-
-To run the tests, the linting and formatter libraries you will need to install `pipenv`. This [link](https://pipenv.pypa.io/en/latest/installation.html) guides you on how to do it.
-
-```bash
-pip install pipenv --user
-```
-
-Install packages in dev enviroment for testing, linting, formatting and pre-commit.
-
-```bash
-pipenv install --dev -r requirements.txt
-```
-
 ## Create a AWS User to deploy the Project
 This project uses AWS S3 as the storage layer for your input data as well as the data processed in each step or pipeline. Therefore, to run it you will need an AWS user with the necessary permissions.
 
@@ -70,6 +55,20 @@ Go to the AWS Console, IAM section and then, select Policies.
 
 You will need to **create an Access Key and Secret ID** for the user.
 
+## Prepare Python environment for DEV 
+
+To run the tests, the linting and formatter libraries you will need to install `pipenv`. This [link](https://pipenv.pypa.io/en/latest/installation.html) guides you on how to do it.
+
+```bash
+pip install pipenv --user
+```
+
+Install packages in dev enviroment for testing, linting, formatting and pre-commit.
+
+```bash
+pipenv install --dev -r requirements.txt
+```
+
 ## Run the DEV solution
 
 This DEV deployment consis of:
@@ -80,6 +79,8 @@ This DEV deployment consis of:
 - A AWS S3 bucket containing several folder to store the input data and preprocessed data, the location to save the data for batch inference and its output, the datasets (current and reference) for monitoring performance and the reports.
 
 ### Run the following steps to deploy the dev solution.
+
+Make sure you have the software installed and the right AWS User. Review items **Install the base software** and **Create a AWS User to deploy the Project** before proceeding.
 
 1. **Modify the `.env` y `.dev.env` files** with the AWS credentials. You do not need to set the others parameters, the default values are all .
 
@@ -116,7 +117,6 @@ make run-report-server
 7. Go to http://localhost:8001 to open the Evidently UI.
 
 
-
 ## Run the PROD solution
 
 The PROD solutions deploys several AWS tools:
@@ -134,6 +134,8 @@ The PROD solutions deploys several AWS tools:
 **Important**: This deployment can incur relatively high costs, so we recommend using it for as long as necessary and then executing the removal of all deployed resources.
 
 ### Run the following steps to deploy the prod solution.
+
+Make sure you have the software installed and the right AWS User. Review items **Install the base software** and **Create a AWS User to deploy the Project** before proceeding.
 
 1. **Modify the .env y .dev.env files with the AWS credentials**. You do not need to set the others parameters.
 
