@@ -89,7 +89,7 @@ Make sure you have the software installed and the right AWS User. Review items *
 You can run:
 ```bash
 set -a
-source ./.env
+source ./.dev.env
 set +a
 ```
 **Important**: You will have to load the env variables every time you start or open a session or terminal.
@@ -104,7 +104,7 @@ You can run the `make` command to copy them automatically if you have aws cli in
 ```bash
 make copy-files-s3
 ```
-Or copy them manually yo the S3 bucket.
+Or copy them manually to the S3 bucket.
 
 5. You can access the applications through the following URLs:
 - http://localhost:6789 - Mage
