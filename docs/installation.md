@@ -86,7 +86,7 @@ Make sure you have the software installed and the right AWS User. Review items *
 git clone https://github.com/edumunozsala/online-gaming-mlops-project
 ```
 
-2. **Modify the `.dev.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all .
+2. **Modify the `.dev.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all OK.
 
 3. Before executing any script, **You need to load the environment variables** with the AWS credentials and other parameters.
 
@@ -140,7 +140,7 @@ The PROD solutions deploys several AWS tools:
 - VPC
 - etcetera
 
-**Important**: This deployment can incur relatively high costs, so we recommend using it for as long as necessary and then executing the removal of all deployed resources.
+### **Important: This deployment can incur relatively high costs, so we recommend using it for as long as necessary and then executing the removal of all deployed resources.**
 
 ### Run the following steps to deploy the prod solution.
 
@@ -150,7 +150,7 @@ Make sure you have the software installed and the right AWS User. Review items *
 git clone https://github.com/edumunozsala/online-gaming-mlops-project
 ```
 
-2. **Modify the `.dev.env` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all .
+2. **Modify the `.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all OK.
 
 3. You need to **load the environment variables** with the AWS credentials and other parameters.
 
@@ -196,8 +196,12 @@ make copy-files-s3
 ```
 Or copy them manually yo the S3 bucket.
 
-9. Access the application 
+9. Access the applications 
 
+Go to the AWS Load balancer, and get the URL of the published balancer and click on it.
+- URL : Mage Orchestrator
+- URL:5000 : Mlflow
+- URL:8001 : Evidently UI - Report App
 
 10. Once you finished you can destroy the AWS components:
 ```bash

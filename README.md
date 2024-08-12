@@ -348,7 +348,7 @@ There two scenarios to run the project:
  
  **Important**: This deployment can incur relatively high costs, so we recommend using it for as long as necessary and then executing the removal of all deployed resources.
 
- A how-to guide to prepare the environment and deploy both solutions are explained [HERE](docs/installation.md)
+ ### **A how-to guide to prepare the environment and deploy both solutions are explained [HERE](docs/installation.md)**
  
 ## Contributing
 If you find some bug or typo, please let me know. 
