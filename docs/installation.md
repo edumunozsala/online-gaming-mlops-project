@@ -81,10 +81,14 @@ This DEV deployment consis of:
 ### Run the following steps to deploy the dev solution.
 
 Make sure you have the software installed and the right AWS User. Review items **Install the base software** and **Create a AWS User to deploy the Project** before proceeding.
+1. Clone the repo
+```bash
+git clone https://github.com/edumunozsala/online-gaming-mlops-project
+```
 
-1. **Modify the `.env` y `.dev.env` files** with the AWS credentials. You do not need to set the others parameters, the default values are all .
+2. **Modify the `.env` y `.dev.env` files** with the AWS credentials. You do not need to set the others parameters, the default values are all .
 
-2. Before executing any script, **You need to load the environment variables** with the AWS credentials and other parameters.
+3. Before executing any script, **You need to load the environment variables** with the AWS credentials and other parameters.
 
 You can run:
 ```bash
@@ -94,7 +98,7 @@ set +a
 ```
 **Important**: You will have to load the env variables every time you start or open a session or terminal.
 
-3. Run the command to create the AWS bucket and folders and to run the main containers (Mage, Mlflow and Postgres database):
+4. Run the command to create the AWS bucket and folders and to run the main containers (Mage, Mlflow and Postgres database):
 ```bash
 make run-dev-env
 ```
@@ -136,10 +140,14 @@ The PROD solutions deploys several AWS tools:
 ### Run the following steps to deploy the prod solution.
 
 Make sure you have the software installed and the right AWS User. Review items **Install the base software** and **Create a AWS User to deploy the Project** before proceeding.
+1. Clone the repo
+```bash
+git clone https://github.com/edumunozsala/online-gaming-mlops-project
+```
 
-1. **Modify the .env y .dev.env files with the AWS credentials**. You do not need to set the others parameters.
+2. **Modify the .env y .dev.env files with the AWS credentials**. You do not need to set the others parameters.
 
-2. You need to **load the environment variables** with the AWS credentials and other parameters.
+3. You need to **load the environment variables** with the AWS credentials and other parameters.
 
 You can run:
 ```bash
@@ -148,7 +156,7 @@ source ./.env
 set +a
 ```
 
-3. First, we need to **create the AWS ECR repositories** for our container ipmages:
+4. First, we need to **create the AWS ECR repositories** for our container ipmages:
 ```bash
 make deploy-ecr-prod
 ```
@@ -159,23 +167,23 @@ container_repository_url = "http://**223817798831.dkr.ecr.us-west-2.amazonaws.co
 ```
 **Write down the container record xxxxxxx.dkr.ecr.yyyyyyyyy.amazonaws.com** as we will need it in the next step.
 
-4. Set the env variable to the ECR registry:
+5. Set the env variable to the ECR registry:
 ```bash
 export AWS_ECR_ACCOUNT="xxxxxxxxxxx.dkr.ecr.yyyyyyy.amazonaws.com"
 ```
 
-5. Once, we have set the env variable `AWS_ECR_ACCOUNT`, we can create and push the container images to ECR:
+6. Once, we have set the env variable `AWS_ECR_ACCOUNT`, we can create and push the container images to ECR:
 ```bash
 make images-ecr-prod
 ```
 
-6. Our last step is to deploy all the AWS components:
+7. Our last step is to deploy all the AWS components:
 ```bash
 make deploy-aws-prod
 ```
 The output will show you the URL to access to the main application, Mage orchestrator.
 
-7. Now, you can **copy the data files in the local folder `data`** to the folders created in S3 automatically, by default the bucket_name in PROD is `mlops-online`. 
+8. Now, you can **copy the data files in the local folder `data`** to the folders created in S3 automatically, by default the bucket_name in PROD is `mlops-online`. 
 
 You can run the `make` command to copy them automatically if you have aws cli installed:
 ```bash
@@ -183,10 +191,10 @@ make copy-files-s3
 ```
 Or copy them manually yo the S3 bucket.
 
-7. Access the application 
+9. Access the application 
 
 
-8. Once you finished you can destroy the AWS components:
+10. Once you finished you can destroy the AWS components:
 ```bash
 make destroy-ecr-prod
 make destroy-aws-prod
