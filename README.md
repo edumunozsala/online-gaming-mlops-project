@@ -294,7 +294,7 @@ For this project, we have prepared a test scenario where we run the mlflow serve
 
 Now, run the `make` command (set up env variables before):
 ```bash
-make scripts/integration-tests
+make integration-tests
 ```
 ### Linting and Code Formatting
 You can read a complete description of this step in the next [doc](docs/linting.md).
@@ -314,85 +314,60 @@ As a result, our code pass all quality tests.
 
 ### Makefile
 
-A `Makefile` has been defined to make easy to run some scripts like:
+A `Makefile` has been defined to facilitate the execution of some scripts such as:
 - quality-checks: To run `isort`, `black` and `pylint`
 - unit-tests: To run the unit tests
 - run-dev-env: To launch the containers in development mode.
 - run-report-server: To run the evidently report server.
 
-And some others, this way simplifies hot to work with this project.
+There are some others, this way simplifies how to work with this project.
 
-## Prerequisites to run the project demo
-1. Docker:
-	You need to install docker for your OS. [Link to installation](https://docs.docker.com/engine/install/) 
-2. Git
-	You can install Git from this [link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-3. Terraform
-	Installation: https://developer.hashicorp.com/terraform/install
+## Reproducibility: Instructions on how to run the solution
 
-**Note:** You can use a GitHub Codespace to run this demo, it's installed both Docker and Git. You can watch [this video](https://youtu.be/XOSUt8Ih3zA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=15) for instructions on how to prepare a Codespace.
+There two scenarios to run the project:
+* Deploy the dev solution: This DEV deployment consis of:
+	- Mage Docker container running in port 6789
+	- Postgres db container used by Mage in port 5432
+	- Mlflow container running in port 5000 using a local SQLite database. The artifacts store is located in AWS S3.
+	- Report server, an container running Evidently AI UI in port 8001.
+	- A AWS S3 bucket containing several folder to store the input data and preprocessed data, the location to save the data for batch inference and its output, the datasets (current and reference) for monitoring performance and the reports.
 
+	**It is the simplest way to simulate the project and only requires a S3 bucket, no more charges.**
 
-## To run the demo project
-1. Clone the repo to your local folder or to a VM or Github Codespace
-```bash
-git clone https://github.com/edumunozsala/GDELT-Events-Data-Eng-Project.git
-```
+* Deploy the prod solution: The PROD solutions deploys several AWS tools:
+	- ECS Cluster
+	- ECS Fargate services or containers for:
+		- Mage
+		- MlFlow
+		- Report Server
+	- ECR repositories to registry the docker images
+	- Postgres RDS as database for Mage
+	- Load balancer
+	- VPC
+	- etcetera
+ 
+ **Important**: This deployment can incur relatively high costs, so we recommend using it for as long as necessary and then executing the removal of all deployed resources.
 
-2. Copy the json file with the GCP service account credentials to the folders `terraform` and `mage-gdelt` with the filename `gdelt-project-credentials.json`
-3. Create the GCP objects with Terraform
+ A how-to guide to prepare the environment and deploy both solutions are explained [HERE](docs/installation.md)
+ 
+## Contributing
+If you find some bug or typo, please let me know. 
 
-**You can modify the file `variables.tf`, if you want to change the names of the GCP object to create for this demo. You will also need to modify the `.env`**
+## License
 
-4.  `cd` into the terraform directory.
-5. Initialize terraform folder
+Copyright 2024 Eduardo Muñoz
 
-```bash
-terraform init
-```
-6. To show changes to apply:
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-```bash
-terraform plan
-```
-7. To create or update infrastructure:
+       http://www.apache.org/licenses/LICENSE-2.0
 
-```bash
-terraform apply
-```
-**Our terraform script enable the BigQuery API**
-
-8. `cd` into mage directory `mage-gdelt`
-9. Rename the file `dev.env` to `.env` and review the parameters.
-
-	**Values you can change: the buckets name and dataset you create with terraform
-	but you must not change PROJECT_NAME, SPARK_MASTER_HOST, GOOGLE_APPLICATION_CREDENTIALS, ENV**
-	
-		Days to collect: you can change this value if you want to collect more or less data. Be carefull with the value you include.
-
-10. Build the container
-	`docker compose build`
-11. Run the contaier
-`docker compose up`
-12. Open Mage UI in your web browser.
-	If you are running it locally go to http://localhost:6789, but this link may differ depending on where and how you run the docker container.
-13. To run the whole workflow you just need to open the `load_bronze_gcs` pipeline and click the run once button.
-![Pipelines](images/pipelines.png)
-
-Click on run@nce:
-![Load_bronze_gcs](images/run_load_bronze_gcs.png)
-
-Go to logs to watch how the process advance, when a pipeline finish the next one is automatically launch. Open every pipeline to see the logs.
-
-**It takes about 15 minutes to download and move to Cloud Storage all the csv files, 4,700, and about 10 minutos to process them and create the dataframes and tables.**
-
-14. Once the workflow has finished you can go to the dashboard on [Looker Studio](https://lookerstudio.google.com/reporting/f1018a56-01ea-422b-8c40-ea9b1a87ee01)
-
-**IMPORTANT**: When you are done you can destroy the GCP bjects :
-
-```bash
-terraform destroy
-```
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 
 
 

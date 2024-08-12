@@ -5,6 +5,7 @@ echo $PWD
 cd ./terraform/aws_dev
 echo $PWD
 
+echo "Creating the AWS bucket and folders for the MLOps project"
 terraform init
 terraform plan
 terraform apply -auto-approve

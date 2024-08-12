@@ -35,6 +35,10 @@ run-report-server:
 			echo "Building and running the docker container Report Server"
 			REBUILD=${REBUILD} bash ./scripts/run-report-server.sh
 
+copy-files-s3:
+			echo "Uploading the necessary datafiles to AWS S3 bucket"
+			bash ./scripts/copy-files-s3.sh
+
 deploy-ecr-prod:
 			echo "Creating the AWS ECR repositories"
 			bash ./scripts/deploy-prod-ecr.sh
@@ -43,6 +47,14 @@ images-ecr-prod:
 			echo "Pushing images to AWS ECR"
 			REBUILD=${REBUILD} bash ./scripts/push-images.sh
 
+destroy-ecr-prod:
+			echo "Destroy the container repositories on AWS"
+			bash ./scripts/destroy-prod-ecr.sh
+
 deploy-aws-prod:
 			echo "Deploy the project to AWS"
 			bash ./scripts/deploy-prod-aws.sh
+
+destroy-aws-prod:
+			echo "Destroy the project on AWS"
+			bash ./scripts/destroy-prod-aws.sh
