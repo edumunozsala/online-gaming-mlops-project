@@ -86,7 +86,7 @@ Make sure you have the software installed and the right AWS User. Review items *
 git clone https://github.com/edumunozsala/online-gaming-mlops-project
 ```
 
-2. **Modify the `.env` y `.dev.env` files** with the AWS credentials. You do not need to set the others parameters, the default values are all .
+2. **Modify the `.dev.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all .
 
 3. Before executing any script, **You need to load the environment variables** with the AWS credentials and other parameters.
 
@@ -102,9 +102,9 @@ set +a
 ```bash
 make run-dev-env
 ```
-4. Now, you can **copy the data files in the local folder `data`** to the folders created in S3 automatically, by default the bucket_name is `mlops-zoomcamp-gaming`. 
+Now, the script have **copied the data files in the local folder `data`** to the folders created in S3 automatically, by default the bucket_name is `mlops-gaming-dev`. 
 
-You can run the `make` command to copy them automatically if you have aws cli installed:
+if they are not in the bucket, You can run the `make` command to copy them automatically if you have aws cli installed:
 ```bash
 make copy-files-s3
 ```
@@ -120,6 +120,11 @@ make run-report-server
 ```
 7. Go to http://localhost:8001 to open the Evidently UI.
 
+8. Once you finished you can destroy the AWS bucket and shutdown the containers:
+```bash
+make shutdown-dev-env
+```
+**Important**: Make sure that all components have been removed or you will still be charged for their use.
 
 ## Run the PROD solution
 
@@ -145,7 +150,7 @@ Make sure you have the software installed and the right AWS User. Review items *
 git clone https://github.com/edumunozsala/online-gaming-mlops-project
 ```
 
-2. **Modify the .env y .dev.env files with the AWS credentials**. You do not need to set the others parameters.
+2. **Modify the `.dev.env` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all .
 
 3. You need to **load the environment variables** with the AWS credentials and other parameters.
 

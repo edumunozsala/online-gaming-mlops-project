@@ -181,5 +181,5 @@ titanic_clean.csv
 cryptonews.csv
 
 #AWS Cli installation
-aws/
+./aws/
 awscliv2.zip
