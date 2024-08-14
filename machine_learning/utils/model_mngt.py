@@ -113,3 +113,18 @@ def get_model_alias(client: mlflow.tracking.MlflowClient, model_name: str, alias
     best_model = mlflow.sklearn.load_model(f"models:/{model_name}@{alias}")
 
     return best_model
+
+def register_model_set_alias(run_id: str, model_name: str, 
+                            alias: str):
+    """
+    Register a model and set an alias to the model and version
+    Returns:
+        Set the model name and version as the best model using the proper alias
+    """
+    client = mlflow.tracking.MlflowClient()
+    # REgister the model
+    model_uri = "runs:/{}/model".format(run_id)
+    model_version = mlflow.register_model(model_uri, model_name)
+    # Specify your custom logic here
+    client.set_registered_model_alias(model_name, alias, model_version.version)
+

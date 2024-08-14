@@ -85,6 +85,10 @@ Make sure you have the software installed and the right AWS User. Review items *
 ```bash
 git clone https://github.com/edumunozsala/online-gaming-mlops-project
 ```
+Go to dir `online-gaming-mlops-project`
+```bash
+cd online-gaming-mlops-project
+```
 
 2. **Modify the `.dev.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all OK.
 
@@ -148,6 +152,10 @@ Make sure you have the software installed and the right AWS User. Review items *
 1. Clone the repo
 ```bash
 git clone https://github.com/edumunozsala/online-gaming-mlops-project
+```
+Go to dir `online-gaming-mlops-project`
+```bash
+cd online-gaming-mlops-project
 ```
 
 2. **Modify the `.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all OK.

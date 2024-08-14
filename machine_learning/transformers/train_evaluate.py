@@ -38,7 +38,7 @@ def transform(data, *args, **kwargs):
     mlflow.set_tracking_uri(mlflow_tracking_server)
     mlflow.set_experiment("online_gaming")
     
-    mlflow.sklearn.autolog(log_input_examples=True, registered_model_name=kwargs['model_name'])
+    mlflow.sklearn.autolog(log_input_examples=True)
     
     with mlflow.start_run() as run:
     
@@ -51,7 +51,10 @@ def transform(data, *args, **kwargs):
         # When using autolog the model is logged
         #mlflow.sklearn.log_model(pipeline, artifact_path="models")
 
-    model_uri = "runs:/{}/model".format(run.info.run_id)
+    #model_uri = "runs:/{}/model".format(run.info.run_id)
+    model_mngt.register_model_set_alias(run.info.run_id, 
+                                        kwargs['model_name'], 
+                                        "candidate")
     print("Results: ", results)
     
     return run.info.run_id, pipeline, results
