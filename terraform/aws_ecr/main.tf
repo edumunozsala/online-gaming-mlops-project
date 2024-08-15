@@ -29,7 +29,7 @@ resource "aws_ecr_repository" "container_repository" {
   }
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
@@ -47,7 +47,7 @@ resource "aws_ecr_repository" "tracker_repository" {
   }
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
@@ -65,7 +65,7 @@ resource "aws_ecr_repository" "reporter_repository" {
   }
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
