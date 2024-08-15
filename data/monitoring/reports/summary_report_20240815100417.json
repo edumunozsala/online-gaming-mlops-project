@@ -1,0 +1,4284 @@
+{
+  "id": "16b2bd2d-1b06-44db-acfc-0595e702b609",
+  "timestamp": "2024-08-15T10:04:17.597775",
+  "metadata": {
+    "metric_presets": [
+      "DataQualityPreset"
+    ]
+  },
+  "tags": [],
+  "suite": {
+    "metrics": [
+      {
+        "type": "evidently.metrics.data_integrity.dataset_summary_metric.DatasetSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "almost_duplicated_threshold": 0.95,
+        "almost_constant_threshold": 0.95
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Gender",
+          "display_name": "Gender",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Location",
+          "display_name": "Location",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "GameGenre",
+          "display_name": "GameGenre",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "InGamePurchases",
+          "display_name": "InGamePurchases",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "GameDifficulty",
+          "display_name": "GameDifficulty",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "AchievementsUnlocked",
+          "display_name": "AchievementsUnlocked",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Age",
+          "display_name": "Age",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "AvgSessionDurationMinutes",
+          "display_name": "AvgSessionDurationMinutes",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "PlayTimeHours",
+          "display_name": "PlayTimeHours",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "PlayerLevel",
+          "display_name": "PlayerLevel",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "SessionsPerWeek",
+          "display_name": "SessionsPerWeek",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "prediction",
+          "display_name": "prediction",
+          "dataset": "main",
+          "feature_class": null
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValuesMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "missing_values": [
+          "",
+          -Infinity,
+          null,
+          Infinity
+        ]
+      },
+      {
+        "type": "evidently.metrics.data_quality.dataset_correlations_metric.DatasetCorrelationsMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        }
+      }
+    ],
+    "metric_results": [
+      {
+        "type": "evidently.metrics.data_integrity.dataset_summary_metric.DatasetSummaryMetricResult",
+        "almost_duplicated_threshold": 0.95,
+        "current": {
+          "type": "evidently.metrics.data_integrity.dataset_summary_metric.DatasetSummary",
+          "target": null,
+          "prediction": "prediction",
+          "date_column": null,
+          "id_column": null,
+          "number_of_columns": 12,
+          "number_of_rows": 6005,
+          "number_of_missing_values": 0,
+          "number_of_categorical_columns": 5,
+          "number_of_numeric_columns": 7,
+          "number_of_text_columns": 0,
+          "number_of_datetime_columns": 0,
+          "number_of_constant_columns": 0,
+          "number_of_almost_constant_columns": 0,
+          "number_of_duplicated_columns": 0,
+          "number_of_almost_duplicated_columns": 0,
+          "number_of_empty_rows": 0,
+          "number_of_empty_columns": 0,
+          "number_of_duplicated_rows": 0,
+          "columns_type_data": {
+            "Age": {
+              "dtype": "int64"
+            },
+            "Gender": {
+              "dtype": "object"
+            },
+            "Location": {
+              "dtype": "object"
+            },
+            "GameGenre": {
+              "dtype": "object"
+            },
+            "PlayTimeHours": {
+              "dtype": "float64"
+            },
+            "InGamePurchases": {
+              "dtype": "object"
+            },
+            "GameDifficulty": {
+              "dtype": "object"
+            },
+            "SessionsPerWeek": {
+              "dtype": "int64"
+            },
+            "AvgSessionDurationMinutes": {
+              "dtype": "int64"
+            },
+            "PlayerLevel": {
+              "dtype": "int64"
+            },
+            "AchievementsUnlocked": {
+              "dtype": "int64"
+            },
+            "prediction": {
+              "dtype": "int64"
+            }
+          },
+          "nans_by_columns": {
+            "Age": 0,
+            "Gender": 0,
+            "Location": 0,
+            "GameGenre": 0,
+            "PlayTimeHours": 0,
+            "InGamePurchases": 0,
+            "GameDifficulty": 0,
+            "SessionsPerWeek": 0,
+            "AvgSessionDurationMinutes": 0,
+            "PlayerLevel": 0,
+            "AchievementsUnlocked": 0,
+            "prediction": 0
+          },
+          "number_uniques_by_columns": {
+            "Age": 35,
+            "Gender": 2,
+            "Location": 4,
+            "GameGenre": 5,
+            "PlayTimeHours": 6005,
+            "InGamePurchases": 2,
+            "GameDifficulty": 3,
+            "SessionsPerWeek": 20,
+            "AvgSessionDurationMinutes": 170,
+            "PlayerLevel": 99,
+            "AchievementsUnlocked": 50,
+            "prediction": 3
+          }
+        },
+        "reference": {
+          "type": "evidently.metrics.data_integrity.dataset_summary_metric.DatasetSummary",
+          "target": null,
+          "prediction": "prediction",
+          "date_column": null,
+          "id_column": null,
+          "number_of_columns": 12,
+          "number_of_rows": 34028,
+          "number_of_missing_values": 0,
+          "number_of_categorical_columns": 5,
+          "number_of_numeric_columns": 7,
+          "number_of_text_columns": 0,
+          "number_of_datetime_columns": 0,
+          "number_of_constant_columns": 0,
+          "number_of_almost_constant_columns": 0,
+          "number_of_duplicated_columns": 0,
+          "number_of_almost_duplicated_columns": 0,
+          "number_of_empty_rows": 0,
+          "number_of_empty_columns": 0,
+          "number_of_duplicated_rows": 0,
+          "columns_type_data": {
+            "Age": {
+              "dtype": "int64"
+            },
+            "Gender": {
+              "dtype": "object"
+            },
+            "Location": {
+              "dtype": "object"
+            },
+            "GameGenre": {
+              "dtype": "object"
+            },
+            "PlayTimeHours": {
+              "dtype": "float64"
+            },
+            "InGamePurchases": {
+              "dtype": "object"
+            },
+            "GameDifficulty": {
+              "dtype": "object"
+            },
+            "SessionsPerWeek": {
+              "dtype": "int64"
+            },
+            "AvgSessionDurationMinutes": {
+              "dtype": "int64"
+            },
+            "PlayerLevel": {
+              "dtype": "int64"
+            },
+            "AchievementsUnlocked": {
+              "dtype": "int64"
+            },
+            "prediction": {
+              "dtype": "int64"
+            }
+          },
+          "nans_by_columns": {
+            "Age": 0,
+            "Gender": 0,
+            "Location": 0,
+            "GameGenre": 0,
+            "PlayTimeHours": 0,
+            "InGamePurchases": 0,
+            "GameDifficulty": 0,
+            "SessionsPerWeek": 0,
+            "AvgSessionDurationMinutes": 0,
+            "PlayerLevel": 0,
+            "AchievementsUnlocked": 0,
+            "prediction": 0
+          },
+          "number_uniques_by_columns": {
+            "Age": 35,
+            "Gender": 2,
+            "Location": 4,
+            "GameGenre": 5,
+            "PlayTimeHours": 34028,
+            "InGamePurchases": 2,
+            "GameDifficulty": 3,
+            "SessionsPerWeek": 20,
+            "AvgSessionDurationMinutes": 170,
+            "PlayerLevel": 99,
+            "AchievementsUnlocked": 50,
+            "prediction": 3
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "Gender",
+        "column_type": "cat",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 2,
+          "unique_percentage": 0.01,
+          "most_common": "Male",
+          "most_common_percentage": 59.69,
+          "new_in_current_values_count": null,
+          "unused_in_current_values_count": null
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 2,
+          "unique_percentage": 0.03,
+          "most_common": "Male",
+          "most_common_percentage": 60.93,
+          "new_in_current_values_count": 0,
+          "unused_in_current_values_count": 0
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "Male",
+                "Female"
+              ],
+              "count": [
+                3659,
+                2346
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "Male",
+                "Female"
+              ],
+              "count": [
+                20313,
+                13715
+              ],
+              "name": null
+            },
+            "current_log": null,
+            "reference_log": null
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": "Male",
+                "1": "Female"
+              },
+              "count": {
+                "0": 3659,
+                "1": 2346
+              }
+            },
+            "reference": {
+              "x": {
+                "0": "Male",
+                "1": "Female"
+              },
+              "count": {
+                "0": 20313,
+                "1": 13715
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "Location",
+        "column_type": "cat",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 4,
+          "unique_percentage": 0.01,
+          "most_common": "USA",
+          "most_common_percentage": 39.88,
+          "new_in_current_values_count": null,
+          "unused_in_current_values_count": null
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 4,
+          "unique_percentage": 0.07,
+          "most_common": "USA",
+          "most_common_percentage": 39.82,
+          "new_in_current_values_count": 0,
+          "unused_in_current_values_count": 0
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "USA",
+                "Europe",
+                "Asia",
+                "Other"
+              ],
+              "count": [
+                2391,
+                1816,
+                1224,
+                574
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "USA",
+                "Europe",
+                "Asia",
+                "Other"
+              ],
+              "count": [
+                13569,
+                10207,
+                6886,
+                3366
+              ],
+              "name": null
+            },
+            "current_log": null,
+            "reference_log": null
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": "USA",
+                "1": "Europe",
+                "2": "Asia",
+                "3": "Other"
+              },
+              "count": {
+                "0": 2391,
+                "1": 1816,
+                "2": 1224,
+                "3": 574
+              }
+            },
+            "reference": {
+              "x": {
+                "0": "USA",
+                "1": "Europe",
+                "2": "Asia",
+                "3": "Other"
+              },
+              "count": {
+                "0": 13569,
+                "1": 10207,
+                "2": 6886,
+                "3": 3366
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "GameGenre",
+        "column_type": "cat",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 5,
+          "unique_percentage": 0.01,
+          "most_common": "Action",
+          "most_common_percentage": 20.11,
+          "new_in_current_values_count": null,
+          "unused_in_current_values_count": null
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 5,
+          "unique_percentage": 0.08,
+          "most_common": "RPG",
+          "most_common_percentage": 20.4,
+          "new_in_current_values_count": 0,
+          "unused_in_current_values_count": 0
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "RPG",
+                "Strategy",
+                "Action",
+                "Simulation",
+                "Sports"
+              ],
+              "count": [
+                1225,
+                1222,
+                1195,
+                1186,
+                1177
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "Action",
+                "Strategy",
+                "Simulation",
+                "Sports",
+                "RPG"
+              ],
+              "count": [
+                6843,
+                6834,
+                6827,
+                6801,
+                6723
+              ],
+              "name": null
+            },
+            "current_log": null,
+            "reference_log": null
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": "RPG",
+                "1": "Strategy",
+                "2": "Action",
+                "3": "Simulation",
+                "4": "Sports"
+              },
+              "count": {
+                "0": 1225,
+                "1": 1222,
+                "2": 1195,
+                "3": 1186,
+                "4": 1177
+              }
+            },
+            "reference": {
+              "x": {
+                "0": "Action",
+                "1": "Strategy",
+                "2": "Simulation",
+                "3": "Sports",
+                "4": "RPG"
+              },
+              "count": {
+                "0": 6843,
+                "1": 6834,
+                "2": 6827,
+                "3": 6801,
+                "4": 6723
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "InGamePurchases",
+        "column_type": "cat",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 2,
+          "unique_percentage": 0.01,
+          "most_common": "No",
+          "most_common_percentage": 79.97,
+          "new_in_current_values_count": null,
+          "unused_in_current_values_count": null
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 2,
+          "unique_percentage": 0.03,
+          "most_common": "No",
+          "most_common_percentage": 79.4,
+          "new_in_current_values_count": 0,
+          "unused_in_current_values_count": 0
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "No",
+                "Yes"
+              ],
+              "count": [
+                4768,
+                1237
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "No",
+                "Yes"
+              ],
+              "count": [
+                27213,
+                6815
+              ],
+              "name": null
+            },
+            "current_log": null,
+            "reference_log": null
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": "No",
+                "1": "Yes"
+              },
+              "count": {
+                "0": 4768,
+                "1": 1237
+              }
+            },
+            "reference": {
+              "x": {
+                "0": "No",
+                "1": "Yes"
+              },
+              "count": {
+                "0": 27213,
+                "1": 6815
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "GameDifficulty",
+        "column_type": "cat",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 3,
+          "unique_percentage": 0.01,
+          "most_common": "Easy",
+          "most_common_percentage": 49.8,
+          "new_in_current_values_count": null,
+          "unused_in_current_values_count": null
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.CategoricalCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "unique": 3,
+          "unique_percentage": 0.05,
+          "most_common": "Easy",
+          "most_common_percentage": 50.92,
+          "new_in_current_values_count": 0,
+          "unused_in_current_values_count": 0
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "Easy",
+                "Medium",
+                "Hard"
+              ],
+              "count": [
+                3058,
+                1786,
+                1161
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                "Easy",
+                "Medium",
+                "Hard"
+              ],
+              "count": [
+                16946,
+                10232,
+                6850
+              ],
+              "name": null
+            },
+            "current_log": null,
+            "reference_log": null
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": "Easy",
+                "1": "Medium",
+                "2": "Hard"
+              },
+              "count": {
+                "0": 3058,
+                "1": 1786,
+                "2": 1161
+              }
+            },
+            "reference": {
+              "x": {
+                "0": "Easy",
+                "1": "Medium",
+                "2": "Hard"
+              },
+              "count": {
+                "0": 16946,
+                "1": 10232,
+                "2": 6850
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "AchievementsUnlocked",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 24.49,
+          "std": 14.44,
+          "min": 0.0,
+          "p25": 12.0,
+          "p50": 24.0,
+          "p75": 37.0,
+          "max": 49.0,
+          "unique": 50,
+          "unique_percentage": 0.15,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 32.0,
+          "most_common_percentage": 2.14
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 24.52,
+          "std": 14.4,
+          "min": 0.0,
+          "p25": 12.0,
+          "p50": 25.0,
+          "p75": 37.0,
+          "max": 49.0,
+          "unique": 50,
+          "unique_percentage": 0.83,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 40.0,
+          "most_common_percentage": 2.31
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                2.8823529411764706,
+                5.764705882352941,
+                8.647058823529411,
+                11.529411764705882,
+                14.411764705882353,
+                17.294117647058822,
+                20.176470588235293,
+                23.058823529411764,
+                25.941176470588236,
+                28.823529411764707,
+                31.705882352941178,
+                34.588235294117645,
+                37.470588235294116,
+                40.35294117647059,
+                43.23529411764706,
+                46.11764705882353
+              ],
+              "count": [
+                354,
+                383,
+                349,
+                339,
+                359,
+                354,
+                358,
+                380,
+                242,
+                354,
+                378,
+                351,
+                346,
+                389,
+                376,
+                335,
+                358
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                2.8823529411764706,
+                5.764705882352941,
+                8.647058823529411,
+                11.529411764705882,
+                14.411764705882353,
+                17.294117647058822,
+                20.176470588235293,
+                23.058823529411764,
+                25.941176470588236,
+                28.823529411764707,
+                31.705882352941178,
+                34.588235294117645,
+                37.470588235294116,
+                40.35294117647059,
+                43.23529411764706,
+                46.11764705882353
+              ],
+              "count": [
+                2089,
+                1991,
+                2075,
+                1985,
+                2069,
+                2008,
+                2081,
+                2128,
+                1315,
+                1991,
+                2012,
+                2077,
+                2029,
+                2079,
+                2012,
+                2029,
+                2058
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.07042483666785473,
+                0.14084967333570947,
+                0.2112745100035642,
+                0.28169934667141894,
+                0.35212418333927364,
+                0.4225490200071284,
+                0.49297385667498317,
+                0.5633986933428379,
+                0.6338235300106926,
+                0.7042483666785473,
+                0.7746732033464021,
+                0.8450980400142568,
+                0.9155228766821115,
+                0.9859477133499663,
+                1.056372550017821,
+                1.1267973866856758,
+                1.1972222233535306,
+                1.2676470600213852,
+                1.33807189668924,
+                1.4084967333570946,
+                1.4789215700249494,
+                1.5493464066928042,
+                1.6197712433606588
+              ],
+              "count": [
+                109,
+                0,
+                0,
+                0,
+                108,
+                0,
+                125,
+                0,
+                120,
+                138,
+                0,
+                119,
+                230,
+                110,
+                229,
+                229,
+                254,
+                358,
+                352,
+                500,
+                616,
+                583,
+                750,
+                938
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.07042483666785473,
+                0.14084967333570947,
+                0.2112745100035642,
+                0.28169934667141894,
+                0.35212418333927364,
+                0.4225490200071284,
+                0.49297385667498317,
+                0.5633986933428379,
+                0.6338235300106926,
+                0.7042483666785473,
+                0.7746732033464021,
+                0.8450980400142568,
+                0.9155228766821115,
+                0.9859477133499663,
+                1.056372550017821,
+                1.1267973866856758,
+                1.1972222233535306,
+                1.2676470600213852,
+                1.33807189668924,
+                1.4084967333570946,
+                1.4789215700249494,
+                1.5493464066928042,
+                1.6197712433606588
+              ],
+              "count": [
+                714,
+                0,
+                0,
+                0,
+                696,
+                0,
+                689,
+                0,
+                641,
+                661,
+                0,
+                680,
+                1395,
+                665,
+                1320,
+                1390,
+                1352,
+                2055,
+                2080,
+                2724,
+                3310,
+                3437,
+                4128,
+                5412
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 40,
+                "1": 5,
+                "2": 25,
+                "3": 0,
+                "4": 48,
+                "5": 29,
+                "6": 22,
+                "7": 32,
+                "8": 41,
+                "9": 14
+              },
+              "count": {
+                "0": 139,
+                "1": 138,
+                "2": 138,
+                "3": 137,
+                "4": 137,
+                "5": 134,
+                "6": 133,
+                "7": 131,
+                "8": 131,
+                "9": 130
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 32,
+                "1": 18,
+                "2": 21,
+                "3": 8,
+                "4": 39,
+                "5": 22,
+                "6": 1,
+                "7": 48,
+                "8": 40,
+                "9": 36
+              },
+              "count": {
+                "0": 728,
+                "1": 720,
+                "2": 719,
+                "3": 716,
+                "4": 715,
+                "5": 714,
+                "6": 714,
+                "7": 706,
+                "8": 705,
+                "9": 703
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "Age",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 32.0,
+          "std": 10.04,
+          "min": 15.0,
+          "p25": 23.0,
+          "p50": 32.0,
+          "p75": 41.0,
+          "max": 49.0,
+          "unique": 35,
+          "unique_percentage": 0.1,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 37.0,
+          "most_common_percentage": 3.1
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 31.89,
+          "std": 10.0,
+          "min": 15.0,
+          "p25": 23.0,
+          "p50": 32.0,
+          "p75": 41.0,
+          "max": 49.0,
+          "unique": 35,
+          "unique_percentage": 0.58,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 30.0,
+          "most_common_percentage": 3.41
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                15.0,
+                17.0,
+                19.0,
+                21.0,
+                23.0,
+                25.0,
+                27.0,
+                29.0,
+                31.0,
+                33.0,
+                35.0,
+                37.0,
+                39.0,
+                41.0,
+                43.0,
+                45.0,
+                47.0
+              ],
+              "count": [
+                317,
+                348,
+                343,
+                347,
+                368,
+                337,
+                361,
+                395,
+                338,
+                335,
+                327,
+                332,
+                349,
+                355,
+                327,
+                334,
+                492
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                15.0,
+                17.0,
+                19.0,
+                21.0,
+                23.0,
+                25.0,
+                27.0,
+                29.0,
+                31.0,
+                33.0,
+                35.0,
+                37.0,
+                39.0,
+                41.0,
+                43.0,
+                45.0,
+                47.0
+              ],
+              "count": [
+                1920,
+                1963,
+                1917,
+                1930,
+                1915,
+                1873,
+                1960,
+                1984,
+                2045,
+                1891,
+                1991,
+                2032,
+                1981,
+                1936,
+                1999,
+                1908,
+                2783
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                1.1760912590556813,
+                1.199459660008992,
+                1.2228280609623026,
+                1.246196461915613,
+                1.2695648628689236,
+                1.2929332638222342,
+                1.3163016647755448,
+                1.3396700657288552,
+                1.3630384666821658,
+                1.3864068676354764,
+                1.409775268588787,
+                1.4331436695420976,
+                1.456512070495408,
+                1.4798804714487186,
+                1.5032488724020292,
+                1.5266172733553396,
+                1.5499856743086502,
+                1.5733540752619608,
+                1.5967224762152714,
+                1.620090877168582,
+                1.6434592781218924,
+                1.666827679075203
+              ],
+              "count": [
+                149,
+                168,
+                164,
+                184,
+                188,
+                155,
+                169,
+                366,
+                180,
+                162,
+                359,
+                177,
+                395,
+                165,
+                338,
+                331,
+                328,
+                333,
+                371,
+                497,
+                334,
+                492
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                1.1760912590556813,
+                1.199459660008992,
+                1.2228280609623026,
+                1.246196461915613,
+                1.2695648628689236,
+                1.2929332638222342,
+                1.3163016647755448,
+                1.3396700657288552,
+                1.3630384666821658,
+                1.3864068676354764,
+                1.409775268588787,
+                1.4331436695420976,
+                1.456512070495408,
+                1.4798804714487186,
+                1.5032488724020292,
+                1.5266172733553396,
+                1.5499856743086502,
+                1.5733540752619608,
+                1.5967224762152714,
+                1.620090877168582,
+                1.6434592781218924,
+                1.666827679075203
+              ],
+              "count": [
+                933,
+                987,
+                965,
+                998,
+                963,
+                954,
+                963,
+                1905,
+                977,
+                936,
+                1975,
+                922,
+                1984,
+                1052,
+                1952,
+                1927,
+                2052,
+                1944,
+                1948,
+                3000,
+                1908,
+                2783
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 30,
+                "1": 29,
+                "2": 19,
+                "3": 23,
+                "4": 40,
+                "5": 41,
+                "6": 27,
+                "7": 18,
+                "8": 24,
+                "9": 22
+              },
+              "count": {
+                "0": 205,
+                "1": 190,
+                "2": 188,
+                "3": 188,
+                "4": 186,
+                "5": 185,
+                "6": 184,
+                "7": 184,
+                "8": 180,
+                "9": 178
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 37,
+                "1": 31,
+                "2": 27,
+                "3": 43,
+                "4": 40,
+                "5": 42,
+                "6": 29,
+                "7": 18,
+                "8": 36,
+                "9": 35
+              },
+              "count": {
+                "0": 1056,
+                "1": 1052,
+                "2": 1038,
+                "3": 1017,
+                "4": 1013,
+                "5": 1001,
+                "6": 999,
+                "7": 998,
+                "8": 996,
+                "9": 995
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "AvgSessionDurationMinutes",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 94.88,
+          "std": 48.95,
+          "min": 10.0,
+          "p25": 53.0,
+          "p50": 95.0,
+          "p75": 137.0,
+          "max": 179.0,
+          "unique": 170,
+          "unique_percentage": 0.5,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 138.0,
+          "most_common_percentage": 0.71
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 95.08,
+          "std": 49.17,
+          "min": 10.0,
+          "p25": 53.0,
+          "p50": 95.0,
+          "p75": 138.0,
+          "max": 179.0,
+          "unique": 170,
+          "unique_percentage": 2.83,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 61.0,
+          "most_common_percentage": 0.92
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                10.0,
+                19.941176470588236,
+                29.88235294117647,
+                39.82352941176471,
+                49.76470588235294,
+                59.705882352941174,
+                69.64705882352942,
+                79.58823529411765,
+                89.52941176470588,
+                99.47058823529412,
+                109.41176470588235,
+                119.3529411764706,
+                129.29411764705884,
+                139.23529411764707,
+                149.1764705882353,
+                159.11764705882354,
+                169.05882352941177
+              ],
+              "count": [
+                344,
+                333,
+                357,
+                354,
+                361,
+                386,
+                334,
+                329,
+                358,
+                357,
+                339,
+                358,
+                356,
+                346,
+                362,
+                371,
+                360
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                10.0,
+                19.941176470588236,
+                29.88235294117647,
+                39.82352941176471,
+                49.76470588235294,
+                59.705882352941174,
+                69.64705882352942,
+                79.58823529411765,
+                89.52941176470588,
+                99.47058823529412,
+                109.41176470588235,
+                119.3529411764706,
+                129.29411764705884,
+                139.23529411764707,
+                149.1764705882353,
+                159.11764705882354,
+                169.05882352941177
+              ],
+              "count": [
+                1951,
+                1973,
+                1924,
+                1996,
+                2075,
+                2006,
+                1922,
+                2089,
+                2047,
+                1948,
+                2002,
+                2016,
+                2043,
+                1979,
+                2054,
+                2005,
+                1998
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                1.0,
+                1.0544718709121692,
+                1.1089437418243386,
+                1.1634156127365078,
+                1.217887483648677,
+                1.2723593545608463,
+                1.3268312254730157,
+                1.381303096385185,
+                1.435774967297354,
+                1.4902468382095235,
+                1.5447187091216927,
+                1.599190580033862,
+                1.6536624509460314,
+                1.7081343218582006,
+                1.7626061927703698,
+                1.8170780636825392,
+                1.8715499345947084,
+                1.9260218055068776,
+                1.980493676419047,
+                2.0349655473312165,
+                2.0894374182433855,
+                2.143909289155555,
+                2.198381160067724
+              ],
+              "count": [
+                69,
+                42,
+                62,
+                63,
+                69,
+                106,
+                103,
+                99,
+                103,
+                164,
+                154,
+                212,
+                222,
+                211,
+                304,
+                326,
+                312,
+                383,
+                467,
+                494,
+                601,
+                631,
+                808
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                1.0,
+                1.0544718709121692,
+                1.1089437418243386,
+                1.1634156127365078,
+                1.217887483648677,
+                1.2723593545608463,
+                1.3268312254730157,
+                1.381303096385185,
+                1.435774967297354,
+                1.4902468382095235,
+                1.5447187091216927,
+                1.599190580033862,
+                1.6536624509460314,
+                1.7081343218582006,
+                1.7626061927703698,
+                1.8170780636825392,
+                1.8715499345947084,
+                1.9260218055068776,
+                1.980493676419047,
+                2.0349655473312165,
+                2.0894374182433855,
+                2.143909289155555,
+                2.198381160067724
+              ],
+              "count": [
+                386,
+                203,
+                375,
+                393,
+                400,
+                589,
+                583,
+                564,
+                642,
+                918,
+                795,
+                1224,
+                1204,
+                1242,
+                1633,
+                1745,
+                1974,
+                2267,
+                2603,
+                2789,
+                3463,
+                3614,
+                4422
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 61,
+                "1": 156,
+                "2": 36,
+                "3": 66,
+                "4": 56,
+                "5": 104,
+                "6": 177,
+                "7": 159,
+                "8": 20,
+                "9": 118
+              },
+              "count": {
+                "0": 55,
+                "1": 54,
+                "2": 52,
+                "3": 49,
+                "4": 49,
+                "5": 48,
+                "6": 48,
+                "7": 47,
+                "8": 45,
+                "9": 45
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 138,
+                "1": 152,
+                "2": 57,
+                "3": 29,
+                "4": 63,
+                "5": 45,
+                "6": 95,
+                "7": 51,
+                "8": 99,
+                "9": 85
+              },
+              "count": {
+                "0": 242,
+                "1": 235,
+                "2": 234,
+                "3": 233,
+                "4": 232,
+                "5": 230,
+                "6": 229,
+                "7": 229,
+                "8": 228,
+                "9": 227
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "PlayTimeHours",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 12.02,
+          "std": 6.91,
+          "min": 0.0,
+          "p25": 6.06,
+          "p50": 11.99,
+          "p75": 17.95,
+          "max": 24.0,
+          "unique": 34028,
+          "unique_percentage": 100.0,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 16.99186,
+          "most_common_percentage": 0.0
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 12.09,
+          "std": 6.86,
+          "min": 0.0,
+          "p25": 6.26,
+          "p50": 12.12,
+          "p75": 17.96,
+          "max": 24.0,
+          "unique": 6005,
+          "unique_percentage": 100.0,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 8.82843,
+          "most_common_percentage": 0.02
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0001146866199155,
+                1.4118486246764175,
+                2.8235825627329194,
+                4.235316500789422,
+                5.647050438845923,
+                7.058784376902425,
+                8.470518314958927,
+                9.882252253015428,
+                11.29398619107193,
+                12.705720129128432,
+                14.117454067184934,
+                15.529188005241435,
+                16.94092194329794,
+                18.35265588135444,
+                19.764389819410944,
+                21.176123757467444,
+                22.587857695523947
+              ],
+              "count": [
+                343,
+                356,
+                292,
+                343,
+                363,
+                380,
+                372,
+                343,
+                377,
+                335,
+                354,
+                385,
+                360,
+                349,
+                361,
+                349,
+                343
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0001146866199155,
+                1.4118486246764175,
+                2.8235825627329194,
+                4.235316500789422,
+                5.647050438845923,
+                7.058784376902425,
+                8.470518314958927,
+                9.882252253015428,
+                11.29398619107193,
+                12.705720129128432,
+                14.117454067184934,
+                15.529188005241435,
+                16.94092194329794,
+                18.35265588135444,
+                19.764389819410944,
+                21.176123757467444,
+                22.587857695523947
+              ],
+              "count": [
+                1988,
+                1939,
+                1977,
+                2046,
+                2004,
+                1995,
+                2065,
+                2003,
+                2017,
+                1974,
+                1960,
+                1996,
+                2124,
+                1986,
+                1949,
+                2003,
+                2002
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                -3.940487246752795,
+                -3.7187917843042637,
+                -3.4970963218557323,
+                -3.275400859407201,
+                -3.053705396958669,
+                -2.8320099345101375,
+                -2.610314472061606,
+                -2.388619009613074,
+                -2.1669235471645427,
+                -1.9452280847160115,
+                -1.7235326222674798,
+                -1.5018371598189484,
+                -1.280141697370417,
+                -1.0584462349218855,
+                -0.8367507724733536,
+                -0.6150553100248222,
+                -0.3933598475762907,
+                -0.17166438512775928,
+                0.050031077320772166,
+                0.27172653976930405,
+                0.4934220022178355,
+                0.7151174646663669,
+                0.9368129271148984,
+                1.1585083895634298
+              ],
+              "count": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                3,
+                0,
+                7,
+                8,
+                17,
+                22,
+                42,
+                66,
+                121,
+                173,
+                302,
+                449,
+                921,
+                1432,
+                2440
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                -3.940487246752795,
+                -3.7187917843042637,
+                -3.4970963218557323,
+                -3.275400859407201,
+                -3.053705396958669,
+                -2.8320099345101375,
+                -2.610314472061606,
+                -2.388619009613074,
+                -2.1669235471645427,
+                -1.9452280847160115,
+                -1.7235326222674798,
+                -1.5018371598189484,
+                -1.280141697370417,
+                -1.0584462349218855,
+                -0.8367507724733536,
+                -0.6150553100248222,
+                -0.3933598475762907,
+                -0.17166438512775928,
+                0.050031077320772166,
+                0.27172653976930405,
+                0.4934220022178355,
+                0.7151174646663669,
+                0.9368129271148984,
+                1.1585083895634298
+              ],
+              "count": [
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                5,
+                5,
+                7,
+                9,
+                14,
+                32,
+                58,
+                84,
+                133,
+                209,
+                367,
+                657,
+                1029,
+                1708,
+                2963,
+                4930,
+                8200,
+                13616
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 8.828433843831764,
+                "1": 23.08638022977756,
+                "2": 8.055681215628692,
+                "3": 2.901104078736449,
+                "4": 7.631568861297729,
+                "5": 20.10005042646484,
+                "6": 15.037950831098712,
+                "7": 23.09144824111761,
+                "8": 12.28936100174208,
+                "9": 14.078408217788136
+              },
+              "count": {
+                "0": 1,
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 16.991864811084042,
+                "1": 2.432300975751251,
+                "2": 6.110117158709716,
+                "3": 6.308618913002779,
+                "4": 2.026277075062894,
+                "5": 8.617934296103519,
+                "6": 7.806059543559934,
+                "7": 22.46740008033796,
+                "8": 23.94133125496042,
+                "9": 11.899365868120544
+              },
+              "count": {
+                "0": 1,
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "PlayerLevel",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 49.63,
+          "std": 28.63,
+          "min": 1.0,
+          "p25": 25.0,
+          "p50": 49.0,
+          "p75": 74.0,
+          "max": 99.0,
+          "unique": 99,
+          "unique_percentage": 0.29,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 48.0,
+          "most_common_percentage": 1.13
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 49.26,
+          "std": 28.75,
+          "min": 1.0,
+          "p25": 24.0,
+          "p50": 49.0,
+          "p75": 73.0,
+          "max": 99.0,
+          "unique": 99,
+          "unique_percentage": 1.65,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 16.0,
+          "most_common_percentage": 1.43
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                1.0,
+                6.444444444444445,
+                11.88888888888889,
+                17.333333333333336,
+                22.77777777777778,
+                28.22222222222222,
+                33.66666666666667,
+                39.111111111111114,
+                44.55555555555556,
+                50.0,
+                55.44444444444444,
+                60.88888888888889,
+                66.33333333333334,
+                71.77777777777779,
+                77.22222222222223,
+                82.66666666666667,
+                88.11111111111111,
+                93.55555555555556
+              ],
+              "count": [
+                394,
+                310,
+                420,
+                292,
+                368,
+                288,
+                358,
+                288,
+                304,
+                377,
+                298,
+                357,
+                316,
+                353,
+                262,
+                354,
+                300,
+                366
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                1.0,
+                6.444444444444445,
+                11.88888888888889,
+                17.333333333333336,
+                22.77777777777778,
+                28.22222222222222,
+                33.66666666666667,
+                39.111111111111114,
+                44.55555555555556,
+                50.0,
+                55.44444444444444,
+                60.88888888888889,
+                66.33333333333334,
+                71.77777777777779,
+                77.22222222222223,
+                82.66666666666667,
+                88.11111111111111,
+                93.55555555555556
+              ],
+              "count": [
+                2092,
+                1767,
+                2138,
+                1748,
+                2056,
+                1653,
+                2148,
+                1679,
+                1808,
+                2096,
+                1683,
+                1990,
+                1695,
+                1991,
+                1678,
+                2047,
+                1718,
+                2041
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.08315146644156458,
+                0.16630293288312917,
+                0.24945439932469377,
+                0.33260586576625834,
+                0.4157573322078229,
+                0.49890879864938753,
+                0.5820602650909521,
+                0.6652117315325167,
+                0.7483631979740812,
+                0.8315146644156458,
+                0.9146661308572104,
+                0.9978175972987751,
+                1.0809690637403395,
+                1.1641205301819042,
+                1.2472719966234687,
+                1.3304234630650333,
+                1.413574929506598,
+                1.4967263959481625,
+                1.5798778623897272,
+                1.6630293288312916,
+                1.7461807952728563,
+                1.8293322617144208,
+                1.9124837281559854
+              ],
+              "count": [
+                62,
+                0,
+                0,
+                63,
+                0,
+                66,
+                0,
+                71,
+                55,
+                77,
+                124,
+                57,
+                197,
+                124,
+                228,
+                231,
+                236,
+                370,
+                390,
+                473,
+                575,
+                721,
+                809,
+                1076
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.08315146644156458,
+                0.16630293288312917,
+                0.24945439932469377,
+                0.33260586576625834,
+                0.4157573322078229,
+                0.49890879864938753,
+                0.5820602650909521,
+                0.6652117315325167,
+                0.7483631979740812,
+                0.8315146644156458,
+                0.9146661308572104,
+                0.9978175972987751,
+                1.0809690637403395,
+                1.1641205301819042,
+                1.2472719966234687,
+                1.3304234630650333,
+                1.413574929506598,
+                1.4967263959481625,
+                1.5798778623897272,
+                1.6630293288312916,
+                1.7461807952728563,
+                1.8293322617144208,
+                1.9124837281559854
+              ],
+              "count": [
+                355,
+                0,
+                0,
+                348,
+                0,
+                335,
+                0,
+                347,
+                370,
+                337,
+                672,
+                357,
+                1096,
+                710,
+                1070,
+                1438,
+                1342,
+                2026,
+                2457,
+                2735,
+                3190,
+                4021,
+                4696,
+                6126
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 16,
+                "1": 17,
+                "2": 11,
+                "3": 39,
+                "4": 42,
+                "5": 6,
+                "6": 72,
+                "7": 50,
+                "8": 8,
+                "9": 24
+              },
+              "count": {
+                "0": 86,
+                "1": 82,
+                "2": 81,
+                "3": 79,
+                "4": 79,
+                "5": 77,
+                "6": 75,
+                "7": 74,
+                "8": 72,
+                "9": 71
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 48,
+                "1": 36,
+                "2": 14,
+                "3": 19,
+                "4": 16,
+                "5": 97,
+                "6": 11,
+                "7": 5,
+                "8": 18,
+                "9": 51
+              },
+              "count": {
+                "0": 385,
+                "1": 382,
+                "2": 381,
+                "3": 376,
+                "4": 373,
+                "5": 373,
+                "6": 372,
+                "7": 370,
+                "8": 370,
+                "9": 368
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "SessionsPerWeek",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 9.46,
+          "std": 5.76,
+          "min": 0.0,
+          "p25": 4.0,
+          "p50": 9.0,
+          "p75": 14.0,
+          "max": 19.0,
+          "unique": 20,
+          "unique_percentage": 0.06,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 7.0,
+          "most_common_percentage": 5.42
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 9.45,
+          "std": 5.76,
+          "min": 0.0,
+          "p25": 4.0,
+          "p50": 9.0,
+          "p75": 14.0,
+          "max": 19.0,
+          "unique": 20,
+          "unique_percentage": 0.33,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 4.0,
+          "most_common_percentage": 5.55
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                1.0555555555555556,
+                2.111111111111111,
+                3.166666666666667,
+                4.222222222222222,
+                5.277777777777778,
+                6.333333333333334,
+                7.388888888888889,
+                8.444444444444445,
+                9.5,
+                10.555555555555555,
+                11.61111111111111,
+                12.666666666666668,
+                13.722222222222223,
+                14.777777777777779,
+                15.833333333333334,
+                16.88888888888889,
+                17.944444444444446
+              ],
+              "count": [
+                589,
+                305,
+                286,
+                333,
+                309,
+                294,
+                319,
+                298,
+                310,
+                326,
+                285,
+                316,
+                274,
+                271,
+                261,
+                312,
+                306,
+                611
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                1.0555555555555556,
+                2.111111111111111,
+                3.166666666666667,
+                4.222222222222222,
+                5.277777777777778,
+                6.333333333333334,
+                7.388888888888889,
+                8.444444444444445,
+                9.5,
+                10.555555555555555,
+                11.61111111111111,
+                12.666666666666668,
+                13.722222222222223,
+                14.777777777777779,
+                15.833333333333334,
+                16.88888888888889,
+                17.944444444444446
+              ],
+              "count": [
+                3362,
+                1708,
+                1744,
+                1750,
+                1747,
+                1700,
+                1846,
+                1661,
+                1668,
+                1641,
+                1673,
+                1745,
+                1680,
+                1687,
+                1672,
+                1675,
+                1648,
+                3421
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.055597982650122994,
+                0.11119596530024599,
+                0.16679394795036898,
+                0.22239193060049198,
+                0.27798991325061495,
+                0.33358789590073795,
+                0.38918587855086095,
+                0.44478386120098395,
+                0.500381843851107,
+                0.5559798265012299,
+                0.611577809151353,
+                0.6671757918014759,
+                0.722773774451599,
+                0.7783717571017219,
+                0.833969739751845,
+                0.8895677224019679,
+                0.9451657050520909,
+                1.000763687702214,
+                1.0563616703523369,
+                1.1119596530024598,
+                1.167557635652583,
+                1.223155618302706
+              ],
+              "count": [
+                292,
+                0,
+                0,
+                0,
+                0,
+                305,
+                0,
+                0,
+                286,
+                0,
+                333,
+                0,
+                309,
+                294,
+                0,
+                319,
+                298,
+                636,
+                285,
+                316,
+                545,
+                573,
+                917
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.055597982650122994,
+                0.11119596530024599,
+                0.16679394795036898,
+                0.22239193060049198,
+                0.27798991325061495,
+                0.33358789590073795,
+                0.38918587855086095,
+                0.44478386120098395,
+                0.500381843851107,
+                0.5559798265012299,
+                0.611577809151353,
+                0.6671757918014759,
+                0.722773774451599,
+                0.7783717571017219,
+                0.833969739751845,
+                0.8895677224019679,
+                0.9451657050520909,
+                1.000763687702214,
+                1.0563616703523369,
+                1.1119596530024598,
+                1.167557635652583,
+                1.223155618302706
+              ],
+              "count": [
+                1678,
+                0,
+                0,
+                0,
+                0,
+                1708,
+                0,
+                0,
+                1744,
+                0,
+                1750,
+                0,
+                1747,
+                1700,
+                0,
+                1846,
+                1661,
+                3309,
+                1673,
+                1745,
+                3367,
+                3347,
+                5069
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 4,
+                "1": 10,
+                "2": 7,
+                "3": 12,
+                "4": 18,
+                "5": 16,
+                "6": 9,
+                "7": 5,
+                "8": 17,
+                "9": 2
+              },
+              "count": {
+                "0": 333,
+                "1": 326,
+                "2": 319,
+                "3": 316,
+                "4": 314,
+                "5": 312,
+                "6": 310,
+                "7": 309,
+                "8": 306,
+                "9": 305
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 7,
+                "1": 4,
+                "2": 5,
+                "3": 12,
+                "4": 3,
+                "5": 19,
+                "6": 2,
+                "7": 6,
+                "8": 18,
+                "9": 14
+              },
+              "count": {
+                "0": 1846,
+                "1": 1750,
+                "2": 1747,
+                "3": 1745,
+                "4": 1744,
+                "5": 1728,
+                "6": 1708,
+                "7": 1700,
+                "8": 1693,
+                "9": 1687
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.column_summary_metric.ColumnSummaryResult",
+        "column_name": "prediction",
+        "column_type": "num",
+        "reference_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 34028,
+          "count": 34028,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 1.0,
+          "std": 0.71,
+          "min": 0.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "max": 2.0,
+          "unique": 3,
+          "unique_percentage": 0.01,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 1.0,
+          "most_common_percentage": 50.24
+        },
+        "current_characteristics": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.NumericCharacteristics",
+          "number_of_rows": 6005,
+          "count": 6005,
+          "missing": 0,
+          "missing_percentage": 0.0,
+          "mean": 1.0,
+          "std": 0.71,
+          "min": 0.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 2.0,
+          "max": 2.0,
+          "unique": 3,
+          "unique_percentage": 0.05,
+          "infinite_count": 0,
+          "infinite_percentage": 0.0,
+          "most_common": 1.0,
+          "most_common_percentage": 50.16
+        },
+        "plot_data": {
+          "type": "evidently.metrics.data_integrity.column_summary_metric.DataQualityPlot",
+          "bins_for_hist": {
+            "type": "evidently.metric_results.Histogram",
+            "current": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.11764705882352941,
+                0.23529411764705882,
+                0.3529411764705882,
+                0.47058823529411764,
+                0.5882352941176471,
+                0.7058823529411764,
+                0.8235294117647058,
+                0.9411764705882353,
+                1.0588235294117647,
+                1.1764705882352942,
+                1.2941176470588236,
+                1.4117647058823528,
+                1.5294117647058822,
+                1.6470588235294117,
+                1.7647058823529411,
+                1.8823529411764706
+              ],
+              "count": [
+                1488,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                3012,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1505
+              ],
+              "name": null
+            },
+            "reference": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.11764705882352941,
+                0.23529411764705882,
+                0.3529411764705882,
+                0.47058823529411764,
+                0.5882352941176471,
+                0.7058823529411764,
+                0.8235294117647058,
+                0.9411764705882353,
+                1.0588235294117647,
+                1.1764705882352942,
+                1.2941176470588236,
+                1.4117647058823528,
+                1.5294117647058822,
+                1.6470588235294117,
+                1.7647058823529411,
+                1.8823529411764706
+              ],
+              "count": [
+                8433,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                17096,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                8499
+              ],
+              "name": null
+            },
+            "current_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.013683181621090055,
+                0.02736636324218011,
+                0.041049544863270164,
+                0.05473272648436022,
+                0.06841590810545027,
+                0.08209908972654033,
+                0.09578227134763038,
+                0.10946545296872044,
+                0.1231486345898105,
+                0.13683181621090054,
+                0.1505149978319906,
+                0.16419817945308066,
+                0.1778813610741707,
+                0.19156454269526077,
+                0.20524772431635083,
+                0.21893090593744088,
+                0.23261408755853094,
+                0.246297269179621,
+                0.259980450800711,
+                0.2736636324218011,
+                0.28734681404289114
+              ],
+              "count": [
+                3012,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1505
+              ],
+              "name": null
+            },
+            "reference_log": {
+              "type": "evidently.metric_results.HistogramData",
+              "x": [
+                0.0,
+                0.013683181621090055,
+                0.02736636324218011,
+                0.041049544863270164,
+                0.05473272648436022,
+                0.06841590810545027,
+                0.08209908972654033,
+                0.09578227134763038,
+                0.10946545296872044,
+                0.1231486345898105,
+                0.13683181621090054,
+                0.1505149978319906,
+                0.16419817945308066,
+                0.1778813610741707,
+                0.19156454269526077,
+                0.20524772431635083,
+                0.21893090593744088,
+                0.23261408755853094,
+                0.246297269179621,
+                0.259980450800711,
+                0.2736636324218011,
+                0.28734681404289114
+              ],
+              "count": [
+                17096,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                8499
+              ],
+              "name": null
+            }
+          },
+          "data_in_time": null,
+          "data_by_target": null,
+          "counts_of_values": {
+            "current": {
+              "x": {
+                "0": 1,
+                "1": 2,
+                "2": 0
+              },
+              "count": {
+                "0": 3012,
+                "1": 1505,
+                "2": 1488
+              }
+            },
+            "reference": {
+              "x": {
+                "0": 1,
+                "1": 2,
+                "2": 0
+              },
+              "count": {
+                "0": 17096,
+                "1": 8499,
+                "2": 8433
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValuesMetricResult",
+        "current": {
+          "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValues",
+          "different_missing_values": {
+            "": 0,
+            "-Infinity": 0,
+            "null": 0,
+            "Infinity": 0
+          },
+          "number_of_different_missing_values": 0,
+          "different_missing_values_by_column": {
+            "Age": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Gender": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Location": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "GameGenre": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "PlayTimeHours": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "InGamePurchases": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "GameDifficulty": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "SessionsPerWeek": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "AvgSessionDurationMinutes": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "PlayerLevel": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "AchievementsUnlocked": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "prediction": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            }
+          },
+          "number_of_different_missing_values_by_column": {
+            "Age": 0,
+            "Gender": 0,
+            "Location": 0,
+            "GameGenre": 0,
+            "PlayTimeHours": 0,
+            "InGamePurchases": 0,
+            "GameDifficulty": 0,
+            "SessionsPerWeek": 0,
+            "AvgSessionDurationMinutes": 0,
+            "PlayerLevel": 0,
+            "AchievementsUnlocked": 0,
+            "prediction": 0
+          },
+          "number_of_missing_values": 0,
+          "share_of_missing_values": 0.0,
+          "number_of_missing_values_by_column": {
+            "Age": 0,
+            "Gender": 0,
+            "Location": 0,
+            "GameGenre": 0,
+            "PlayTimeHours": 0,
+            "InGamePurchases": 0,
+            "GameDifficulty": 0,
+            "SessionsPerWeek": 0,
+            "AvgSessionDurationMinutes": 0,
+            "PlayerLevel": 0,
+            "AchievementsUnlocked": 0,
+            "prediction": 0
+          },
+          "share_of_missing_values_by_column": {
+            "Age": 0.0,
+            "Gender": 0.0,
+            "Location": 0.0,
+            "GameGenre": 0.0,
+            "PlayTimeHours": 0.0,
+            "InGamePurchases": 0.0,
+            "GameDifficulty": 0.0,
+            "SessionsPerWeek": 0.0,
+            "AvgSessionDurationMinutes": 0.0,
+            "PlayerLevel": 0.0,
+            "AchievementsUnlocked": 0.0,
+            "prediction": 0.0
+          },
+          "number_of_rows": 6005,
+          "number_of_rows_with_missing_values": 0,
+          "share_of_rows_with_missing_values": 0.0,
+          "number_of_columns": 12,
+          "columns_with_missing_values": [],
+          "number_of_columns_with_missing_values": 0,
+          "share_of_columns_with_missing_values": 0.0
+        },
+        "reference": {
+          "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValues",
+          "different_missing_values": {
+            "": 0,
+            "-Infinity": 0,
+            "null": 0,
+            "Infinity": 0
+          },
+          "number_of_different_missing_values": 0,
+          "different_missing_values_by_column": {
+            "Age": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Gender": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Location": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "GameGenre": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "PlayTimeHours": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "InGamePurchases": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "GameDifficulty": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "SessionsPerWeek": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "AvgSessionDurationMinutes": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "PlayerLevel": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "AchievementsUnlocked": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "prediction": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            }
+          },
+          "number_of_different_missing_values_by_column": {
+            "Age": 0,
+            "Gender": 0,
+            "Location": 0,
+            "GameGenre": 0,
+            "PlayTimeHours": 0,
+            "InGamePurchases": 0,
+            "GameDifficulty": 0,
+            "SessionsPerWeek": 0,
+            "AvgSessionDurationMinutes": 0,
+            "PlayerLevel": 0,
+            "AchievementsUnlocked": 0,
+            "prediction": 0
+          },
+          "number_of_missing_values": 0,
+          "share_of_missing_values": 0.0,
+          "number_of_missing_values_by_column": {
+            "Age": 0,
+            "Gender": 0,
+            "Location": 0,
+            "GameGenre": 0,
+            "PlayTimeHours": 0,
+            "InGamePurchases": 0,
+            "GameDifficulty": 0,
+            "SessionsPerWeek": 0,
+            "AvgSessionDurationMinutes": 0,
+            "PlayerLevel": 0,
+            "AchievementsUnlocked": 0,
+            "prediction": 0
+          },
+          "share_of_missing_values_by_column": {
+            "Age": 0.0,
+            "Gender": 0.0,
+            "Location": 0.0,
+            "GameGenre": 0.0,
+            "PlayTimeHours": 0.0,
+            "InGamePurchases": 0.0,
+            "GameDifficulty": 0.0,
+            "SessionsPerWeek": 0.0,
+            "AvgSessionDurationMinutes": 0.0,
+            "PlayerLevel": 0.0,
+            "AchievementsUnlocked": 0.0,
+            "prediction": 0.0
+          },
+          "number_of_rows": 34028,
+          "number_of_rows_with_missing_values": 0,
+          "share_of_rows_with_missing_values": 0.0,
+          "number_of_columns": 12,
+          "columns_with_missing_values": [],
+          "number_of_columns_with_missing_values": 0,
+          "share_of_columns_with_missing_values": 0.0
+        }
+      },
+      {
+        "type": "evidently.metrics.data_quality.dataset_correlations_metric.DatasetCorrelationsMetricResult",
+        "current": {
+          "type": "evidently.metrics.data_quality.dataset_correlations_metric.DatasetCorrelation",
+          "correlation": {
+            "pearson": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.003702067705853888,
+                "PlayTimeHours": -0.01832464170536706,
+                "SessionsPerWeek": 0.6789715076165881,
+                "AvgSessionDurationMinutes": 0.5292029048400457,
+                "PlayerLevel": 0.03757115802650011,
+                "AchievementsUnlocked": 0.04431537447546887
+              },
+              "Age": {
+                "prediction": 0.003702067705853888,
+                "Age": 1.0,
+                "PlayTimeHours": -0.010168858267192714,
+                "SessionsPerWeek": 0.010753179310653189,
+                "AvgSessionDurationMinutes": 0.0027695297948031575,
+                "PlayerLevel": -0.014206341398536087,
+                "AchievementsUnlocked": 0.0024361899392476415
+              },
+              "PlayTimeHours": {
+                "prediction": -0.01832464170536706,
+                "Age": -0.010168858267192714,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.005232660945634148,
+                "AvgSessionDurationMinutes": -0.018494669662960123,
+                "PlayerLevel": -0.02129690955910817,
+                "AchievementsUnlocked": -1.4201120244815384e-06
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.6789715076165881,
+                "Age": 0.010753179310653189,
+                "PlayTimeHours": -0.005232660945634148,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.007412526734771044,
+                "PlayerLevel": -0.020398646034228016,
+                "AchievementsUnlocked": -0.013985949641149461
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5292029048400457,
+                "Age": 0.0027695297948031575,
+                "PlayTimeHours": -0.018494669662960123,
+                "SessionsPerWeek": -0.007412526734771044,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.007973919876698888,
+                "AchievementsUnlocked": 0.010179825383409417
+              },
+              "PlayerLevel": {
+                "prediction": 0.03757115802650011,
+                "Age": -0.014206341398536087,
+                "PlayTimeHours": -0.02129690955910817,
+                "SessionsPerWeek": -0.020398646034228016,
+                "AvgSessionDurationMinutes": 0.007973919876698888,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": -0.011055124755767615
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.04431537447546887,
+                "Age": 0.0024361899392476415,
+                "PlayTimeHours": -1.4201120244815384e-06,
+                "SessionsPerWeek": -0.013985949641149461,
+                "AvgSessionDurationMinutes": 0.010179825383409417,
+                "PlayerLevel": -0.011055124755767615,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "spearman": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.0037795556956964683,
+                "PlayTimeHours": -0.018148520625194318,
+                "SessionsPerWeek": 0.680608776467252,
+                "AvgSessionDurationMinutes": 0.5289357035656413,
+                "PlayerLevel": 0.03770333715151291,
+                "AchievementsUnlocked": 0.04438224314556034
+              },
+              "Age": {
+                "prediction": 0.0037795556956964683,
+                "Age": 1.0,
+                "PlayTimeHours": -0.010383908531672939,
+                "SessionsPerWeek": 0.01112620760569022,
+                "AvgSessionDurationMinutes": 0.0033122184392395306,
+                "PlayerLevel": -0.014034544675432031,
+                "AchievementsUnlocked": 0.0022018526476018404
+              },
+              "PlayTimeHours": {
+                "prediction": -0.018148520625194318,
+                "Age": -0.010383908531672939,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.005289019650181577,
+                "AvgSessionDurationMinutes": -0.018471140226152937,
+                "PlayerLevel": -0.02180463435537883,
+                "AchievementsUnlocked": 0.0002252134777170794
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.680608776467252,
+                "Age": 0.01112620760569022,
+                "PlayTimeHours": -0.005289019650181577,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.007131994326741389,
+                "PlayerLevel": -0.020448504312615648,
+                "AchievementsUnlocked": -0.013682676771936218
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5289357035656413,
+                "Age": 0.0033122184392395306,
+                "PlayTimeHours": -0.018471140226152937,
+                "SessionsPerWeek": -0.007131994326741389,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.007994094558634689,
+                "AchievementsUnlocked": 0.010342044133451682
+              },
+              "PlayerLevel": {
+                "prediction": 0.03770333715151291,
+                "Age": -0.014034544675432031,
+                "PlayTimeHours": -0.02180463435537883,
+                "SessionsPerWeek": -0.020448504312615648,
+                "AvgSessionDurationMinutes": 0.007994094558634689,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": -0.01075810995813552
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.04438224314556034,
+                "Age": 0.0022018526476018404,
+                "PlayTimeHours": 0.0002252134777170794,
+                "SessionsPerWeek": -0.013682676771936218,
+                "AvgSessionDurationMinutes": 0.010342044133451682,
+                "PlayerLevel": -0.01075810995813552,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "kendall": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.002974592596199753,
+                "PlayTimeHours": -0.014089477980504932,
+                "SessionsPerWeek": 0.5720938076393458,
+                "AvgSessionDurationMinutes": 0.4283464889940924,
+                "PlayerLevel": 0.02931293753730925,
+                "AchievementsUnlocked": 0.03475024661400498
+              },
+              "Age": {
+                "prediction": 0.002974592596199753,
+                "Age": 1.0,
+                "PlayTimeHours": -0.007057528225796228,
+                "SessionsPerWeek": 0.007709901187409552,
+                "AvgSessionDurationMinutes": 0.0021950426781118656,
+                "PlayerLevel": -0.009466639473417837,
+                "AchievementsUnlocked": 0.001486919927195367
+              },
+              "PlayTimeHours": {
+                "prediction": -0.014089477980504932,
+                "Age": -0.007057528225796228,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.003554626573500924,
+                "AvgSessionDurationMinutes": -0.01254471622882712,
+                "PlayerLevel": -0.014484451459172556,
+                "AchievementsUnlocked": 9.402692685901635e-05
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.5720938076393458,
+                "Age": 0.007709901187409552,
+                "PlayTimeHours": -0.003554626573500924,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.00491869676510153,
+                "PlayerLevel": -0.014065592977788581,
+                "AchievementsUnlocked": -0.009408487488218905
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.4283464889940924,
+                "Age": 0.0021950426781118656,
+                "PlayTimeHours": -0.01254471622882712,
+                "SessionsPerWeek": -0.00491869676510153,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.005356959787037159,
+                "AchievementsUnlocked": 0.0068985114851986395
+              },
+              "PlayerLevel": {
+                "prediction": 0.02931293753730925,
+                "Age": -0.009466639473417837,
+                "PlayTimeHours": -0.014484451459172556,
+                "SessionsPerWeek": -0.014065592977788581,
+                "AvgSessionDurationMinutes": 0.005356959787037159,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": -0.007255635569986625
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.03475024661400498,
+                "Age": 0.001486919927195367,
+                "PlayTimeHours": 9.402692685901635e-05,
+                "SessionsPerWeek": -0.009408487488218905,
+                "AvgSessionDurationMinutes": 0.0068985114851986395,
+                "PlayerLevel": -0.007255635569986625,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "cramer_v": {
+              "Gender": {
+                "Gender": 1.0,
+                "Location": 0.031373693591519765,
+                "GameGenre": 0.014169244224484163,
+                "InGamePurchases": 0.0019109306036668133,
+                "GameDifficulty": 0.02781079984226709
+              },
+              "Location": {
+                "Gender": 0.031373693591519765,
+                "Location": 1.0,
+                "GameGenre": 0.015553723368654949,
+                "InGamePurchases": 0.02189413928625616,
+                "GameDifficulty": 0.014699866553084556
+              },
+              "GameGenre": {
+                "Gender": 0.014169244224484163,
+                "Location": 0.015553723368654949,
+                "GameGenre": 1.0,
+                "InGamePurchases": 0.03895757782020439,
+                "GameDifficulty": 0.024166256150080417
+              },
+              "InGamePurchases": {
+                "Gender": 0.0019109306036668133,
+                "Location": 0.02189413928625616,
+                "GameGenre": 0.03895757782020439,
+                "InGamePurchases": 1.0,
+                "GameDifficulty": 0.0038581990450896634
+              },
+              "GameDifficulty": {
+                "Gender": 0.02781079984226709,
+                "Location": 0.014699866553084556,
+                "GameGenre": 0.024166256150080417,
+                "InGamePurchases": 0.0038581990450896634,
+                "GameDifficulty": 1.0
+              }
+            }
+          },
+          "stats": {
+            "pearson": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": 0.6789715076165881,
+              "abs_max_correlation": 0.6789715076165881,
+              "abs_max_features_correlation": 0.02129690955910817
+            },
+            "spearman": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": 0.680608776467252,
+              "abs_max_correlation": 0.680608776467252,
+              "abs_max_features_correlation": 0.02180463435537883
+            },
+            "kendall": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": 0.5720938076393458,
+              "abs_max_correlation": 0.5720938076393458,
+              "abs_max_features_correlation": 0.014484451459172556
+            },
+            "cramer_v": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": null,
+              "abs_max_correlation": 0.03895757782020439,
+              "abs_max_features_correlation": 0.03895757782020439
+            }
+          },
+          "correlations_calculate": {
+            "pearson": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.003702067705853888,
+                "PlayTimeHours": -0.01832464170536706,
+                "SessionsPerWeek": 0.6789715076165881,
+                "AvgSessionDurationMinutes": 0.5292029048400457,
+                "PlayerLevel": 0.03757115802650011,
+                "AchievementsUnlocked": 0.04431537447546887
+              },
+              "Age": {
+                "prediction": 0.003702067705853888,
+                "Age": 1.0,
+                "PlayTimeHours": -0.010168858267192714,
+                "SessionsPerWeek": 0.010753179310653189,
+                "AvgSessionDurationMinutes": 0.0027695297948031575,
+                "PlayerLevel": -0.014206341398536087,
+                "AchievementsUnlocked": 0.0024361899392476415
+              },
+              "PlayTimeHours": {
+                "prediction": -0.01832464170536706,
+                "Age": -0.010168858267192714,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.005232660945634148,
+                "AvgSessionDurationMinutes": -0.018494669662960123,
+                "PlayerLevel": -0.02129690955910817,
+                "AchievementsUnlocked": -1.4201120244815384e-06
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.6789715076165881,
+                "Age": 0.010753179310653189,
+                "PlayTimeHours": -0.005232660945634148,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.007412526734771044,
+                "PlayerLevel": -0.020398646034228016,
+                "AchievementsUnlocked": -0.013985949641149461
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5292029048400457,
+                "Age": 0.0027695297948031575,
+                "PlayTimeHours": -0.018494669662960123,
+                "SessionsPerWeek": -0.007412526734771044,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.007973919876698888,
+                "AchievementsUnlocked": 0.010179825383409417
+              },
+              "PlayerLevel": {
+                "prediction": 0.03757115802650011,
+                "Age": -0.014206341398536087,
+                "PlayTimeHours": -0.02129690955910817,
+                "SessionsPerWeek": -0.020398646034228016,
+                "AvgSessionDurationMinutes": 0.007973919876698888,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": -0.011055124755767615
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.04431537447546887,
+                "Age": 0.0024361899392476415,
+                "PlayTimeHours": -1.4201120244815384e-06,
+                "SessionsPerWeek": -0.013985949641149461,
+                "AvgSessionDurationMinutes": 0.010179825383409417,
+                "PlayerLevel": -0.011055124755767615,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "spearman": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.0037795556956964683,
+                "PlayTimeHours": -0.018148520625194318,
+                "SessionsPerWeek": 0.680608776467252,
+                "AvgSessionDurationMinutes": 0.5289357035656413,
+                "PlayerLevel": 0.03770333715151291,
+                "AchievementsUnlocked": 0.04438224314556034
+              },
+              "Age": {
+                "prediction": 0.0037795556956964683,
+                "Age": 1.0,
+                "PlayTimeHours": -0.010383908531672939,
+                "SessionsPerWeek": 0.01112620760569022,
+                "AvgSessionDurationMinutes": 0.0033122184392395306,
+                "PlayerLevel": -0.014034544675432031,
+                "AchievementsUnlocked": 0.0022018526476018404
+              },
+              "PlayTimeHours": {
+                "prediction": -0.018148520625194318,
+                "Age": -0.010383908531672939,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.005289019650181577,
+                "AvgSessionDurationMinutes": -0.018471140226152937,
+                "PlayerLevel": -0.02180463435537883,
+                "AchievementsUnlocked": 0.0002252134777170794
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.680608776467252,
+                "Age": 0.01112620760569022,
+                "PlayTimeHours": -0.005289019650181577,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.007131994326741389,
+                "PlayerLevel": -0.020448504312615648,
+                "AchievementsUnlocked": -0.013682676771936218
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5289357035656413,
+                "Age": 0.0033122184392395306,
+                "PlayTimeHours": -0.018471140226152937,
+                "SessionsPerWeek": -0.007131994326741389,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.007994094558634689,
+                "AchievementsUnlocked": 0.010342044133451682
+              },
+              "PlayerLevel": {
+                "prediction": 0.03770333715151291,
+                "Age": -0.014034544675432031,
+                "PlayTimeHours": -0.02180463435537883,
+                "SessionsPerWeek": -0.020448504312615648,
+                "AvgSessionDurationMinutes": 0.007994094558634689,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": -0.01075810995813552
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.04438224314556034,
+                "Age": 0.0022018526476018404,
+                "PlayTimeHours": 0.0002252134777170794,
+                "SessionsPerWeek": -0.013682676771936218,
+                "AvgSessionDurationMinutes": 0.010342044133451682,
+                "PlayerLevel": -0.01075810995813552,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "kendall": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.002974592596199753,
+                "PlayTimeHours": -0.014089477980504932,
+                "SessionsPerWeek": 0.5720938076393458,
+                "AvgSessionDurationMinutes": 0.4283464889940924,
+                "PlayerLevel": 0.02931293753730925,
+                "AchievementsUnlocked": 0.03475024661400498
+              },
+              "Age": {
+                "prediction": 0.002974592596199753,
+                "Age": 1.0,
+                "PlayTimeHours": -0.007057528225796228,
+                "SessionsPerWeek": 0.007709901187409552,
+                "AvgSessionDurationMinutes": 0.0021950426781118656,
+                "PlayerLevel": -0.009466639473417837,
+                "AchievementsUnlocked": 0.001486919927195367
+              },
+              "PlayTimeHours": {
+                "prediction": -0.014089477980504932,
+                "Age": -0.007057528225796228,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.003554626573500924,
+                "AvgSessionDurationMinutes": -0.01254471622882712,
+                "PlayerLevel": -0.014484451459172556,
+                "AchievementsUnlocked": 9.402692685901635e-05
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.5720938076393458,
+                "Age": 0.007709901187409552,
+                "PlayTimeHours": -0.003554626573500924,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.00491869676510153,
+                "PlayerLevel": -0.014065592977788581,
+                "AchievementsUnlocked": -0.009408487488218905
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.4283464889940924,
+                "Age": 0.0021950426781118656,
+                "PlayTimeHours": -0.01254471622882712,
+                "SessionsPerWeek": -0.00491869676510153,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.005356959787037159,
+                "AchievementsUnlocked": 0.0068985114851986395
+              },
+              "PlayerLevel": {
+                "prediction": 0.02931293753730925,
+                "Age": -0.009466639473417837,
+                "PlayTimeHours": -0.014484451459172556,
+                "SessionsPerWeek": -0.014065592977788581,
+                "AvgSessionDurationMinutes": 0.005356959787037159,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": -0.007255635569986625
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.03475024661400498,
+                "Age": 0.001486919927195367,
+                "PlayTimeHours": 9.402692685901635e-05,
+                "SessionsPerWeek": -0.009408487488218905,
+                "AvgSessionDurationMinutes": 0.0068985114851986395,
+                "PlayerLevel": -0.007255635569986625,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "cramer_v": {
+              "Gender": {
+                "Gender": 1.0,
+                "Location": 0.031373693591519765,
+                "GameGenre": 0.014169244224484163,
+                "InGamePurchases": 0.0019109306036668133,
+                "GameDifficulty": 0.02781079984226709
+              },
+              "Location": {
+                "Gender": 0.031373693591519765,
+                "Location": 1.0,
+                "GameGenre": 0.015553723368654949,
+                "InGamePurchases": 0.02189413928625616,
+                "GameDifficulty": 0.014699866553084556
+              },
+              "GameGenre": {
+                "Gender": 0.014169244224484163,
+                "Location": 0.015553723368654949,
+                "GameGenre": 1.0,
+                "InGamePurchases": 0.03895757782020439,
+                "GameDifficulty": 0.024166256150080417
+              },
+              "InGamePurchases": {
+                "Gender": 0.0019109306036668133,
+                "Location": 0.02189413928625616,
+                "GameGenre": 0.03895757782020439,
+                "InGamePurchases": 1.0,
+                "GameDifficulty": 0.0038581990450896634
+              },
+              "GameDifficulty": {
+                "Gender": 0.02781079984226709,
+                "Location": 0.014699866553084556,
+                "GameGenre": 0.024166256150080417,
+                "InGamePurchases": 0.0038581990450896634,
+                "GameDifficulty": 1.0
+              }
+            }
+          }
+        },
+        "reference": {
+          "type": "evidently.metrics.data_quality.dataset_correlations_metric.DatasetCorrelation",
+          "correlation": {
+            "pearson": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.00039550377997034353,
+                "PlayTimeHours": 0.0026497368037292903,
+                "SessionsPerWeek": 0.6825167186216563,
+                "AvgSessionDurationMinutes": 0.5305460874680726,
+                "PlayerLevel": 0.05039570062438236,
+                "AchievementsUnlocked": 0.059819738903321325
+              },
+              "Age": {
+                "prediction": 0.00039550377997034353,
+                "Age": 1.0,
+                "PlayTimeHours": 0.004086122441410991,
+                "SessionsPerWeek": 0.003039314541201845,
+                "AvgSessionDurationMinutes": -0.0004325753654385372,
+                "PlayerLevel": 0.0031777902286268863,
+                "AchievementsUnlocked": -0.002233433818848424
+              },
+              "PlayTimeHours": {
+                "prediction": 0.0026497368037292903,
+                "Age": 0.004086122441410991,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.003390492958064577,
+                "AvgSessionDurationMinutes": 0.0008274310432711343,
+                "PlayerLevel": -0.003790119890075353,
+                "AchievementsUnlocked": 0.0031140066989392232
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.6825167186216563,
+                "Age": 0.003039314541201845,
+                "PlayTimeHours": -0.003390492958064577,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.0014588630535112802,
+                "PlayerLevel": 0.0021903690378533864,
+                "AchievementsUnlocked": 0.006983453241444939
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5305460874680726,
+                "Age": -0.0004325753654385372,
+                "PlayTimeHours": 0.0008274310432711343,
+                "SessionsPerWeek": -0.0014588630535112802,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.0016218929665963843,
+                "AchievementsUnlocked": -0.0017197018007688272
+              },
+              "PlayerLevel": {
+                "prediction": 0.05039570062438236,
+                "Age": 0.0031777902286268863,
+                "PlayTimeHours": -0.003790119890075353,
+                "SessionsPerWeek": 0.0021903690378533864,
+                "AvgSessionDurationMinutes": 0.0016218929665963843,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": 0.007102329692971171
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.059819738903321325,
+                "Age": -0.002233433818848424,
+                "PlayTimeHours": 0.0031140066989392232,
+                "SessionsPerWeek": 0.006983453241444939,
+                "AvgSessionDurationMinutes": -0.0017197018007688272,
+                "PlayerLevel": 0.007102329692971171,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "spearman": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.00039596891161735654,
+                "PlayTimeHours": 0.0026481400350056397,
+                "SessionsPerWeek": 0.6833685002189833,
+                "AvgSessionDurationMinutes": 0.5302313342073507,
+                "PlayerLevel": 0.050315481376511345,
+                "AchievementsUnlocked": 0.05977616300687983
+              },
+              "Age": {
+                "prediction": 0.00039596891161735654,
+                "Age": 1.0,
+                "PlayTimeHours": 0.004068636968338601,
+                "SessionsPerWeek": 0.0030830930829169856,
+                "AvgSessionDurationMinutes": -0.00037501256572674624,
+                "PlayerLevel": 0.003171289038178525,
+                "AchievementsUnlocked": -0.002212299027979604
+              },
+              "PlayTimeHours": {
+                "prediction": 0.0026481400350056397,
+                "Age": 0.004068636968338601,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.0034302201348262703,
+                "AvgSessionDurationMinutes": 0.0008565809770378315,
+                "PlayerLevel": -0.0037579394789639597,
+                "AchievementsUnlocked": 0.0031287555669270335
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.6833685002189833,
+                "Age": 0.0030830930829169856,
+                "PlayTimeHours": -0.0034302201348262703,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.0015223976457977141,
+                "PlayerLevel": 0.0022018532688991986,
+                "AchievementsUnlocked": 0.006969998969657349
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5302313342073507,
+                "Age": -0.00037501256572674624,
+                "PlayTimeHours": 0.0008565809770378315,
+                "SessionsPerWeek": -0.0015223976457977141,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.0016248018605337687,
+                "AchievementsUnlocked": -0.001712182254735531
+              },
+              "PlayerLevel": {
+                "prediction": 0.050315481376511345,
+                "Age": 0.003171289038178525,
+                "PlayTimeHours": -0.0037579394789639597,
+                "SessionsPerWeek": 0.0022018532688991986,
+                "AvgSessionDurationMinutes": 0.0016248018605337687,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": 0.007068671975467362
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.05977616300687983,
+                "Age": -0.002212299027979604,
+                "PlayTimeHours": 0.0031287555669270335,
+                "SessionsPerWeek": 0.006969998969657349,
+                "AvgSessionDurationMinutes": -0.001712182254735531,
+                "PlayerLevel": 0.007068671975467362,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "kendall": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.00031252248815706265,
+                "PlayTimeHours": 0.0020553502145840346,
+                "SessionsPerWeek": 0.5748643861396848,
+                "AvgSessionDurationMinutes": 0.428514856957221,
+                "PlayerLevel": 0.03918705565679728,
+                "AchievementsUnlocked": 0.04673517752339977
+              },
+              "Age": {
+                "prediction": 0.00031252248815706265,
+                "Age": 1.0,
+                "PlayTimeHours": 0.0027667246153227592,
+                "SessionsPerWeek": 0.00214176543450847,
+                "AvgSessionDurationMinutes": -0.00026211945747401386,
+                "PlayerLevel": 0.0021677858796895736,
+                "AchievementsUnlocked": -0.0014757456670084124
+              },
+              "PlayTimeHours": {
+                "prediction": 0.0020553502145840346,
+                "Age": 0.0027667246153227592,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.0023069869878203594,
+                "AvgSessionDurationMinutes": 0.000561141576247384,
+                "PlayerLevel": -0.0025255817098216323,
+                "AchievementsUnlocked": 0.0020940041557344176
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.5748643861396848,
+                "Age": 0.00214176543450847,
+                "PlayTimeHours": -0.0023069869878203594,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.0010418350619285273,
+                "PlayerLevel": 0.001512401330383313,
+                "AchievementsUnlocked": 0.004788471303456699
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.428514856957221,
+                "Age": -0.00026211945747401386,
+                "PlayTimeHours": 0.000561141576247384,
+                "SessionsPerWeek": -0.0010418350619285273,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.0010935723390839756,
+                "AchievementsUnlocked": -0.0011525146059982584
+              },
+              "PlayerLevel": {
+                "prediction": 0.03918705565679728,
+                "Age": 0.0021677858796895736,
+                "PlayTimeHours": -0.0025255817098216323,
+                "SessionsPerWeek": 0.001512401330383313,
+                "AvgSessionDurationMinutes": 0.0010935723390839756,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": 0.004784578473495578
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.04673517752339977,
+                "Age": -0.0014757456670084124,
+                "PlayTimeHours": 0.0020940041557344176,
+                "SessionsPerWeek": 0.004788471303456699,
+                "AvgSessionDurationMinutes": -0.0011525146059982584,
+                "PlayerLevel": 0.004784578473495578,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "cramer_v": {
+              "Gender": {
+                "Gender": 1.0,
+                "Location": 0.006062494155422786,
+                "GameGenre": 0.011688138402175306,
+                "InGamePurchases": 0.007004402279155182,
+                "GameDifficulty": 0.006411409708335257
+              },
+              "Location": {
+                "Gender": 0.006062494155422786,
+                "Location": 1.0,
+                "GameGenre": 0.007802438161959717,
+                "InGamePurchases": 0.007212408219046243,
+                "GameDifficulty": 0.0036842969085645436
+              },
+              "GameGenre": {
+                "Gender": 0.011688138402175306,
+                "Location": 0.007802438161959717,
+                "GameGenre": 1.0,
+                "InGamePurchases": 0.013254953096390281,
+                "GameDifficulty": 0.012150607884545151
+              },
+              "InGamePurchases": {
+                "Gender": 0.007004402279155182,
+                "Location": 0.007212408219046243,
+                "GameGenre": 0.013254953096390281,
+                "InGamePurchases": 1.0,
+                "GameDifficulty": 0.00285011071145657
+              },
+              "GameDifficulty": {
+                "Gender": 0.006411409708335257,
+                "Location": 0.0036842969085645436,
+                "GameGenre": 0.012150607884545151,
+                "InGamePurchases": 0.00285011071145657,
+                "GameDifficulty": 1.0
+              }
+            }
+          },
+          "stats": {
+            "pearson": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": 0.6825167186216563,
+              "abs_max_correlation": 0.6825167186216563,
+              "abs_max_features_correlation": 0.007102329692971171
+            },
+            "spearman": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": 0.6833685002189833,
+              "abs_max_correlation": 0.6833685002189833,
+              "abs_max_features_correlation": 0.007068671975467362
+            },
+            "kendall": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": 0.5748643861396848,
+              "abs_max_correlation": 0.5748643861396848,
+              "abs_max_features_correlation": 0.004788471303456699
+            },
+            "cramer_v": {
+              "type": "evidently.metrics.data_quality.dataset_correlations_metric.CorrelationStats",
+              "target_prediction_correlation": null,
+              "abs_max_target_features_correlation": null,
+              "abs_max_prediction_features_correlation": null,
+              "abs_max_correlation": 0.013254953096390281,
+              "abs_max_features_correlation": 0.013254953096390281
+            }
+          },
+          "correlations_calculate": {
+            "pearson": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.00039550377997034353,
+                "PlayTimeHours": 0.0026497368037292903,
+                "SessionsPerWeek": 0.6825167186216563,
+                "AvgSessionDurationMinutes": 0.5305460874680726,
+                "PlayerLevel": 0.05039570062438236,
+                "AchievementsUnlocked": 0.059819738903321325
+              },
+              "Age": {
+                "prediction": 0.00039550377997034353,
+                "Age": 1.0,
+                "PlayTimeHours": 0.004086122441410991,
+                "SessionsPerWeek": 0.003039314541201845,
+                "AvgSessionDurationMinutes": -0.0004325753654385372,
+                "PlayerLevel": 0.0031777902286268863,
+                "AchievementsUnlocked": -0.002233433818848424
+              },
+              "PlayTimeHours": {
+                "prediction": 0.0026497368037292903,
+                "Age": 0.004086122441410991,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.003390492958064577,
+                "AvgSessionDurationMinutes": 0.0008274310432711343,
+                "PlayerLevel": -0.003790119890075353,
+                "AchievementsUnlocked": 0.0031140066989392232
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.6825167186216563,
+                "Age": 0.003039314541201845,
+                "PlayTimeHours": -0.003390492958064577,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.0014588630535112802,
+                "PlayerLevel": 0.0021903690378533864,
+                "AchievementsUnlocked": 0.006983453241444939
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5305460874680726,
+                "Age": -0.0004325753654385372,
+                "PlayTimeHours": 0.0008274310432711343,
+                "SessionsPerWeek": -0.0014588630535112802,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.0016218929665963843,
+                "AchievementsUnlocked": -0.0017197018007688272
+              },
+              "PlayerLevel": {
+                "prediction": 0.05039570062438236,
+                "Age": 0.0031777902286268863,
+                "PlayTimeHours": -0.003790119890075353,
+                "SessionsPerWeek": 0.0021903690378533864,
+                "AvgSessionDurationMinutes": 0.0016218929665963843,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": 0.007102329692971171
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.059819738903321325,
+                "Age": -0.002233433818848424,
+                "PlayTimeHours": 0.0031140066989392232,
+                "SessionsPerWeek": 0.006983453241444939,
+                "AvgSessionDurationMinutes": -0.0017197018007688272,
+                "PlayerLevel": 0.007102329692971171,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "spearman": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.00039596891161735654,
+                "PlayTimeHours": 0.0026481400350056397,
+                "SessionsPerWeek": 0.6833685002189833,
+                "AvgSessionDurationMinutes": 0.5302313342073507,
+                "PlayerLevel": 0.050315481376511345,
+                "AchievementsUnlocked": 0.05977616300687983
+              },
+              "Age": {
+                "prediction": 0.00039596891161735654,
+                "Age": 1.0,
+                "PlayTimeHours": 0.004068636968338601,
+                "SessionsPerWeek": 0.0030830930829169856,
+                "AvgSessionDurationMinutes": -0.00037501256572674624,
+                "PlayerLevel": 0.003171289038178525,
+                "AchievementsUnlocked": -0.002212299027979604
+              },
+              "PlayTimeHours": {
+                "prediction": 0.0026481400350056397,
+                "Age": 0.004068636968338601,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.0034302201348262703,
+                "AvgSessionDurationMinutes": 0.0008565809770378315,
+                "PlayerLevel": -0.0037579394789639597,
+                "AchievementsUnlocked": 0.0031287555669270335
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.6833685002189833,
+                "Age": 0.0030830930829169856,
+                "PlayTimeHours": -0.0034302201348262703,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.0015223976457977141,
+                "PlayerLevel": 0.0022018532688991986,
+                "AchievementsUnlocked": 0.006969998969657349
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.5302313342073507,
+                "Age": -0.00037501256572674624,
+                "PlayTimeHours": 0.0008565809770378315,
+                "SessionsPerWeek": -0.0015223976457977141,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.0016248018605337687,
+                "AchievementsUnlocked": -0.001712182254735531
+              },
+              "PlayerLevel": {
+                "prediction": 0.050315481376511345,
+                "Age": 0.003171289038178525,
+                "PlayTimeHours": -0.0037579394789639597,
+                "SessionsPerWeek": 0.0022018532688991986,
+                "AvgSessionDurationMinutes": 0.0016248018605337687,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": 0.007068671975467362
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.05977616300687983,
+                "Age": -0.002212299027979604,
+                "PlayTimeHours": 0.0031287555669270335,
+                "SessionsPerWeek": 0.006969998969657349,
+                "AvgSessionDurationMinutes": -0.001712182254735531,
+                "PlayerLevel": 0.007068671975467362,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "kendall": {
+              "prediction": {
+                "prediction": 1.0,
+                "Age": 0.00031252248815706265,
+                "PlayTimeHours": 0.0020553502145840346,
+                "SessionsPerWeek": 0.5748643861396848,
+                "AvgSessionDurationMinutes": 0.428514856957221,
+                "PlayerLevel": 0.03918705565679728,
+                "AchievementsUnlocked": 0.04673517752339977
+              },
+              "Age": {
+                "prediction": 0.00031252248815706265,
+                "Age": 1.0,
+                "PlayTimeHours": 0.0027667246153227592,
+                "SessionsPerWeek": 0.00214176543450847,
+                "AvgSessionDurationMinutes": -0.00026211945747401386,
+                "PlayerLevel": 0.0021677858796895736,
+                "AchievementsUnlocked": -0.0014757456670084124
+              },
+              "PlayTimeHours": {
+                "prediction": 0.0020553502145840346,
+                "Age": 0.0027667246153227592,
+                "PlayTimeHours": 1.0,
+                "SessionsPerWeek": -0.0023069869878203594,
+                "AvgSessionDurationMinutes": 0.000561141576247384,
+                "PlayerLevel": -0.0025255817098216323,
+                "AchievementsUnlocked": 0.0020940041557344176
+              },
+              "SessionsPerWeek": {
+                "prediction": 0.5748643861396848,
+                "Age": 0.00214176543450847,
+                "PlayTimeHours": -0.0023069869878203594,
+                "SessionsPerWeek": 1.0,
+                "AvgSessionDurationMinutes": -0.0010418350619285273,
+                "PlayerLevel": 0.001512401330383313,
+                "AchievementsUnlocked": 0.004788471303456699
+              },
+              "AvgSessionDurationMinutes": {
+                "prediction": 0.428514856957221,
+                "Age": -0.00026211945747401386,
+                "PlayTimeHours": 0.000561141576247384,
+                "SessionsPerWeek": -0.0010418350619285273,
+                "AvgSessionDurationMinutes": 1.0,
+                "PlayerLevel": 0.0010935723390839756,
+                "AchievementsUnlocked": -0.0011525146059982584
+              },
+              "PlayerLevel": {
+                "prediction": 0.03918705565679728,
+                "Age": 0.0021677858796895736,
+                "PlayTimeHours": -0.0025255817098216323,
+                "SessionsPerWeek": 0.001512401330383313,
+                "AvgSessionDurationMinutes": 0.0010935723390839756,
+                "PlayerLevel": 1.0,
+                "AchievementsUnlocked": 0.004784578473495578
+              },
+              "AchievementsUnlocked": {
+                "prediction": 0.04673517752339977,
+                "Age": -0.0014757456670084124,
+                "PlayTimeHours": 0.0020940041557344176,
+                "SessionsPerWeek": 0.004788471303456699,
+                "AvgSessionDurationMinutes": -0.0011525146059982584,
+                "PlayerLevel": 0.004784578473495578,
+                "AchievementsUnlocked": 1.0
+              }
+            },
+            "cramer_v": {
+              "Gender": {
+                "Gender": 1.0,
+                "Location": 0.006062494155422786,
+                "GameGenre": 0.011688138402175306,
+                "InGamePurchases": 0.007004402279155182,
+                "GameDifficulty": 0.006411409708335257
+              },
+              "Location": {
+                "Gender": 0.006062494155422786,
+                "Location": 1.0,
+                "GameGenre": 0.007802438161959717,
+                "InGamePurchases": 0.007212408219046243,
+                "GameDifficulty": 0.0036842969085645436
+              },
+              "GameGenre": {
+                "Gender": 0.011688138402175306,
+                "Location": 0.007802438161959717,
+                "GameGenre": 1.0,
+                "InGamePurchases": 0.013254953096390281,
+                "GameDifficulty": 0.012150607884545151
+              },
+              "InGamePurchases": {
+                "Gender": 0.007004402279155182,
+                "Location": 0.007212408219046243,
+                "GameGenre": 0.013254953096390281,
+                "InGamePurchases": 1.0,
+                "GameDifficulty": 0.00285011071145657
+              },
+              "GameDifficulty": {
+                "Gender": 0.006411409708335257,
+                "Location": 0.0036842969085645436,
+                "GameGenre": 0.012150607884545151,
+                "InGamePurchases": 0.00285011071145657,
+                "GameDifficulty": 1.0
+              }
+            }
+          }
+        },
+        "target_correlation": null
+      }
+    ],
+    "tests": [],
+    "test_results": [],
+    "options": {
+      "color": null,
+      "render": null,
+      "custom": {}
+    }
+  },
+  "metrics_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    12,
+    13,
+    14
+  ],
+  "test_ids": [],
+  "options": {
+    "color": null,
+    "render": null,
+    "custom": {}
+  }
+}
