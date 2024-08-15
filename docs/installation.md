@@ -176,7 +176,7 @@ make deploy-ecr-prod
 
 The output will show you the registry url,  that we need to log in to push the images. 
 ```text
-container_repository_url = "http://**223817798831.dkr.ecr.us-west-2.amazonaws.com**/online-gaming-production-repository"
+container_repository_url = "http://**xxxxxxxxxxxx.dkr.ecr.yyyyyyy.amazonaws.com**/online-gaming-production-repository"
 ```
 **Write down the container record xxxxxxx.dkr.ecr.yyyyyyyyy.amazonaws.com** as we will need it in the next step.
 

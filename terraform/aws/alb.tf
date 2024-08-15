@@ -24,28 +24,28 @@ resource "aws_security_group" "load_balancer_security_group" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.mylocalip}"]
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.MYLOCALIP}"]
   }
 
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.mylocalip}"]
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.MYLOCALIP}"]
   }
 
 ingress {
     from_port   = 8001
     to_port     = 8001
     protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.mylocalip}"]
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.MYLOCALIP}"]
   }
 
 ingress {
     from_port   = 5000
     to_port     = 5000
     protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.mylocalip}"]
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32", "${var.MYLOCALIP}"]
   }
 
   egress {

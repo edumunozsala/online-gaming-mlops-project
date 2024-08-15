@@ -16,7 +16,7 @@ variable "AWS_BUCKET_NAME" {
   description = "S3 bucket for our project"
 }
 
-variable "mylocalip" {
+variable "MYLOCALIP" {
   description = "The IP address to access from."
 }
 
