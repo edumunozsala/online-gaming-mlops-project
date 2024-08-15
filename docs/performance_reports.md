@@ -20,3 +20,6 @@ Flow diagram:
 	- Prepare reference data for monitoring, removing the target column that is not present in the current data
 	- Run a Summary Data Quality report, a Data Drift report and a Prediction Drift report
 	- Upload and save the reports to an S3 folder. The Evidently UI will read and visualize them.
+
+Performance Dashboard
+![Performance Dashboard Evidently](../images/dashboard_evidently.png)

@@ -233,6 +233,8 @@ For this project we use Evidently AI and have considered two actions in the surv
 
 And **you can navigate to our Evidently UI** (This URL depends on how the solutions is deployed, you can read it later in the Instalation guide) and visualize a main **Dashboard** where you can easily assess data quality and performance. You can also navigate to individual **reports** to drill down to detailed information such as columns drifted, correlations, etc.
 
+![Performance Dashboard](images/dashboard_evidently.png)
+
 ## Cloud
 
 ![I-a-C Tool Terraform](images/terraform.225x256.png) 						![Amazon Web Services](images/aws-logo.png)
