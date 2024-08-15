@@ -18,6 +18,7 @@ provider "aws" {
 resource "aws_ecr_repository" "container_repository" {
   name                 = "${var.app_name}-${var.app_environment}-repository"
   image_tag_mutability = "MUTABLE"
+  force_delete = true
 
   image_scanning_configuration {
     scan_on_push = true
@@ -36,6 +37,7 @@ resource "aws_ecr_repository" "container_repository" {
 resource "aws_ecr_repository" "tracker_repository" {
   name                 = "${var.tracker_name}-repository"
   image_tag_mutability = "MUTABLE"
+  force_delete = true
 
   image_scanning_configuration {
     scan_on_push = true
@@ -54,6 +56,7 @@ resource "aws_ecr_repository" "tracker_repository" {
 resource "aws_ecr_repository" "reporter_repository" {
   name                 = "${var.reporter_name}-repository"
   image_tag_mutability = "MUTABLE"
+  force_delete = true
 
   image_scanning_configuration {
     scan_on_push = true
