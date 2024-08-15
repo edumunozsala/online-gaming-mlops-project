@@ -158,7 +158,7 @@ Go to dir `online-gaming-mlops-project`
 cd online-gaming-mlops-project
 ```
 
-2. **Modify the `.env.bck` file and rename it to `.dev.env`**. Insert your AWS credentials and region. You do not need to set the others parameters, the default values are all OK.
+2. **Modify the `.env.bck` file and rename it to `.dev.env`**. Insert your **AWS credentials**, **region** and your **local IP**, to configure netwrk access. You do not need to set the others parameters, the default values are all OK.
 
 3. You need to **load the environment variables** with the AWS credentials and other parameters.
 

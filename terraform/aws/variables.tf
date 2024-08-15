@@ -16,6 +16,11 @@ variable "AWS_BUCKET_NAME" {
   description = "S3 bucket for our project"
 }
 
+variable "mylocalip" {
+  description = "The IP address to access from."
+}
+
+
 variable "PROJECT_NAME" {
   type        = string
   description = "Mage project"
@@ -92,11 +97,6 @@ variable "enable_ci_cd" {
 variable "cidr" {
   description = "The CIDR block for the VPC."
   default     = "10.32.0.0/16"
-}
-
-variable "mylocalip" {
-  description = "The IP address to access from."
-  default     = "62.117.203.0/24"
 }
 
 variable "tracker_name" {
