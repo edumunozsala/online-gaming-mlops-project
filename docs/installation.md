@@ -189,13 +189,13 @@ export AWS_ECR_ACCOUNT="xxxxxxxxxxx.dkr.ecr.yyyyyyy.amazonaws.com"
 ```bash
 make images-ecr-prod
 ```
-7. Now, you can **copy the data files in the local folder `data`** to the folders created in S3 automatically, by default the bucket_name in PROD is `mlops-online`. 
+7. Now, you can **copy the data files in the local folder `data`** to the folders created in S3 automatically, by default the bucket_name in PROD is `mlops-gaming-prod`. 
 
 You can run the `make` command to copy them automatically if you have aws cli installed:
 ```bash
 make copy-files-s3
 ```
-Or copy them manually yo the S3 bucket.
+Or copy them manually to the S3 bucket.
 
 8. Our last step is to deploy all the AWS components:
 ```bash
