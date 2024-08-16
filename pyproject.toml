@@ -1,10 +1,7 @@
 [tool.pylint.'MESSAGES_CONTROL']
 
 # if you do not have applied isort and black previously, uncomment the lines
-disable=[#"trailing-whitespace", 
-        #"missing-final-newline",
-        #"possibly-used-before-assignment",
-        #"import-error",
+disable=["consider-using-f-string",
         "unused-variable",
         "unused-argument",
         "invalid-name",

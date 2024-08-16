@@ -28,7 +28,7 @@ set +a
 
 First, we recommend to only show the differences:
 ```bash
-isort --diff
+isort --diff machine_learning/utils
 ```
 
 Now, review the changes, and if everything looks fine then we will apply it:

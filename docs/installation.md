@@ -203,6 +203,8 @@ make deploy-aws-prod
 ```
 The output will show you the URL to access to the main application, Mage orchestrator.
 
+**Important**: The ECS services can take 2-3 minutes to completly start up. Wait a few minutes before accessing the applications.
+
 9. Access the applications 
 
 Go to the AWS Load balancer, and get the URL of the published balancer and click on it.
