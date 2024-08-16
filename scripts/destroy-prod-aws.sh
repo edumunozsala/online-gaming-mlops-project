@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -x
 
-echo "Removing all files in the AWS bucket"
-aws s3 rm s3://${AWS_BUCKET_NAME} --recursive
-
 echo $PWD
 cd ./terraform/aws
 echo $PWD

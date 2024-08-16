@@ -15,21 +15,6 @@ provider "aws" {
   secret_key = var.AWS_SECRET_ACCESS_KEY  
 }
 
-resource "aws_s3_bucket" "project_bucket" {
-  bucket = var.AWS_BUCKET_NAME
-
-  tags = {
-    Name        = "project"
-    Environment = "mlops-online"
-  }
-}
-
-resource "aws_s3_object" "default_s3_content" {
-    for_each = var.default_s3_content
-    bucket = aws_s3_bucket.project_bucket.id
-    key = "${each.value}/"
-}
-
 # Create the ECS cluster
 resource "aws_ecs_cluster" "aws-ecs-cluster" {
   name = "${var.app_name}-${var.app_environment}-cluster"
