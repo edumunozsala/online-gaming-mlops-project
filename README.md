@@ -21,8 +21,8 @@ The next picture ilustrate the workflows or pipelines we have built using Mage A
 ![MLOps Workflow and Pipelines](images/flows.drawio.png)
 
 - In our scenario, data about players and their playing behavior are collected every day.
-- From the collected data, we can prepare and train an ML model to predict a player's engagement level.  
-- Then, each day in the evening, we run a batch inference process to obtain a prediction of each player's engagement level and this data is stored in a shared, presistent cloud storage. 
+- From the collected data, we can prepare and train an ML model to predict a player's engagement level.
+- Then, each day in the evening, we run a batch inference process to obtain a prediction of each player's engagement level and this data is stored in a shared, presistent cloud storage.
 - At the end of the week, we can compile the actual truth or target value based on the level of engagement the player has shown during the week. This means that we can have new training data.
 - Every weekend, we can retrain our model and record a new version, a candidate model.
 - Every Monday, we select the best model, compare the candidate model with the production model, establish the new best model and move it to production.
@@ -122,7 +122,7 @@ We rely on Mage AI as our pipeline orchestrator, building a pipeline for each fl
 
 ![Mage Pipeline List](images/list-pipelines.png)
 
-### Data preparation stage:  
+### Data preparation stage:
 ---
 
 
@@ -173,7 +173,7 @@ Detailed information and pipeline diagram [HERE](docs/model_selection.md)
 	- Load the model from the Global Data Product
 	- Make predictions on the dataset
 	- Upload and save predictions to the destination folder in S3
-	- Upload and save the input data to the monitoring folder in S3. It will become the current data for performance monitoring. 
+	- Upload and save the input data to the monitoring folder in S3. It will become the current data for performance monitoring.
 
 Detailed information and pipeline diagram [HERE](docs/batch_inference.md)
 
@@ -223,7 +223,7 @@ As we've mentioned in a previous section, we deploy our model on the Mage platfo
 ## Model Monitoring
 ![Performance Monitoring framework Evidently AI](images/evidentlyai-logo.png)
 
-Evidently AI helps run ML in production reliably. Evidently gives visibility into how ML models behave in the wild and helps detect and debug issues, from data drift to segments of low performance. All with an open-source approach: extensible, open, and built together with the community. 
+Evidently AI helps run ML in production reliably. Evidently gives visibility into how ML models behave in the wild and helps detect and debug issues, from data drift to segments of low performance. All with an open-source approach: extensible, open, and built together with the community.
 
 For this project we use Evidently AI and have considered two actions in the surveillance strategy:
 
@@ -253,13 +253,13 @@ The production solution includes the following architecture:
 
 - Mlflow, the experiment tracker and model registry tool: A Fargate service runing a Mlflow container, small size 1024 CPU and 2048 GB. Data is stored in a local SQLite to reduce cost and complexity and the artifacts are stored in a folder in an S3 bucket.
 
-- Evidently UI: A new task and Fargate service, runing in 1024 CPU and 2048 GB Mem. It collects reports from an S3 folder and generate the reports and dashboard when started. 
+- Evidently UI: A new task and Fargate service, runing in 1024 CPU and 2048 GB Mem. It collects reports from an S3 folder and generate the reports and dashboard when started.
 
+* Amazon ECR including three repositories for our images.
 * Amazon Load Balancer: An application balancer to direct traffic to one of three containers.
 
 * Amazon VPC: All components are protected inside a VPC to control access and networking.
 	-	Several subnets and security groups to keep the solution secure.
-* 
 
 ## Best practices
 
@@ -287,7 +287,7 @@ make unit-tests
 
 **Integration testing** is a type of software testing where components of the software are gradually integrated and then tested as a whole. Usually, these components are already working well individually. However, they may break when integrated with other components.
 
-For this project, we have prepared a test scenario where we run the mlflow server container and test the code in `machine_learning/utils' that creates a mlclient and connects to the container. 
+For this project, we have prepared a test scenario where we run the mlflow server container and test the code in `machine_learning/utils' that creates a mlclient and connects to the container.
 
 * Set some evironment variables
 * Start the mlflow Docker container
@@ -298,6 +298,8 @@ Now, run the `make` command (set up env variables before):
 ```bash
 make integration-tests
 ```
+[Link](docs/testing.md) to the description and steps to run integration tests.
+
 ### Linting and Code Formatting
 You can read a complete description of this step in the next [doc](docs/linting.md).
 
@@ -306,7 +308,7 @@ We apply some tools to check for quality code, standard formatting and programmi
 * black
 * pylint
 
-And create a `pyproject.toml` file to set up how to apply every tool. 
+And create a `pyproject.toml` file to set up how to apply every tool.
 
 We have added a Makefiel entry to run the quality checks and show possible errors:
 ```bash
@@ -323,6 +325,28 @@ A `Makefile` has been defined to facilitate the execution of some scripts such a
 - run-report-server: To run the evidently report server.
 
 There are some others, this way simplifies how to work with this project.
+
+### Pre-commit hook
+We include a pre-commit hook to make sure our code files are formatted and the unit tests are passed before commiting.
+```bash
+git commit -m "Adding pre commit config"
+[WARNING] Unstaged files detected.
+[INFO] Stashing unstaged files to /home/codespace/.cache/pre-commit/patch1723829155-50738.
+Trim Trailing Whitespace.................................................Passed
+Check Yaml...............................................................Passed
+Check for added large files..............................................Passed
+isort (python).......................................(no files to check)Skipped
+black................................................(no files to check)Skipped
+pylint...............................................(no files to check)Skipped
+pytest-check.............................................................Passed
+[INFO] Restored changes from /home/codespace/.cache/pre-commit/patch1723829155-50738.
+[main b08c44f] Adding pre commit config
+ 2 files changed, 65 insertions(+)
+ create mode 100644 .pre-commit-config.yaml
+```
+
+
+You can view the pre-commit configuration and results in this [section](docs/precommit.md)
 
 ## Reproducibility: Instructions on how to run the solution
 
@@ -347,13 +371,13 @@ There two scenarios to run the project:
 	- Load balancer
 	- VPC
 	- etcetera
- 
+
  **Important**: This deployment can incur relatively high costs, so we recommend using it for as long as necessary and then executing the removal of all deployed resources.
 
  ### **A how-to guide to prepare the environment and deploy both solutions are explained [HERE](docs/installation.md)**
- 
+
 ## Contributing
-If you find some bug or typo, please let me know. 
+If you find some bug or typo, please let me know.
 
 ## License
 
