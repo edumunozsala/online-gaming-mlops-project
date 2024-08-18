@@ -29,7 +29,6 @@ The next picture ilustrate the workflows or pipelines we have built using Mage A
 - Every night we run performance tests to check for problems related to data or model drift. If any of the relevant tests fail, we can force a retraining step.
 - Some performance monitoring reports are also run every day. These are saved, and the ML team will have access to a dashboard and reports to keep up to date on model performance.
 
-
 #### Data Understanding and Preprocessing
 * Data Collection: Gather the dataset with fields about the gamers and their gaming behavior on the platform.
 * Data Cleaning: Handle missing values, remove duplicates, and correct any inconsistencies in the data.
@@ -38,34 +37,19 @@ The next picture ilustrate the workflows or pipelines we have built using Mage A
 * Data Splitting: Divide the data into training, validation, and test sets to evaluate the model's performance.
 
 #### Model Selection and Training
-* Algorithm Choice: Consider various machine learning algorithms such as:
-	- Logistic Regression: For baseline performance and interpretability.
-	- Random Forest: For handling complex interactions and providing feature importance.
-	- Gradient Boosting Machines (GBM): For high accuracy and robustness.
-	- Neural Networks: If the data is sufficiently large and complex.
-
-* Model Training: Train multiple models and perform hyperparameter tuning using techniques like cross-validation to optimize model performance.
+* Algorithm Choice: Consider various machine learning algorithms such as: Logistic Regression, Random Forest (handling complex interactions and providing feature importance), Gradient Boosting Machines (For high accuracy and robustness), Neural Networks (If the data is sufficiently large and complex).
+* Model Training: Train multiple models, perform hyperparameter tuning using techniques like cross-validation.
 * Feature Importance Analysis: Identify which features are most influential in predicting player engagement.
 
 **Important**: We will not focus in the machine learning model and how to get the better approach. Therefore, **we will simplify tasks such as feature engineering, model selection, and hyperparameter tuning**. This project is about MLOps, and we will try to provide a solution to orchestrate the several pipelines this kind of problem requires. Consecuently, **we will not create any new feature**, **we have already chosen the model Gradient Booster** and we will not perform a hyperparameter tuning job, **we have selected some standard parameters**.
 
 #### Model Evaluation
-* Metrics:
-	- Accuracy: Overall correctness of the model.
-	- Precision, Recall, and F1-Score: For evaluating the balance between precision and recall, especially for the 'High' engagement category.
-	- Confusion Matrix: To understand the types of errors the model is making.
+* Metrics: Accuracy, Precision, Recall, and F1-Score.
+* Confusion Matrix: To understand the types of errors the model is making.
 
 #### Deployment and Monitoring
 * Model Deployment: Deploy the best-performing model into the production environment.
 * Continuous Monitoring: Track model performance over time to ensure it remains accurate and relevant, retraining as necessary.
-
-### Business Objective and Optimization
-
-Strategies to Improve Player Engagement
-* In-Game Purchases: Recommend items or upgrades that align with the player's gaming behavior and preferences.
-* Engagement Level-Based Campaigns: Create specific campaigns for 'Medium' and 'Low' engagement players to re-engage them with tailored offers, rewards, and incentives.
-* Retention Programs: Design loyalty programs for 'High' engagement players to maintain their interest and reward their loyalty.
-* In-Game Events and Achievements: Organize special in-game events and introduce new achievements to keep the game fresh and engaging.
 
 ## Dataset: Predict Online Gaming Behavior Dataset
 
@@ -344,13 +328,11 @@ pytest-check.............................................................Passed
  2 files changed, 65 insertions(+)
  create mode 100644 .pre-commit-config.yaml
 ```
-
-
 You can view the pre-commit configuration and results in this [section](docs/precommit.md)
 
 ## Reproducibility: Instructions on how to run the solution
 
-There two scenarios to run the project:
+There are two scenarios to run the project:
 * Deploy the dev solution: This DEV deployment consis of:
 	- Mage Docker container running in port 6789
 	- Postgres db container used by Mage in port 5432
